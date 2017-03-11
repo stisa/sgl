@@ -3,3 +3,6 @@ nimcache/
 examples/nimcache
 examples/*.js
 examples/*.html
+refs
+*.exe
+*.log
