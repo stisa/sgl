@@ -2,7 +2,10 @@ import webgl
 
 import utils
 
+# Describe the Layout of the Vertices passed to a buffer.
+
 type StepFunc* {.pure.}= enum
+  ## Whether the described layout is for vertices or elements
   PerVertex,
   PerInstance
 
@@ -21,22 +24,17 @@ type  VertexFormat* {.pure.} = enum
   Short4N,## 4 packed 16-bit shorts, signed (-1.0 .. +1.0)
 
 
-type VertexLayoutOptions* = concept v
-  v.components is openarray[tuple[name:string,format:VertexFormat]]
-  v.stepfunc is ?StepFunc
-  v.steprate is ?Natural
-
 type VertexLayout* = object
   components : seq[tuple[name:string,format:VertexFormat]]
   stepFunc : StepFunc
   stepRate : Natural
 
-proc vertexlayout*( o:VertexLayoutOptions ):VertexLayout =
-  result.components = o.components
-  result.stepfunc = o.stepfunc.get(StepFunc.PerVertex)
-  result.steprate = o.steprate.get(1)
+proc vertexlayout*( comps: seq[tuple[name:string,format:VertexFormat]] ,stepfunc=StepFunc.PerVertex,steprate=1):VertexLayout =
+  result.components = comps
+  result.stepfunc = stepfunc
+  result.steprate = steprate
 
-proc vertexFormatByteSize(fmt: VertexFormat): int =
+proc vertexFormatByteSize*(fmt: VertexFormat): int =
   case fmt:
   of  VertexFormat.Float,
       VertexFormat.Byte4,
@@ -55,9 +53,9 @@ proc vertexFormatByteSize(fmt: VertexFormat): int =
   of VertexFormat.Float4:
     16
 
-proc bytesize(vl:VertexLayout):int =
+proc bytesize*(vl:VertexLayout):int =
   for comp in vl.components: result += vertexFormatByteSize(comp[1])
 
-proc componentByteOffset(vl:VertexLayout, compIndex: int): int =
+proc componentByteOffset*(vl:VertexLayout, compIndex: int): int =
   for i in 0..<compindex:
     result += vertexFormatByteSize(vl.components[i][1])

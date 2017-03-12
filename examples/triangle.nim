@@ -1,71 +1,121 @@
-import ../src/altgl
-import options
-# create the AltGL object which initializes
-# a WebGL context and the default render state
+import webgl, dom
 
-let gfx = altgl( AltGLOptions( width: 400.some, height: 300.some, canvas: "triangle-canvas".some ) )
+converter toUI(i:int):uint = i.uint
 
-# create a render-pass
-let pass = gfx.makePass(
-    PassOptions( 
-        colorAttachments: @[ ColorAttachmentOptions( clearColor: (0.5, 0.5, 0.5, 1.0).some ) ].some
-        )
-    )
+#============== Creating a canvas ====================*/
+var canvas = dom.document.getElementById("glcanvas").Canvas;
+var gl = canvas.getContextWebgl()
+#======== Defining and storing the geometry ===========*/
 
-# a vertex buffer with positions and colors for a triangle
-let vertexBuffer = gfx.makeBuffer({
-    Type: altai.BufferType.VertexBuffer,
-    Data: new Float32Array([
-        # positions        colors
-        0.0, 0.5, 0.5,      1.0, 0.0, 0.0, 1.0,
-        0.5, -0.5, 0.5,     0.0, 1.0, 0.0, 1.0,
-        -0.5, -0.5, 0.5,    0.0, 0.0, 1.0, 1.0,
-    ]),
-});
+var vertices = [
+  -0.5'f32,0.5,0.0,
+  -0.5,-0.5,0.0,
+  0.5,-0.5,0.0, 
+];
 
-# create a vertex/fragment shader pair
-let shader = gfx.makeShader({
-    VertexShader: `
-        attribute vec4 position;
-        attribute vec4 color;
-        varying lowp vec4 vColor;
-        void main(void) {
-            gl_Position = position;
-            vColor = color;
-        }`,
-    FragmentShader: `
-        varying lowp vec4 vColor;
-        void main(void) {
-            gl_FragColor = vColor;
-        }`
-});
+var indices = [0'u16,1,2];
 
-# the pipeline-state object 
-let pipeline = gfx.makePipeline({
-    VertexLayouts: [{
-        Components: [
-            [ "position", altai.VertexFormat.Float3 ],
-            [ "color", altai.VertexFormat.Float4 ],
-        ]
-    }],
-    Shader: shader,
-    DepthCmpFunc: altai.CompareFunc.Always,
-    DepthWriteEnabled: false,
-    CullFaceEnabled: false,
-});
+# Create an empty buffer object to store vertex buffer
+var vertex_buffer = gl.createBuffer();
 
-# putting it all together in a draw-state object
-let drawState = gfx.makeDrawState({
-    Pipeline: pipeline,
-    VertexBuffers: [ vertexBuffer ],
-});
+# Bind appropriate array buffer to it
+gl.bindBuffer(beArrayBuffer, vertex_buffer);
 
-# the per-frame draw-function
-function draw() {
-    gfx.beginPass(pass);
-    gfx.applyDrawState(drawState);
-    gfx.draw(0, 3);
-    gfx.endPass();
-    gfx.commitFrame(draw);
-}
-draw();
+# Pass the vertex data to the buffer
+gl.bufferData(beArrayBuffer, vertices, beStaticDraw);
+
+# Unbind the buffer
+gl.bindBuffer(beArrayBuffer, nil);
+
+# Create an empty buffer object to store Index buffer
+var Index_Buffer = gl.createBuffer();
+
+# Bind appropriate array buffer to it
+gl.bindBuffer(beElementArrayBuffer, Index_Buffer);
+
+# Pass the vertex data to the buffer
+gl.bufferData(beElementArrayBuffer, indices, beStaticDraw);
+
+# Unbind the buffer
+gl.bindBuffer(beElementArrayBuffer, nil);
+
+#================ Shaders ====================*/
+
+# Vertex shader source code
+var vertCode = "attribute vec3 coordinates;"&
+  "void main(void) {" &
+  " gl_Position = vec4(coordinates, 1.0);" &
+  "}"
+  
+# Create a vertex shader object
+var vertShader = gl.createShader(seVertexShader);
+
+# Attach vertex shader source code
+gl.shaderSource(vertShader, vertCode);
+
+# Compile the vertex shader
+gl.compileShader(vertShader);
+if not gl.getStatus(vertShader): log("error vs")
+#fragment shader source code
+var fragCode ="void main(void){" &
+  "gl_FragColor = vec4(0.0, 0.0, 0.0, 0.1);" &
+  "}"
+  
+# Create fragment shader object
+var fragShader = gl.createShader(seFragmentShader);
+
+# Attach fragment shader source code
+gl.shaderSource(fragShader, fragCode); 
+
+# Compile the fragmentt shader
+gl.compileShader(fragShader);
+if not gl.getStatus(fragShader): log("error fg")
+# Create a shader program object to store
+# the combined shader program
+var shaderProgram = gl.createProgram();
+
+# Attach a vertex shader
+gl.attachShader(shaderProgram, vertShader);
+
+# Attach a fragment shader
+gl.attachShader(shaderProgram, fragShader);
+
+# Link both the programs
+gl.linkProgram(shaderProgram);
+if not gl.getStatus(shaderProgram): log("error p")
+# Use the combined shader program object
+gl.useProgram(shaderProgram);
+
+#======= Associating shaders to buffer objects =======*/
+
+# Bind vertex buffer object
+gl.bindBuffer(beArrayBuffer, vertex_buffer);
+
+# Bind index buffer object
+gl.bindBuffer(beElementArrayBuffer, Index_Buffer);
+
+# Get the attribute location
+var coord = gl.getAttribLocation(shaderProgram, "coordinates");
+
+# Point an attribute to the currently bound VBO
+gl.vertexAttribPointer(coord, 3, dtFloat, false, 0, 0); 
+
+# Enable the attribute
+gl.enableVertexAttribArray(coord);
+
+#=========Drawing the triangle===========*/
+
+# Clear the canvas
+gl.clearColor(0.5, 0.5, 0.5, 0.9);
+
+# Enable the depth test
+gl.enable(0x0B71);
+
+# Clear the color buffer bit
+gl.clear(bbColor);
+
+# Set the view port
+gl.viewport(0,0,canvas.width,canvas.height);
+
+# Draw the triangle
+gl.drawElements(pmTriangles, indices.len, dtUnsignedShort,0) #0x1403 ??
