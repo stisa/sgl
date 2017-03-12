@@ -6,3 +6,6 @@ examples/*.html
 refs
 *.exe
 *.log
+src/*.js
+src/*.html
+discarded
