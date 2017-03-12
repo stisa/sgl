@@ -16,6 +16,16 @@ template optional*(ty,body:untyped):untyped =
     body is ty
   else:discard
 
+
+proc get3*[T](one: Option[T],two: Option[T], otherwise: T): T =
+  ## Returns the contents of this option or `otherwise` if the option is none.
+  if one.isSome:
+    one.val
+  elif two.issome:
+    two.val
+  else:
+    otherwise
+
 const VertexFormatMap* = [
   ( 1, dtFLOAT, false ),
   ( 2, dtFLOAT, false ),
