@@ -22,6 +22,9 @@ type Buffer* = object
   usage: Usage
   kind: BufferKind
 
+proc kind(b:Buffer):Bufferkind=b.kind
+proc usage(b:Buffer):Usage=b.usage
+
 proc buffer*(
     o:BufferOptions,
     glbuffer:WebGLBuffer):Buffer =

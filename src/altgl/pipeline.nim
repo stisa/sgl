@@ -2,14 +2,14 @@ import utils,webgl
 
 import shader,vertexlayout
 
-type PrimitiveMode {.pure.} = enum
+type PrimitiveMode* {.pure.} = enum
   Points = pmPoints
   Lines = pmLines
   LineStrip = pmLineStrip
   Triangles = pmTriangles
   TriangleStrip = pmTriangleStrip
 
-type IndexFormat {.pure.} = enum
+type IndexFormat* {.pure.} = enum
   None = 0
   UShort = dtUnsignedShort
   UInt = dtUnsignedInt
@@ -37,7 +37,7 @@ type BlendOp {.pure.} = enum
   SUBSTRACT = 0x800A # Passed to blendEquation or blendEquationSeparate to specify a subtraction blend function (source - destination). 
   REVERSE_SUBTRACT = 0x800B # Passed to blendEquation or blendEquationSeparate to specify a reverse subtraction blend function (destination - source). 
 
-type Face {.pure.} = enum
+type Face* {.pure.} = enum
   Front = 0x0404 ## cull front side 
   Back = 0x0405  ## cull back side 
   Both = 0x0408  ## cull both sides 
@@ -78,7 +78,7 @@ type CompareFunc {.pure.} = enum
   Always = 0x0207,
   ## new value always passes 
 
-type PipelineOptions = concept p
+type PipelineOptions* = concept p
   p.vertexLayouts is seq[VertexLayoutOptions]
   ## described the structure of input vertex data 
   p.shader() is Shader
@@ -174,43 +174,81 @@ type PipelineOptions = concept p
   p.scissorTestEnabled is ?bool
   ## scissor test enabled? (default: false) 
 
-type PipelineState = object
-  blendEnabled: bool
-  blendSrcFactorRGB: BlendFactor
-  blendDstFactorRGB: BlendFactor
-  blendOpRGB: BlendOp
-  blendSrcFactorAlpha: BlendFactor
-  blendDstFactorAlpha: BlendFactor
-  blendOpAlpha: BlendOp
-  colorWriteMask: tuple[r,g,b,a:bool]
-  blendColor: tuple[r,g,b,a:float]
+type PipelineState* = object
+  blendEnabled*: bool
+  blendSrcFactorRGB*: BlendFactor
+  blendDstFactorRGB*: BlendFactor
+  blendOpRGB*: BlendOp
+  blendSrcFactorAlpha*: BlendFactor
+  blendDstFactorAlpha*: BlendFactor
+  blendOpAlpha*: BlendOp
+  colorWriteMask*: tuple[r,g,b,a:bool]
+  blendColor*: tuple[r,g,b,a:float]
 
-  stencilEnabled: bool
+  stencilEnabled*: bool
 
-  frontStencilFailOp: StencilOp
-  frontStencilDepthFailOp: StencilOp
-  frontStencilPassOp: StencilOp
-  frontStencilCmpFunc: CompareFunc
-  frontStencilReadMask: int
-  frontStencilWriteMask: int
-  frontStencilRef: int
+  frontStencilFailOp*: StencilOp
+  frontStencilDepthFailOp*: StencilOp
+  frontStencilPassOp*: StencilOp
+  frontStencilCmpFunc*: CompareFunc
+  frontStencilReadMask*: int
+  frontStencilWriteMask*: int
+  frontStencilRef*: int
 
-  backStencilFailOp: StencilOp
-  backStencilDepthFailOp: StencilOp
-  backStencilPassOp: StencilOp
-  backStencilCmpFunc: CompareFunc
-  backStencilReadMask: int
-  backStencilWriteMask: int
-  backStencilRef: int
+  backStencilFailOp*: StencilOp
+  backStencilDepthFailOp*: StencilOp
+  backStencilPassOp*: StencilOp
+  backStencilCmpFunc*: CompareFunc
+  backStencilReadMask*: int
+  backStencilWriteMask*: int
+  backStencilRef*: int
 
-  depthCmpFunc: CompareFunc
-  depthWriteEnabled: bool
+  depthCmpFunc*: CompareFunc
+  depthWriteEnabled*: bool
 
-  cullFaceEnabled: bool
-  cullFace: Face
-  scissorTestEnabled: bool
-  
-proc pipelinestate(o:PipelineOptions):PipelineState =
+  cullFaceEnabled*: bool
+  cullFace*: Face
+  scissorTestEnabled*: bool
+
+proc pipelinestate*():PipelineState =
+  PipelineState(
+    blendEnabled : false,
+    blendSrcFactorRGB : BlendFactor.One,
+    blendDstFactorRGB : BlendFactor.Zero,
+    blendOpRGB : BlendOp.Add,
+    blendSrcFactorAlpha : BlendFactor.One,
+    blendDstFactorAlpha : BlendFactor.Zero,
+    blendOpAlpha : BlendOp.Add,
+    colorWriteMask : (true, true, true, true),
+    blendColor : (1.0, 1.0, 1.0, 1.0),
+
+    stencilEnabled : false,
+
+    frontStencilFailOp : StencilOp.Keep,
+    frontStencilDepthFailOp : StencilOp.Keep,
+    frontStencilPassOp : StencilOp.Keep,
+    frontStencilCmpFunc : CompareFunc.Always,
+    frontStencilReadMask : 0xFF,
+    frontStencilWriteMask : 0xFF,
+    frontStencilRef : 0,
+
+    backStencilFailOp : StencilOp.Keep,
+    backStencilDepthFailOp : StencilOp.Keep,
+    backStencilPassOp : StencilOp.Keep,
+    backStencilCmpFunc : CompareFunc.Always,
+    backStencilReadMask : 0xFF,
+    backStencilWriteMask : 0xFF,
+    backStencilRef : 0,
+
+    depthCmpFunc : CompareFunc.Always,
+    depthWriteEnabled : false,
+
+    cullFaceEnabled : false,
+    cullFace : Face.Back,
+    scissorTestEnabled : false
+    )
+
+proc pipelinestate*(o:PipelineOptions):PipelineState =
   result.blendEnabled = get(o.blendEnabled, false);
   result.blendSrcFactorRGB = get3(o.blendSrcFactorRGB, o.blendSrcFactor, BlendFactor.One)
   result.blendDstFactorRGB = get3(o.blendDstFactorRGB, o.blendDstFactor, BlendFactor.Zero)
@@ -246,26 +284,26 @@ proc pipelinestate(o:PipelineOptions):PipelineState =
   result.cullFace = get(o.cullFace, Face.Back)
   result.scissorTestEnabled = get(o.scissorTestEnabled, false)
 
-type GlAttrib = object
-  enabled: bool
-  vbIndex: int
-  divisor: int
-  stride: int
-  size: int
-  normalized: bool
-  offset: int
-  kind: int # Attributekind?? enum?
+type GlAttrib* = object
+  enabled*: bool
+  vbIndex*: int
+  divisor*: int
+  stride*: int
+  size*: int
+  normalized*: bool
+  offset*: int
+  kind*: int # Attributekind?? enum?
 
 proc glAttrib():GLAttrib = discard
 
 type Pipeline* = object
-  vertexlayout: seq[VertexLayout]
-  shader: Shader
-  primitivemode: PrimitiveMode
-  state: PipelineState
-  glAttribs: seq[GLAttrib]
-  indexFormat: IndexFormat
-  indexSize: int
+  vertexlayout*: seq[VertexLayout]
+  shader*: Shader
+  primitivemode*: PrimitiveMode
+  state*: PipelineState
+  glAttribs*: seq[GLAttrib]
+  indexFormat*: IndexFormat
+  indexSize*: int
 
 proc pipeline*(o:PipelineOptions):Pipeline = 
   result.vertexLayouts = @[]

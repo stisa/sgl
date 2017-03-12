@@ -22,18 +22,6 @@ type SamplerState = object
     minFilter : Filter
     mipFilter : Filter
 
-type TextureAttrs = concept t
-  t.kind is ?TextureKind
-  t.width is ?int
-  t.height is ?int
-  t.depth is ?int
-  t.colorFormat is ?PixelFormat
-  t.depthStencilFormat is ?DepthStencilFormat
-  t.usage is ?Usage
-  t.renderTarget is ?bool
-  t.generateMipMaps is ?bool
-  t.sampleCount is ?int
-  t.sampler is ?SamplerState
 
 type PixelFormat {.pure.} = enum
     NONE,## undefined/none/unused 
@@ -53,14 +41,18 @@ type DepthStencilFormat {.pure.}= enum
     DEPTHSTENCIL ## combined depth-stencil
 
 type Texture* = object
-  kind : TextureKind
-  width : int
-  height : int
-  depth : int
-  colorFormat : PixelFormat
-  depthStencilFormat : DepthStencilFormat
-  usage : Usage
-  renderTarget : bool
-  generateMipMaps : bool
-  sampleCount : int
-  sampler : SamplerState
+  kind* : ?TextureKind
+  width* : ?int
+  height* : ?int
+  depth* : ?int
+  colorFormat* : ?PixelFormat
+  depthStencilFormat* : ?DepthStencilFormat
+  usage* : ?Usage
+  renderTarget* : ?bool
+  generateMipMaps* : ?bool
+  sampleCount* : ?int
+  sampler* : ?SamplerState
+
+
+proc emptyTexture*():Texture =
+  result.kind = some(TextureKind.TwoD)

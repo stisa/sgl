@@ -5,15 +5,15 @@ type StoreAction* {.pure.} = enum
   Resolve,
   StoreAndResolve
 
-type PassOptions* = concept p
-  p.colorAttachments is ?seq[ColorAttachmentOptions]
-  p.depthAttachment is ?DepthAttachmentOptions
-  p.storeAction is ?StoreAction
+type PassOptions* = object
+  colorAttachments* : ?seq[ColorAttachmentOptions]
+  depthAttachment* : ?DepthAttachmentOptions
+  storeAction* : ?StoreAction
 
 type Pass* = object
-  ColorAttachments: seq[ColorAttachment]
-  DepthAttachment: DepthAttachment
-  StoreAction: StoreAction
+  colorAttachments*: seq[ColorAttachment]
+  depthAttachment*: DepthAttachment
+  storeAction*: StoreAction
 
 proc pass*(o: PassOptions):Pass =
   result.colorAttachments = @[]
@@ -23,6 +23,6 @@ proc pass*(o: PassOptions):Pass =
     for colAttrs in o.colorAttachments.get :
       result.colorAttachments.add(colorAttachment(colAttrs))
 
-  result.depthAttachment = depthAttachment(get(o.depthAttachment()))
+  result.depthAttachment = depthAttachment(get(o.depthAttachment))
   result.storeAction = get(o.storeAction, StoreAction.DontCare)
     
