@@ -9,3 +9,7 @@ refs
 src/*.js
 src/*.html
 discarded
+scratch.nim
+scratch.js
+/index.html
+t.js
