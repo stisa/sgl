@@ -1,11 +1,9 @@
 import webgl, dom
 
-converter toUI(i:int):uint = i.uint
-
-#============== Creating a canvas ====================*/
-var canvas = dom.document.getElementById("glcanvas").Canvas;
+# Creating a canvas 
+var canvas = dom.document.getElementById("sgl-canvas").Canvas;
 var gl = canvas.getContextWebgl()
-#======== Defining and storing the geometry ===========*/
+# Defining and storing the geometry
 
 var vertices = [
   -0.5'f32,0.5,0.0,
@@ -39,7 +37,7 @@ gl.bufferData(beElementArrayBuffer, indices, beStaticDraw);
 # Unbind the buffer
 gl.bindBuffer(beElementArrayBuffer, nil);
 
-#================ Shaders ====================*/
+# Shaders
 
 # Vertex shader source code
 var vertCode = "attribute vec3 coordinates;"&
@@ -86,7 +84,7 @@ if not gl.getStatus(shaderProgram): log("error p")
 # Use the combined shader program object
 gl.useProgram(shaderProgram);
 
-#======= Associating shaders to buffer objects =======*/
+# Associating shaders to buffer objects
 
 # Bind vertex buffer object
 gl.bindBuffer(beArrayBuffer, vertex_buffer);
@@ -103,7 +101,7 @@ gl.vertexAttribPointer(coord, 3, dtFloat, false, 0, 0);
 # Enable the attribute
 gl.enableVertexAttribArray(coord);
 
-#=========Drawing the triangle===========*/
+#Drawing the triangle==*/
 
 # Clear the canvas
 gl.clearColor(0.5, 0.5, 0.5, 0.9);
