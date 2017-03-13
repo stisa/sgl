@@ -105,10 +105,9 @@ proc uniform(name:string,kind:string):Uniform =
   result = Uniform(name:name,kind:k,datatype:dt,size:sz,normalize:nrm)
 
 proc extractAttrsAndUnifs(vs,fs:string):tuple[uniforms:seq[Uniform],attributes:seq[Attribute]] =
-  #result = (uniforms: newseq[Uniform](),
-  #          attributes: newseq[Attribute]())
-  result.uniforms.setlen(0)
-  result.attributes.setlen(0)
+  result = (uniforms: newseq[Uniform](),
+            attributes: newseq[Attribute]())
+
   for line in vs.splitLines: 
     let splitted = line.strip( chars=WhiteSpace+{';',':'} ).splitWhitespace
     if splitted.len == 3: # Assume three elements per line if it's an attribute or uniform'
