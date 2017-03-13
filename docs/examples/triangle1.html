@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="eu">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Examples for sgl">
+  <meta name="author" content="stisa">
+  <link rel="stylesheet" href="http://stisa.space/css/main.css">
+  <link rel="stylesheet" href="http://stisa.space/css/prism.css">
+  <link rel="apple-touch-icon-precomposed" href="http://stisa.space/favicon-152.png">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="http://stisa.space/favicon-144.png">
+  <style>@media only screen and (min-width: 800px)  { .output { float:left; padding-right:1em;} } </style>
+  <title>Example: triangle1</title>  
+</head>
+<body>
+  <header class="sidebar">
+
+    <h3>Menu</h3>
+
+    <div class="menu">
+
+      <a href="/">Home</a>
+      <a href="/projects/">Projects</a>
+      <a href="/about/">About Me</a>
+      <br/>
+      <a href="/sgl/">sgl</a>
+    </div>
+  </header>
+  <section class="content">
+    <section class="output" id="output">
+      <!--TODO:meaningful output-->
+      <h2>Example: triangle1</h2>
+      <canvas style="width:100%; height:100%; min-height:25em;" width="640" height="480" id="sgl-canvas">
+        Your browser doesn't appear to support the 
+        <code>&lt;canvas&gt;</code> element.
+      </canvas>
+      <script type="text/javascript" src="./triangle1.js"></script>
+    </section>
+    <section class="examplecode">
+      <h2>Code</h2>
+      <pre><code class="language-nim">import webgl, dom
+import ../src/sgl/[shader,buffer,utils]
+
+var canvas = dom.document.getElementById("sgl-canvas").Canvas;
+var gl = canvas.getContextWebgl()
+canvas.resizeToDisplaySize
+var vertices = [
+  -0.5'f32,0.5,0.0,
+  -0.5,-0.5,0.0,
+  0.5,-0.5,0.0, 
+];
+
+var indices = [0'u16,1,2];
+
+# Create an empty buffer object to store vertex buffer
+var vb = gl.buffer(BufferKind.Vertex)
+
+vb.upload(vertices)
+
+# Create an empty buffer object to store Index buffer
+var ib = gl.buffer(BufferKind.Index)
+
+ib.upload(indices)
+
+# Vertex shader source code
+var vertCode = """attribute vec3 coordinates;
+void main(void) {
+ gl_Position = vec4(coordinates, 1.0);
+}"""
+
+#fragment shader source code
+var fragCode ="""
+void main(void){
+  gl_FragColor = vec4(0.0, 0.0, 0.0, 0.1);
+}"""
+
+let shd = gl.shader(vertCode,fragCode)
+
+# Bind vertex buffer object
+bindBuffers(vb,ib)
+
+# Point attribute to the currently bound VBO
+var coord = shd.attributes["coordinates"] #shd.attributes["coordinates"]
+gl.point(coord)
+
+# Clear the canvas
+gl.clearColor(0.5, 0.5, 0.5, 0.9);
+
+# Enable the depth test
+gl.enable(0x0B71);
+
+# Clear the color buffer bit
+gl.clear(bbColor);
+
+# Set the view port
+gl.viewport(0,0,canvas.width,canvas.height);
+
+# Draw the triangle
+gl.drawElements(pmTriangles, indices.len, dtUnsignedShort,0) #0x1403 ??
+</code></pre>
+    </section>
+  </section>
+  <script src="http://stisa.space/js/prism.js"></script>
+  
+</body>
