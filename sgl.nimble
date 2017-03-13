@@ -29,6 +29,6 @@ task docs, "Builds documentation":
     exec "nim doc2 --verbosity:0 --hints:off -o:"& ".."/"docs"/"index.html  sgl.nim"
     for file in listfiles("sgl"):
       if splitfile(file).ext == ".nim":
-        echo ".."/"docs" / ".." / file.changefileext("html") & " " & file
+        echo ".."/"docs" / "sgl" / file.changefileext("html") & " " & file
         exec "nim doc2 --verbosity:0 --hints:off -o:" & ".." / "docs" / file.changefileext("html") & " " & file
     echo "DONE - Look inside /docs, possibly serve it to a browser."
