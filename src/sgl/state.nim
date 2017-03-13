@@ -31,6 +31,14 @@ proc upload*(s: var State,vertices:VertexBufferables,indices:IndexBufferables) =
   s.il = indices.len
   s.vl = vertices.len
 
+proc upload*(s: var State,vertices:VertexBufferables) =
+  s.vb.upload(vertices)
+  s.vl = vertices.len
+
+proc upload*(s: var State,indices:IndexBufferables) =
+  s.ib.upload(indices)
+  s.il = indices.len
+
 proc point*(s:State,name:string) =
   var coord = s.shader.attributes[name] #shd.attributes["coordinates"]
   s.vb.gl.point(coord)

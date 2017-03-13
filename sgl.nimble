@@ -26,7 +26,7 @@ task examples, "Build examples":
 task docs, "Builds documentation":
   mkDir("docs"/"sgl")
   withdir "src":
-    exec "nim doc2 --verbosity:0 --hints:off -o:"& ".."/"docs"/"index.html  sgl.nim"
+    exec "nim doc2 --verbosity:0 --hints:off -o:"& ".."/"docs"/"sgl.html  sgl.nim"
     for file in listfiles("sgl"):
       if splitfile(file).ext == ".nim":
         echo ".."/"docs" / "sgl" / file.changefileext("html") & " " & file
