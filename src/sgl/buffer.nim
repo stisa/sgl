@@ -10,7 +10,7 @@ type DrawMode* {.pure.} = enum
   Dynamic = 0x88E8 # Passed to bufferData as a hint about whether the contents of the buffer are likely to be used often and change often. 
   
 type Buffer* = object
-  gl: WebglRenderingContext # Is this a ref? mmh I don't like it'
+  gl: WebglRenderingContext # Is this a ref? mmh I don't like it
   glbuffer* : WebGLBuffer
   kind*: BufferKind
   drawmode*: DrawMode

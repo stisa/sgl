@@ -105,9 +105,10 @@ proc uniform(name:string,kind:string):Uniform =
   result = Uniform(name:name,kind:k,datatype:dt,size:sz,normalize:nrm)
 
 proc extractAttrsAndUnifs(vs,fs:string):tuple[uniforms:seq[Uniform],attributes:seq[Attribute]] =
-  
-  result.uniforms = newseq[Uniform]()
-  result.attributes = newseq[Attribute]()
+  #result = (uniforms: newseq[Uniform](),
+  #          attributes: newseq[Attribute]())
+  result.uniforms.setlen(0)
+  result.attributes.setlen(0)
   for line in vs.splitLines: 
     let splitted = line.strip( chars=WhiteSpace+{';',':'} ).splitWhitespace
     if splitted.len == 3: # Assume three elements per line if it's an attribute or uniform'
@@ -133,18 +134,28 @@ proc extractAttrsAndUnifs(vs,fs:string):tuple[uniforms:seq[Uniform],attributes:s
          discard #echo("unknown splitted:"& $splitted)
     else: discard #echo("unknown splitted len:"& $splitted)
 
-proc `[]`*(list:seq[Uniform|Attribute],name:string):Uniform|Attribute =
-  ## Search into the list of uniforms / attributes by name.
+proc `[]`*(list:seq[Attribute],name:string):Attribute =
+  ## Search into the list of attributes by name.
   ## Since I don't usually have tons of names, a simple linear search will do
   for ua in list:
     if ua.name == name : return ua
+  result = attribute(name,"UNKNOWN") #Nim shuts up about init
+  raise newException(FieldError,"Attribute not found: "&name)
+
+proc `[]`*(list:seq[Uniform],name:string):Uniform =
+  ## Search into the list of uniforms by name.
+  ## Since I don't usually have tons of names, a simple linear search will do
+  for ua in list:
+    if ua.name == name : return ua
+  # If we couldn't find one, raise an error
+  result = uniform(name,"UNKNOWN") #Nim shuts up about init
+  raise newException(FieldError,"Uniform not found: "&name)
 
 proc point*(gl:WebglRenderingContext,a:Attribute) =
   # Point an attribute to the currently bound VBO
   gl.vertexAttribPointer(a.location, a.size, a.datatype, a.normalize, 0, 0)
   # Enable the attribute
   gl.enableVertexAttribArray(a.location)
-
 
 type Shader* = object
   glprogram* : WebglProgram
