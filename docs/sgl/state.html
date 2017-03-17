@@ -1156,12 +1156,18 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
 div.search_results {
   background-color: antiquewhite;
   margin: 3em;
+  border-style: inset;
   padding: 1em;
-  border: 1px solid #4d4d4d;
+}
+#searchInput {
+	width: 100%;
+	margin-bottom: 0.5em;
+}
+
+#groupBy {
+	margin-bottom: 0.5em;	
 }
 </style>
-
-<script type="text/javascript" src="../dochack.js"></script>
 
 <script type="text/javascript">
 function togglepragma(d) {
@@ -1188,7 +1194,16 @@ function main() {
   }
 }
 </script>
-
+<script>
+	// Detects shift+f to focuses the search box
+	document.addEventListener('keydown', function(event) {
+	  if (event.keyCode == 70 && event.shiftKey) {
+	  	event.preventDefault() // avoids writing F on the search box
+	  	var input = document.getElementById("searchInput");
+			input.focus();
+	  } 
+	}, true);
+</script>
 </head>
 <body onload="main()">
 <div class="document" id="documentId">
@@ -1196,17 +1211,6 @@ function main() {
     <h1 class="title">Module state</h1>
     <div class="row">
   <div class="three columns">
-  <div>
-    Search: <input type="text" id="searchInput"
-      onkeyup="search()" />
-  </div>
-  <div>
-    Group by:
-    <select onchange="groupBy(this.value)">
-      <option value="section">Section</option>
-      <option value="type">Type</option>
-    </select>
-  </div>
   <ul class="simple simple-toc" id="toc-list">
 <li>
   <a class="reference reference-toplevel" href="#6" id="56">Imports</a>
@@ -1234,6 +1238,10 @@ function main() {
     title="state(gl: WebGLRenderingContext; vs, fs: string): State"><wbr />state<span class="attachedType" style="visibility:hidden">State</span></a></li>
   <li><a class="reference" href="#upload,State,VertexBufferables,IndexBufferables"
     title="upload[](s: var State; vertices: VertexBufferables; indices: IndexBufferables)"><wbr />upload<span class="attachedType" style="visibility:hidden">State</span></a></li>
+  <li><a class="reference" href="#upload,State,VertexBufferables"
+    title="upload[vertices:type](s: var State; vertices: VertexBufferables)"><wbr />upload<span class="attachedType" style="visibility:hidden">State</span></a></li>
+  <li><a class="reference" href="#upload,State,IndexBufferables"
+    title="upload[indices:type](s: var State; indices: IndexBufferables)"><wbr />upload<span class="attachedType" style="visibility:hidden">State</span></a></li>
   <li><a class="reference" href="#point,State,string"
     title="point(s: State; name: string)"><wbr />point<span class="attachedType" style="visibility:hidden">State</span></a></li>
   <li><a class="reference" href="#drawAsTriangle,State"
@@ -1295,7 +1303,7 @@ class="link-seesrc" target="_blank">Source</a>
 <a href="/edit/devel/sgl/state.nim#L27" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
-<dt id="point"><a name="point,State,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">point</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">State</span><span class="Other">;</span> <span class="Identifier">name</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">FieldError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="upload"><a name="upload,State,VertexBufferables"></a><pre><span class="Keyword">proc</span> <span class="Identifier">upload</span><span class="Other">[</span><span class="Identifier">vertices:type</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">State</span><span class="Other">;</span> <span class="Identifier">vertices</span><span class="Other">:</span> <span class="Identifier">VertexBufferables</span><span class="Other">)</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
@@ -1304,13 +1312,31 @@ class="link-seesrc" target="_blank">Source</a>
 <a href="/edit/devel/sgl/state.nim#L34" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
-<dt id="drawAsTriangle"><a name="drawAsTriangle,State"></a><pre><span class="Keyword">proc</span> <span class="Identifier">drawAsTriangle</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">State</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="upload"><a name="upload,State,IndexBufferables"></a><pre><span class="Keyword">proc</span> <span class="Identifier">upload</span><span class="Other">[</span><span class="Identifier">indices:type</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">State</span><span class="Other">;</span> <span class="Identifier">indices</span><span class="Other">:</span> <span class="Identifier">IndexBufferables</span><span class="Other">)</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
 href="/tree/master/sgl/state.nim#L38"
 class="link-seesrc" target="_blank">Source</a>
 <a href="/edit/devel/sgl/state.nim#L38" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<dt id="point"><a name="point,State,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">point</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">State</span><span class="Other">;</span> <span class="Identifier">name</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">FieldError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+
+&nbsp;&nbsp;<a
+href="/tree/master/sgl/state.nim#L42"
+class="link-seesrc" target="_blank">Source</a>
+<a href="/edit/devel/sgl/state.nim#L42" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<dt id="drawAsTriangle"><a name="drawAsTriangle,State"></a><pre><span class="Keyword">proc</span> <span class="Identifier">drawAsTriangle</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">State</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+
+&nbsp;&nbsp;<a
+href="/tree/master/sgl/state.nim#L46"
+class="link-seesrc" target="_blank">Source</a>
+<a href="/edit/devel/sgl/state.nim#L46" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -1323,7 +1349,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-03-14 00:37:50 UTC</small>
+        <small>Made with Nim. Generated: 2017-03-14 09:42:35 UTC</small>
       </div>
     </div>
   </div>

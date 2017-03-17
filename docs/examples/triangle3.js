@@ -87,6 +87,7 @@ var NTI27088 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
 var NTI27086 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
 var NTI49017 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
 var NTI118 = {size: 0,kind: 42,base: null,node: null,finalizer: null};
+var NTI51016 = {size: 0,kind: 16,base: null,node: null,finalizer: null};
 var NTI51010 = {size: 0,kind: 16,base: null,node: null,finalizer: null};
 var NTI126 = {size: 0,kind: 37,base: null,node: null,finalizer: null};
 var NTI51004 = {size: 0,kind: 16,base: null,node: null,finalizer: null};
@@ -126,7 +127,8 @@ var NNI3446 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
 NTI3446.node = NNI3446;
 NTI3446.base = NTI3424;
 NTI51004.base = NTI126;
-NTI51010.base = NTI118;
+NTI51010.base = NTI126;
+NTI51016.base = NTI118;
 var NNI27004 = {kind: 2, len: 4, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "width", len: 0, typ: NTI104, name: "width", sons: null}, 
 {kind: 1, offset: "height", len: 0, typ: NTI104, name: "height", sons: null}, 
 {kind: 1, offset: "clientWidth", len: 0, typ: NTI104, name: "clientWidth", sons: null}, 
@@ -910,9 +912,10 @@ return result_46033;
 }
 resizeToDisplaySize_46029(canvas_51001[0], 1.0000000000000000e+000);
 var vertices_51009 = /**/[nimCopy(null, [-5.0000000000000000e-001, 5.0000000000000000e-001, 0.0, -5.0000000000000000e-001, -5.0000000000000000e-001, 0.0, 5.0000000000000000e-001, -5.0000000000000000e-001, 0.0], NTI51004)];
-var indices_51012 = /**/[nimCopy(null, [0, 1, 2], NTI51010)];
-var vertCode_51013 = /**/[makeNimstrLit("attribute vec3 coordinates;\x0Avoid main(void) {\x0A gl_Position = vec4(coordinates, 1.0);\x0A}")];
-var fragCode_51014 = /**/[makeNimstrLit("void main(void){\x0A  gl_FragColor = vec4(0.0, 0.0, 0.0, 0.1);\x0A}")];
+var vertices2_51015 = /**/[nimCopy(null, [5.0000000000000000e-001, 5.0000000000000000e-001, 0.0, -5.0000000000000000e-001, -5.0000000000000000e-001, 0.0, 5.0000000000000000e-001, -5.0000000000000000e-001, 0.0], NTI51010)];
+var indices_51018 = /**/[nimCopy(null, [0, 1, 2], NTI51016)];
+var vertCode_51019 = /**/[makeNimstrLit("attribute vec3 coordinates;\x0Avoid main(void) {\x0A gl_Position = vec4(coordinates, 1.0);\x0A}")];
+var fragCode_51020 = /**/[makeNimstrLit("void main(void){\x0A  gl_FragColor = vec4(0.0, 0.0, 0.0, 0.1);\x0A}")];
 function buffer_49023(gl_49025, kind_49026, drawmode_49028) {
 
 var Tmp1;
@@ -1077,7 +1080,7 @@ break;
 }
 var k_47095 = Tmp1;
 F.line = 77;
-var colontmp__51016 = {Field0: 0, Field1: 0, Field2: false};
+var colontmp__51022 = {Field0: 0, Field1: 0, Field2: false};
 F.line = 77;
 var sz_47109 = 0;
 F.line = 77;
@@ -1109,13 +1112,13 @@ default:
 Tmp2 = {Field0: 0, Field1: 5122, Field2: false};
 break;
 }
-nimCopy(colontmp__51016, Tmp2, NTI47097);
+nimCopy(colontmp__51022, Tmp2, NTI47097);
 F.line = 77;
-sz_47109 = colontmp__51016["Field0"];
+sz_47109 = colontmp__51022["Field0"];
 F.line = 77;
-dt_47110 = colontmp__51016["Field1"];
+dt_47110 = colontmp__51022["Field1"];
 F.line = 77;
-nrm_47111 = colontmp__51016["Field2"];
+nrm_47111 = colontmp__51022["Field2"];
 F.line = 85;
 nimCopy(result_47039, {name: name_47037, kind: k_47095, datatype: dt_47110, size: sz_47109, normalize: nrm_47111, location: 0}, NTI47020);
 framePtr = F.prev;
@@ -1155,7 +1158,7 @@ break;
 }
 var k_47173 = Tmp1;
 F.line = 96;
-var colontmp__51017 = {Field0: 0, Field1: 0, Field2: false};
+var colontmp__51023 = {Field0: 0, Field1: 0, Field2: false};
 F.line = 96;
 var sz_47187 = 0;
 F.line = 96;
@@ -1187,13 +1190,13 @@ default:
 Tmp2 = {Field0: 0, Field1: 5122, Field2: false};
 break;
 }
-nimCopy(colontmp__51017, Tmp2, NTI47175);
+nimCopy(colontmp__51023, Tmp2, NTI47175);
 F.line = 96;
-sz_47187 = colontmp__51017["Field0"];
+sz_47187 = colontmp__51023["Field0"];
 F.line = 96;
-dt_47188 = colontmp__51017["Field1"];
+dt_47188 = colontmp__51023["Field1"];
 F.line = 96;
-nrm_47189 = colontmp__51017["Field2"];
+nrm_47189 = colontmp__51023["Field2"];
 F.line = 105;
 nimCopy(result_47117, {name: name_47115, kind: k_47173, datatype: dt_47188, size: sz_47187, normalize: nrm_47189, location: null}, NTI47028);
 framePtr = F.prev;
@@ -1465,23 +1468,23 @@ nimCopy(result_50013, {vb: vb_50015, ib: ib_50017, shader: shd_50018, il: 0, vl:
 framePtr = F.prev;
 return result_50013;
 }
-var stt_51015 = /**/[state_50008(gl_51002[0], vertCode_51013[0], fragCode_51014[0])];
-function upload_51035(b_51039, data_51042) {
+var stt_51021 = /**/[state_50008(gl_51002[0], vertCode_51019[0], fragCode_51020[0])];
+function upload_51041(b_51045, data_51048) {
 
 var F={procname:"upload.upload",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\buffer.nim",line:0};
 framePtr = F;
-b_51039.gl.bindBuffer(b_51039.kind, b_51039.glbuffer);
-b_51039.gl.bufferData(b_51039.kind, new Float32Array(data_51042), b_51039.drawmode);
-b_51039.gl.bindBuffer(b_51039.kind, null);
+b_51045.gl.bindBuffer(b_51045.kind, b_51045.glbuffer);
+b_51045.gl.bufferData(b_51045.kind, new Float32Array(data_51048), b_51045.drawmode);
+b_51045.gl.bindBuffer(b_51045.kind, null);
 framePtr = F.prev;
 }
-function upload_51082(b_51086, data_51089) {
+function upload_51088(b_51092, data_51095) {
 
 var F={procname:"upload.upload",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\buffer.nim",line:0};
 framePtr = F;
-b_51086.gl.bindBuffer(b_51086.kind, b_51086.glbuffer);
-b_51086.gl.bufferData(b_51086.kind, new Uint16Array(data_51089), b_51086.drawmode);
-b_51086.gl.bindBuffer(b_51086.kind, null);
+b_51092.gl.bindBuffer(b_51092.kind, b_51092.glbuffer);
+b_51092.gl.bufferData(b_51092.kind, new Uint16Array(data_51095), b_51092.drawmode);
+b_51092.gl.bindBuffer(b_51092.kind, null);
 framePtr = F.prev;
 }
 function raiseRangeError() {
@@ -1492,20 +1495,20 @@ e_13677.message = nimCopy(null, makeNimstrLit("value out of range"), NTI138);
 e_13677.parent = null;
 raiseException(e_13677, "RangeError");
 }
-function upload_51022(s_51027, vertices_51030, indices_51033) {
+function upload_51028(s_51033, vertices_51036, indices_51039) {
 
 var F={procname:"upload.upload",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
 framePtr = F;
-upload_51035(s_51027.vb, vertices_51030);
-upload_51082(s_51027.ib, indices_51033);
-bindBuffers_49052([s_51027.vb, s_51027.ib]);
+upload_51041(s_51033.vb, vertices_51036);
+upload_51088(s_51033.ib, indices_51039);
+bindBuffers_49052([s_51033.vb, s_51033.ib]);
 F.line = 31;
-s_51027.il = chckRange((indices_51033 != null ? indices_51033.length : 0), 0, 2147483647);
+s_51033.il = chckRange((indices_51039 != null ? indices_51039.length : 0), 0, 2147483647);
 F.line = 32;
-s_51027.vl = chckRange((vertices_51030 != null ? vertices_51030.length : 0), 0, 2147483647);
+s_51033.vl = chckRange((vertices_51036 != null ? vertices_51036.length : 0), 0, 2147483647);
 framePtr = F.prev;
 }
-upload_51022(stt_51015[0], vertices_51009[0], indices_51012[0]);
+upload_51028(stt_51021[0], vertices_51009[0], indices_51018[0]);
 function X5BX5D__47380(list_47383, name_47384) {
 
 var result_47385 = {name: null, location: 0, kind: 0, size: 0, datatype: 0, normalize: false};
@@ -1571,7 +1574,7 @@ var coord_50068 = X5BX5D__47380(s_50066.shader.attributes, name_50067);
 point_47825(s_50066.vb.gl, coord_50068);
 framePtr = F.prev;
 }
-point_50064(stt_51015[0], makeNimstrLit("coordinates"));
+point_50064(stt_51021[0], makeNimstrLit("coordinates"));
 function drawAsTriangle_50069(s_50071) {
 
 var F={procname:"state.drawAsTriangle",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
@@ -1579,4 +1582,15 @@ framePtr = F;
 s_50071.vb.gl.drawElements(4, s_50071.il, s_50071.ib.datatype, 0);
 framePtr = F.prev;
 }
-drawAsTriangle_50069(stt_51015[0]);
+drawAsTriangle_50069(stt_51021[0]);
+function upload_51154(s_51158, vertices_51161) {
+
+var F={procname:"upload.upload",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
+framePtr = F;
+upload_51041(s_51158.vb, vertices_51161);
+F.line = 36;
+s_51158.vl = chckRange((vertices_51161 != null ? vertices_51161.length : 0), 0, 2147483647);
+framePtr = F.prev;
+}
+upload_51154(stt_51021[0], vertices2_51015[0]);
+drawAsTriangle_50069(stt_51021[0]);
