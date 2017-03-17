@@ -1,46 +1,55 @@
-import webgl, dom
+import webgl, dom,math
 import ../src/sgl/[state,utils]
 
-var canvas = dom.document.getElementById("sgl-canvas").Canvas;
-var gl = canvas.getContextWebgl()
-canvas.resizeToDisplaySize
+# Vertex shader source code
+var vertCode = """
+uniform mat3 rotation;
+attribute vec3 coordinates;
+void main(void) {
+ gl_Position = vec4(rotation*coordinates, 1.0);
+}
+"""
+#fragment shader source code
+var fragCode ="""
+precision mediump float;
+uniform vec4 u_color;
+void main(void) {
+  gl_FragColor = u_color;
+}
+"""
 
-var vertices = [
-  -0.5'f32,0.5,0.0,
+let vertices = [
+  0.0,0.5,0.0,
   -0.5,-0.5,0.0,
   0.5,-0.5,0.0, 
 ];
 
-var vertices2 = [
-  0.5'f32,0.5,0.0,
-  -0.5,-0.5,0.0,
-  0.5,-0.5,0.0, 
+var rotation = [
+  1.0,0,0,
+  0,1,0,
+  0,0,1,
 ];
-
 
 var indices = [0'u16,1,2];
 
-# Vertex shader source code
-var vertCode = """attribute vec3 coordinates;
-void main(void) {
- gl_Position = vec4(coordinates, 1.0);
-}"""
-
-#fragment shader source code
-var fragCode ="""
-void main(void){
-  gl_FragColor = vec4(0.0, 0.0, 0.0, 0.1);
-}"""
-
-
-var stt = gl.state(vertcode,fragCode)
-
+var stt = initstate("sgl-canvas",vertcode,fragCode)
 stt.upload(vertices,indices)
 stt.point("coordinates")
+stt["rotation"] = rotation
+stt["u_color"] = [0.0,0,0,1]
 
-stt.drawAsTriangle
+var theta = 0.0
+proc draw(dt:float) = 
+  stt.drawAsTriangle #Draw the triangle
+  # Update rotation uniform
+  theta+=1.0
+  rotation[0] = cos(degtorad(theta))
+  rotation[1] = -sin(degtorad(theta))
+  rotation[3] = sin(degtorad(theta))
+  rotation[4] = cos(degtorad(theta))
+  stt["rotation"] = rotation
+  # Loop
+  requestAnimationFrame(draw)
 
-stt.upload(vertices2)
-
-
-stt.drawAsTriangle
+# Start looping
+draw(0.0)
