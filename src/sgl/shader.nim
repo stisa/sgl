@@ -2,33 +2,17 @@ import webgl
 import strutils
 import utils
 
-const DefaultVS =  """
-attribute vec4 aPosition;
-uniform mat4 uMatrix;
-void main() {
-  gl_Position = uMatrix*aPosition;
-}
-"""
+type UnifOrAttr* {.pure.}= enum
+  U,A
 
-const DefaultFS = """
-#ifdef GL_ES
-  precision highp float;
-#endif
-
-uniform vec4 uColor;
-void main() {
-  gl_FragColor = uColor;
-}
-"""
-
-type DataKind {.pure.}= enum
-  Vec1 = (0,"vec1")
-  Vec2 = (1,"vec2")
-  Vec3 = (2,"vec3")
-  Vec4 = (3,"vec4")
-  Mat3 = (4,"mat3")
-  Mat4 = (5,"mat4")
-  Unknown = (10,"UNKNOWN")
+type DataKind* {.pure.}= enum
+  Vec1 = (1,"float")
+  Vec2 = (2,"vec2")
+  Vec3 = (3,"vec3")
+  Vec4 = (4,"vec4")
+  Mat3 = (9,"mat3")
+  Mat4 = (16,"mat4")
+  Unknown = (100,"UNKNOWN")
 
 type Attribute* = object
   name*: string
@@ -162,6 +146,7 @@ type Shader* = object
   attributes*:seq[Attribute]
 
 proc shader*(gl:WebglRenderingContext,vssrc:string=DefaultVS,fssrc:string=DefaultFS,usethis:bool=true):Shader = 
+
   let vs = gl.createShader(seVertexShader)
   gl.shadersource(vs,vssrc)
   gl.compileShader(vs)
@@ -194,3 +179,24 @@ proc shader*(gl:WebglRenderingContext,vssrc:string=DefaultVS,fssrc:string=Defaul
     u.location = gl.getUniformLocation(result.glprogram, u.name)
     #TODO: check u.location.int "Problems with uniform"&u.name)
   gl.useProgram(result.glprogram)
+
+
+proc `[]`*(s:Shader,name:string):UnifOrAttr =
+  # Until we can have return based overloading
+  var nota :bool
+  var notu :bool
+  try:
+    discard s.uniforms[name]
+    result = UnifOrAttr.U
+  except:
+    notu = true
+  try:
+    discard  s.attributes[name]
+    result = UnifOrAttr.A
+  except:
+    nota = true
+  if nota != notu : return
+  else:
+    raise newException(FieldError,"Attribute/Uniform not found or found in both: "&name)
+   
+  
