@@ -1221,7 +1221,14 @@ function main() {
 <li>
   <a class="reference reference-toplevel" href="#7" id="57">Types</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#Attribute"
+      <li><a class="reference" href="#UnifOrAttr"
+    title="UnifOrAttr = enum
+  U, A"><wbr />Unif<wbr />Or<wbr />Attr<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#DataKind"
+    title="DataKind = enum
+  Vec1 = (1, &quot;float&quot;), Vec2 = (2, &quot;vec2&quot;), Vec3 = (3, &quot;vec3&quot;), Vec4 = (4, &quot;vec4&quot;),
+  Mat3 = (9, &quot;mat3&quot;), Mat4 = (16, &quot;mat4&quot;), Unknown = (100, &quot;UNKNOWN&quot;)"><wbr />Data<wbr />Kind<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#Attribute"
     title="Attribute = object
   name*: string
   location*: uint
@@ -1257,6 +1264,8 @@ function main() {
   <li><a class="reference" href="#shader,WebGLRenderingContext,string,string,bool"
     title="shader(gl: WebGLRenderingContext; vssrc: string = DefaultVS;
        fssrc: string = DefaultFS; usethis: bool = true): Shader"><wbr />shader<span class="attachedType" style="visibility:hidden">Shader</span></a></li>
+  <li><a class="reference" href="#[],Shader,string"
+    title="`[]`(s: Shader; name: string): UnifOrAttr"><wbr />`[]`<span class="attachedType" style="visibility:hidden">Shader</span></a></li>
 
   </ul>
 </li>
@@ -1275,6 +1284,27 @@ function main() {
 <div class="section" id="7">
 <h1><a class="toc-backref" href="#7">Types</a></h1>
 <dl class="item">
+<dt id="UnifOrAttr"><a name="UnifOrAttr"></a><pre><span class="Identifier">UnifOrAttr</span> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <span class="Identifier">U</span><span class="Other">,</span> <span class="Identifier">A</span></pre></dt>
+<dd>
+
+&nbsp;&nbsp;<a
+href="/tree/master/sgl/shader.nim#L5"
+class="link-seesrc" target="_blank">Source</a>
+<a href="/edit/devel/sgl/shader.nim#L5" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<dt id="DataKind"><a name="DataKind"></a><pre><span class="Identifier">DataKind</span> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <span class="Identifier">Vec1</span> <span class="Other">=</span> <span class="Other">(</span><span class="DecNumber">1</span><span class="Other">,</span> <span class="StringLit">&quot;float&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">Vec2</span> <span class="Other">=</span> <span class="Other">(</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="StringLit">&quot;vec2&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">Vec3</span> <span class="Other">=</span> <span class="Other">(</span><span class="DecNumber">3</span><span class="Other">,</span> <span class="StringLit">&quot;vec3&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">Vec4</span> <span class="Other">=</span> <span class="Other">(</span><span class="DecNumber">4</span><span class="Other">,</span> <span class="StringLit">&quot;vec4&quot;</span><span class="Other">)</span><span class="Other">,</span>
+  <span class="Identifier">Mat3</span> <span class="Other">=</span> <span class="Other">(</span><span class="DecNumber">9</span><span class="Other">,</span> <span class="StringLit">&quot;mat3&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">Mat4</span> <span class="Other">=</span> <span class="Other">(</span><span class="DecNumber">16</span><span class="Other">,</span> <span class="StringLit">&quot;mat4&quot;</span><span class="Other">)</span><span class="Other">,</span> <span class="Identifier">Unknown</span> <span class="Other">=</span> <span class="Other">(</span><span class="DecNumber">100</span><span class="Other">,</span> <span class="StringLit">&quot;UNKNOWN&quot;</span><span class="Other">)</span></pre></dt>
+<dd>
+
+&nbsp;&nbsp;<a
+href="/tree/master/sgl/shader.nim#L8"
+class="link-seesrc" target="_blank">Source</a>
+<a href="/edit/devel/sgl/shader.nim#L8" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
 <dt id="Attribute"><a name="Attribute"></a><pre><span class="Identifier">Attribute</span> <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">name</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
   <span class="Identifier">location</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">uint</span>
@@ -1286,9 +1316,9 @@ function main() {
 <dd>
 
 &nbsp;&nbsp;<a
-href="/tree/master/sgl/shader.nim#L33"
+href="/tree/master/sgl/shader.nim#L17"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/sgl/shader.nim#L33" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/sgl/shader.nim#L17" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="Uniform"><a name="Uniform"></a><pre><span class="Identifier">Uniform</span> <span class="Other">=</span> <span class="Keyword">object</span>
@@ -1302,9 +1332,9 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 &nbsp;&nbsp;<a
-href="/tree/master/sgl/shader.nim#L41"
+href="/tree/master/sgl/shader.nim#L25"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/sgl/shader.nim#L41" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/sgl/shader.nim#L25" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="Shader"><a name="Shader"></a><pre><span class="Identifier">Shader</span> <span class="Other">=</span> <span class="Keyword">object</span>
@@ -1315,9 +1345,9 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 &nbsp;&nbsp;<a
-href="/tree/master/sgl/shader.nim#L159"
+href="/tree/master/sgl/shader.nim#L143"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/sgl/shader.nim#L159" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/sgl/shader.nim#L143" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -1330,27 +1360,27 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 Search into the list of attributes by name. Since I don't usually have tons of names, a simple linear search will do
 &nbsp;&nbsp;<a
-href="/tree/master/sgl/shader.nim#L136"
+href="/tree/master/sgl/shader.nim#L120"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/sgl/shader.nim#L136" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/sgl/shader.nim#L120" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="[]"><a name="[],seq[Uniform],string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">`[]`</span><span class="Other">(</span><span class="Identifier">list</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">Uniform</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">name</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Uniform</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">FieldError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 Search into the list of uniforms by name. Since I don't usually have tons of names, a simple linear search will do
 &nbsp;&nbsp;<a
-href="/tree/master/sgl/shader.nim#L144"
+href="/tree/master/sgl/shader.nim#L128"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/sgl/shader.nim#L144" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/sgl/shader.nim#L128" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="point"><a name="point,WebGLRenderingContext,Attribute"></a><pre><span class="Keyword">proc</span> <span class="Identifier">point</span><span class="Other">(</span><span class="Identifier">gl</span><span class="Other">:</span> <span class="Identifier">WebGLRenderingContext</span><span class="Other">;</span> <span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">Attribute</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
-href="/tree/master/sgl/shader.nim#L153"
+href="/tree/master/sgl/shader.nim#L137"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/sgl/shader.nim#L153" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/sgl/shader.nim#L137" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="shader"><a name="shader,WebGLRenderingContext,string,string,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">shader</span><span class="Other">(</span><span class="Identifier">gl</span><span class="Other">:</span> <span class="Identifier">WebGLRenderingContext</span><span class="Other">;</span> <span class="Identifier">vssrc</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">DefaultVS</span><span class="Other">;</span>
@@ -1359,9 +1389,18 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 &nbsp;&nbsp;<a
-href="/tree/master/sgl/shader.nim#L164"
+href="/tree/master/sgl/shader.nim#L148"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/sgl/shader.nim#L164" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/sgl/shader.nim#L148" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<dt id="[]"><a name="[],Shader,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">`[]`</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">Shader</span><span class="Other">;</span> <span class="Identifier">name</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">UnifOrAttr</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">FieldError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+
+&nbsp;&nbsp;<a
+href="/tree/master/sgl/shader.nim#L184"
+class="link-seesrc" target="_blank">Source</a>
+<a href="/edit/devel/sgl/shader.nim#L184" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -1374,7 +1413,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-03-14 09:42:35 UTC</small>
+        <small>Made with Nim. Generated: 2017-03-18 00:49:06 UTC</small>
       </div>
     </div>
   </div>

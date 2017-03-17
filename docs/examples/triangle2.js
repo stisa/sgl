@@ -15,81 +15,81 @@ if (typeof Float64Array === 'undefined') Float64Array = Array;
 var NTI3456 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
 var NTI3458 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
 var NTI3404 = {size: 0,kind: 20,base: null,node: null,finalizer: null};
-var NTI47852 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
-var NTI47850 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
-var NTI27072 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
-var NTI27070 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
-var NTI47848 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
-var NTI50002 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
-var NTI47175 = {size: 0, kind: 18, base: null, node: null, finalizer: null};
-var NTI47097 = {size: 0, kind: 18, base: null, node: null, finalizer: null};
-var NTI39675 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
+var NTI48852 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
+var NTI48850 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
+var NTI28072 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
+var NTI28070 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
+var NTI48848 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
+var NTI51002 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
+var NTI48178 = {size: 0, kind: 18, base: null, node: null, finalizer: null};
+var NTI48100 = {size: 0, kind: 18, base: null, node: null, finalizer: null};
+var NTI40675 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
 var NTI3454 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
 var NTI114 = {size: 0,kind: 40,base: null,node: null,finalizer: null};
-var NTI47020 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
-var NTI47198 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
-var NTI47004 = {size: 0, kind: 14, base: null, node: null, finalizer: null};
-var NTI27052 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
-var NTI27050 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
-var NTI47028 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
-var NTI47196 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
-var NTI47195 = {size: 0, kind: 18, base: null, node: null, finalizer: null};
+var NTI48023 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
+var NTI48201 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
+var NTI48006 = {size: 0, kind: 14, base: null, node: null, finalizer: null};
+var NTI28052 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
+var NTI28050 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
+var NTI48031 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
+var NTI48199 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
+var NTI48198 = {size: 0, kind: 18, base: null, node: null, finalizer: null};
 var NTI3426 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
 var NTI3428 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
-var NTI49009 = {size: 0, kind: 14, base: null, node: null, finalizer: null};
-var NTI26076 = {size: 0, kind: 14, base: null, node: null, finalizer: null};
-var NTI49003 = {size: 0, kind: 14, base: null, node: null, finalizer: null};
-var NTI27064 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
-var NTI27062 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
-var NTI24375 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
-var NTI24371 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
-var NTI24367 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
-var NTI24363 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
-var NTI24359 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
-var NTI24355 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
-var NTI24351 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
-var NTI24347 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
-var NTI24343 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
-var NTI24339 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
-var NTI24335 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
-var NTI24331 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
-var NTI24327 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
-var NTI24323 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
-var NTI24319 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
-var NTI24315 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
-var NTI24311 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
-var NTI24307 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
-var NTI24303 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
-var NTI24299 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
-var NTI24204 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
-var NTI24258 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
-var NTI24256 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
-var NTI24218 = {size: 0, kind: 14, base: null, node: null, finalizer: null};
-var NTI24423 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
-var NTI24421 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
-var NTI24220 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
-var NTI24419 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
-var NTI24222 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
-var NTI24246 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
-var NTI24244 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
-var NTI24470 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
-var NTI24228 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
-var NTI24494 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
-var NTI24250 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
-var NTI24248 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
+var NTI50009 = {size: 0, kind: 14, base: null, node: null, finalizer: null};
+var NTI27076 = {size: 0, kind: 14, base: null, node: null, finalizer: null};
+var NTI50003 = {size: 0, kind: 14, base: null, node: null, finalizer: null};
+var NTI28064 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
+var NTI28062 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
+var NTI25375 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
+var NTI25371 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
+var NTI25367 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
+var NTI25363 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
+var NTI25359 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
+var NTI25355 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
+var NTI25351 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
+var NTI25347 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
+var NTI25343 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
+var NTI25339 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
+var NTI25335 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
+var NTI25331 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
+var NTI25327 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
+var NTI25323 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
+var NTI25319 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
+var NTI25315 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
+var NTI25311 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
+var NTI25307 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
+var NTI25303 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
+var NTI25299 = {size: 0,kind: 25,base: null,node: null,finalizer: null};
+var NTI25204 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
+var NTI25258 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
+var NTI25256 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
+var NTI25218 = {size: 0, kind: 14, base: null, node: null, finalizer: null};
+var NTI25423 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
+var NTI25421 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
+var NTI25220 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
+var NTI25419 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
+var NTI25222 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
+var NTI25246 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
+var NTI25244 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
+var NTI25470 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
+var NTI25228 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
+var NTI25494 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
+var NTI25250 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
+var NTI25248 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
 var NTI130 = {size: 0,kind: 1,base: null,node: null,finalizer: null};
-var NTI24216 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
-var NTI24214 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
-var NTI24230 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
-var NTI27004 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
-var NTI27002 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
-var NTI27088 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
-var NTI27086 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
-var NTI49017 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
+var NTI25216 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
+var NTI25214 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
+var NTI25230 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
+var NTI28004 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
+var NTI28002 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
+var NTI28088 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
+var NTI28086 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
+var NTI50017 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
 var NTI118 = {size: 0,kind: 42,base: null,node: null,finalizer: null};
-var NTI51010 = {size: 0,kind: 16,base: null,node: null,finalizer: null};
+var NTI52010 = {size: 0,kind: 16,base: null,node: null,finalizer: null};
 var NTI126 = {size: 0,kind: 37,base: null,node: null,finalizer: null};
-var NTI51004 = {size: 0,kind: 16,base: null,node: null,finalizer: null};
+var NTI52004 = {size: 0,kind: 16,base: null,node: null,finalizer: null};
 var NTI3446 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
 var NTI3440 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
 var NTI104 = {size: 0,kind: 31,base: null,node: null,finalizer: null};
@@ -125,64 +125,64 @@ NTI3440.base = NTI3438;
 var NNI3446 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
 NTI3446.node = NNI3446;
 NTI3446.base = NTI3424;
-NTI51004.base = NTI126;
-NTI51010.base = NTI118;
-var NNI27004 = {kind: 2, len: 4, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "width", len: 0, typ: NTI104, name: "width", sons: null}, 
+NTI52004.base = NTI126;
+NTI52010.base = NTI118;
+var NNI28004 = {kind: 2, len: 4, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "width", len: 0, typ: NTI104, name: "width", sons: null}, 
 {kind: 1, offset: "height", len: 0, typ: NTI104, name: "height", sons: null}, 
 {kind: 1, offset: "clientWidth", len: 0, typ: NTI104, name: "clientWidth", sons: null}, 
 {kind: 1, offset: "clientHeight", len: 0, typ: NTI104, name: "clientHeight", sons: null}]};
-NTI27004.node = NNI27004;
-var NNI24216 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
-NTI24216.node = NNI24216;
-NTI24216.base = NTI3408;
-NTI24214.base = NTI24216;
-NTI24228.base = NTI24230;
-NTI24494.base = NTI24228;
-var NNI24250 = {kind: 2, len: 5, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "action", len: 0, typ: NTI140, name: "action", sons: null}, 
+NTI28004.node = NNI28004;
+var NNI25216 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
+NTI25216.node = NNI25216;
+NTI25216.base = NTI3408;
+NTI25214.base = NTI25216;
+NTI25228.base = NTI25230;
+NTI25494.base = NTI25228;
+var NNI25250 = {kind: 2, len: 5, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "action", len: 0, typ: NTI140, name: "action", sons: null}, 
 {kind: 1, offset: "encoding", len: 0, typ: NTI140, name: "encoding", sons: null}, 
 {kind: 1, offset: "method", len: 0, typ: NTI140, name: "method", sons: null}, 
 {kind: 1, offset: "target", len: 0, typ: NTI140, name: "target", sons: null}, 
-{kind: 1, offset: "elements", len: 0, typ: NTI24494, name: "elements", sons: null}]};
-NTI24250.node = NNI24250;
-NTI24250.base = NTI24230;
-NTI24248.base = NTI24250;
-var NNI24246 = {kind: 2, len: 5, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "defaultSelected", len: 0, typ: NTI130, name: "defaultSelected", sons: null}, 
+{kind: 1, offset: "elements", len: 0, typ: NTI25494, name: "elements", sons: null}]};
+NTI25250.node = NNI25250;
+NTI25250.base = NTI25230;
+NTI25248.base = NTI25250;
+var NNI25246 = {kind: 2, len: 5, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "defaultSelected", len: 0, typ: NTI130, name: "defaultSelected", sons: null}, 
 {kind: 1, offset: "selected", len: 0, typ: NTI130, name: "selected", sons: null}, 
 {kind: 1, offset: "selectedIndex", len: 0, typ: NTI104, name: "selectedIndex", sons: null}, 
 {kind: 1, offset: "text", len: 0, typ: NTI140, name: "text", sons: null}, 
 {kind: 1, offset: "value", len: 0, typ: NTI140, name: "value", sons: null}]};
-NTI24246.node = NNI24246;
-NTI24246.base = NTI24230;
-NTI24244.base = NTI24246;
-NTI24470.base = NTI24244;
-var NNI24230 = {kind: 2, len: 9, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "classList", len: 0, typ: NTI24214, name: "classList", sons: null}, 
+NTI25246.node = NNI25246;
+NTI25246.base = NTI25230;
+NTI25244.base = NTI25246;
+NTI25470.base = NTI25244;
+var NNI25230 = {kind: 2, len: 9, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "classList", len: 0, typ: NTI25214, name: "classList", sons: null}, 
 {kind: 1, offset: "checked", len: 0, typ: NTI130, name: "checked", sons: null}, 
 {kind: 1, offset: "defaultChecked", len: 0, typ: NTI130, name: "defaultChecked", sons: null}, 
 {kind: 1, offset: "defaultValue", len: 0, typ: NTI140, name: "defaultValue", sons: null}, 
 {kind: 1, offset: "disabled", len: 0, typ: NTI130, name: "disabled", sons: null}, 
-{kind: 1, offset: "form", len: 0, typ: NTI24248, name: "form", sons: null}, 
+{kind: 1, offset: "form", len: 0, typ: NTI25248, name: "form", sons: null}, 
 {kind: 1, offset: "name", len: 0, typ: NTI140, name: "name", sons: null}, 
 {kind: 1, offset: "readOnly", len: 0, typ: NTI130, name: "readOnly", sons: null}, 
-{kind: 1, offset: "options", len: 0, typ: NTI24470, name: "options", sons: null}]};
-NTI24230.node = NNI24230;
-NTI24220.base = NTI24222;
-NTI24419.base = NTI24220;
-NTI24421.base = NTI24220;
-NTI24423.base = NTI24220;
-var NNI24218 = {kind: 2, offset: 0, typ: null, name: null, len: 12, sons: {1: {kind: 1, offset: 1, typ: NTI24218, name: "ElementNode", len: 0, sons: null}, 
-2: {kind: 1, offset: 2, typ: NTI24218, name: "AttributeNode", len: 0, sons: null}, 
-3: {kind: 1, offset: 3, typ: NTI24218, name: "TextNode", len: 0, sons: null}, 
-4: {kind: 1, offset: 4, typ: NTI24218, name: "CDATANode", len: 0, sons: null}, 
-5: {kind: 1, offset: 5, typ: NTI24218, name: "EntityRefNode", len: 0, sons: null}, 
-6: {kind: 1, offset: 6, typ: NTI24218, name: "EntityNode", len: 0, sons: null}, 
-7: {kind: 1, offset: 7, typ: NTI24218, name: "ProcessingInstructionNode", len: 0, sons: null}, 
-8: {kind: 1, offset: 8, typ: NTI24218, name: "CommentNode", len: 0, sons: null}, 
-9: {kind: 1, offset: 9, typ: NTI24218, name: "DocumentNode", len: 0, sons: null}, 
-10: {kind: 1, offset: 10, typ: NTI24218, name: "DocumentTypeNode", len: 0, sons: null}, 
-11: {kind: 1, offset: 11, typ: NTI24218, name: "DocumentFragmentNode", len: 0, sons: null}, 
-12: {kind: 1, offset: 12, typ: NTI24218, name: "NotationNode", len: 0, sons: null}}};
-NTI24218.node = NNI24218;
-var NNI24258 = {kind: 2, len: 89, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "background", len: 0, typ: NTI140, name: "background", sons: null}, 
+{kind: 1, offset: "options", len: 0, typ: NTI25470, name: "options", sons: null}]};
+NTI25230.node = NNI25230;
+NTI25220.base = NTI25222;
+NTI25419.base = NTI25220;
+NTI25421.base = NTI25220;
+NTI25423.base = NTI25220;
+var NNI25218 = {kind: 2, offset: 0, typ: null, name: null, len: 12, sons: {"1": {kind: 1, offset: 1, typ: NTI25218, name: "ElementNode", len: 0, sons: null}, 
+"2": {kind: 1, offset: 2, typ: NTI25218, name: "AttributeNode", len: 0, sons: null}, 
+"3": {kind: 1, offset: 3, typ: NTI25218, name: "TextNode", len: 0, sons: null}, 
+"4": {kind: 1, offset: 4, typ: NTI25218, name: "CDATANode", len: 0, sons: null}, 
+"5": {kind: 1, offset: 5, typ: NTI25218, name: "EntityRefNode", len: 0, sons: null}, 
+"6": {kind: 1, offset: 6, typ: NTI25218, name: "EntityNode", len: 0, sons: null}, 
+"7": {kind: 1, offset: 7, typ: NTI25218, name: "ProcessingInstructionNode", len: 0, sons: null}, 
+"8": {kind: 1, offset: 8, typ: NTI25218, name: "CommentNode", len: 0, sons: null}, 
+"9": {kind: 1, offset: 9, typ: NTI25218, name: "DocumentNode", len: 0, sons: null}, 
+"10": {kind: 1, offset: 10, typ: NTI25218, name: "DocumentTypeNode", len: 0, sons: null}, 
+"11": {kind: 1, offset: 11, typ: NTI25218, name: "DocumentFragmentNode", len: 0, sons: null}, 
+"12": {kind: 1, offset: 12, typ: NTI25218, name: "NotationNode", len: 0, sons: null}}};
+NTI25218.node = NNI25218;
+var NNI25258 = {kind: 2, len: 89, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "background", len: 0, typ: NTI140, name: "background", sons: null}, 
 {kind: 1, offset: "backgroundAttachment", len: 0, typ: NTI140, name: "backgroundAttachment", sons: null}, 
 {kind: 1, offset: "backgroundColor", len: 0, typ: NTI140, name: "backgroundColor", sons: null}, 
 {kind: 1, offset: "backgroundImage", len: 0, typ: NTI140, name: "backgroundImage", sons: null}, 
@@ -271,146 +271,147 @@ var NNI24258 = {kind: 2, len: 89, offset: 0, typ: null, name: null, sons: [{kind
 {kind: 1, offset: "width", len: 0, typ: NTI140, name: "width", sons: null}, 
 {kind: 1, offset: "wordSpacing", len: 0, typ: NTI140, name: "wordSpacing", sons: null}, 
 {kind: 1, offset: "zIndex", len: 0, typ: NTI104, name: "zIndex", sons: null}]};
-NTI24258.node = NNI24258;
-NTI24258.base = NTI3408;
-NTI24256.base = NTI24258;
-var NNI24222 = {kind: 2, len: 14, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "attributes", len: 0, typ: NTI24419, name: "attributes", sons: null}, 
-{kind: 1, offset: "childNodes", len: 0, typ: NTI24421, name: "childNodes", sons: null}, 
-{kind: 1, offset: "children", len: 0, typ: NTI24423, name: "children", sons: null}, 
+NTI25258.node = NNI25258;
+NTI25258.base = NTI3408;
+NTI25256.base = NTI25258;
+var NNI25222 = {kind: 2, len: 14, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "attributes", len: 0, typ: NTI25419, name: "attributes", sons: null}, 
+{kind: 1, offset: "childNodes", len: 0, typ: NTI25421, name: "childNodes", sons: null}, 
+{kind: 1, offset: "children", len: 0, typ: NTI25423, name: "children", sons: null}, 
 {kind: 1, offset: "data", len: 0, typ: NTI140, name: "data", sons: null}, 
-{kind: 1, offset: "firstChild", len: 0, typ: NTI24220, name: "firstChild", sons: null}, 
-{kind: 1, offset: "lastChild", len: 0, typ: NTI24220, name: "lastChild", sons: null}, 
-{kind: 1, offset: "nextSibling", len: 0, typ: NTI24220, name: "nextSibling", sons: null}, 
+{kind: 1, offset: "firstChild", len: 0, typ: NTI25220, name: "firstChild", sons: null}, 
+{kind: 1, offset: "lastChild", len: 0, typ: NTI25220, name: "lastChild", sons: null}, 
+{kind: 1, offset: "nextSibling", len: 0, typ: NTI25220, name: "nextSibling", sons: null}, 
 {kind: 1, offset: "nodeName", len: 0, typ: NTI140, name: "nodeName", sons: null}, 
-{kind: 1, offset: "nodeType", len: 0, typ: NTI24218, name: "nodeType", sons: null}, 
+{kind: 1, offset: "nodeType", len: 0, typ: NTI25218, name: "nodeType", sons: null}, 
 {kind: 1, offset: "nodeValue", len: 0, typ: NTI140, name: "nodeValue", sons: null}, 
-{kind: 1, offset: "parentNode", len: 0, typ: NTI24220, name: "parentNode", sons: null}, 
-{kind: 1, offset: "previousSibling", len: 0, typ: NTI24220, name: "previousSibling", sons: null}, 
+{kind: 1, offset: "parentNode", len: 0, typ: NTI25220, name: "parentNode", sons: null}, 
+{kind: 1, offset: "previousSibling", len: 0, typ: NTI25220, name: "previousSibling", sons: null}, 
 {kind: 1, offset: "innerHTML", len: 0, typ: NTI140, name: "innerHTML", sons: null}, 
-{kind: 1, offset: "style", len: 0, typ: NTI24256, name: "style", sons: null}]};
-NTI24222.node = NNI24222;
-var NNI24204 = {kind: 2, len: 20, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "onabort", len: 0, typ: NTI24299, name: "onabort", sons: null}, 
-{kind: 1, offset: "onblur", len: 0, typ: NTI24303, name: "onblur", sons: null}, 
-{kind: 1, offset: "onchange", len: 0, typ: NTI24307, name: "onchange", sons: null}, 
-{kind: 1, offset: "onclick", len: 0, typ: NTI24311, name: "onclick", sons: null}, 
-{kind: 1, offset: "ondblclick", len: 0, typ: NTI24315, name: "ondblclick", sons: null}, 
-{kind: 1, offset: "onerror", len: 0, typ: NTI24319, name: "onerror", sons: null}, 
-{kind: 1, offset: "onfocus", len: 0, typ: NTI24323, name: "onfocus", sons: null}, 
-{kind: 1, offset: "onkeydown", len: 0, typ: NTI24327, name: "onkeydown", sons: null}, 
-{kind: 1, offset: "onkeypress", len: 0, typ: NTI24331, name: "onkeypress", sons: null}, 
-{kind: 1, offset: "onkeyup", len: 0, typ: NTI24335, name: "onkeyup", sons: null}, 
-{kind: 1, offset: "onload", len: 0, typ: NTI24339, name: "onload", sons: null}, 
-{kind: 1, offset: "onmousedown", len: 0, typ: NTI24343, name: "onmousedown", sons: null}, 
-{kind: 1, offset: "onmousemove", len: 0, typ: NTI24347, name: "onmousemove", sons: null}, 
-{kind: 1, offset: "onmouseout", len: 0, typ: NTI24351, name: "onmouseout", sons: null}, 
-{kind: 1, offset: "onmouseover", len: 0, typ: NTI24355, name: "onmouseover", sons: null}, 
-{kind: 1, offset: "onmouseup", len: 0, typ: NTI24359, name: "onmouseup", sons: null}, 
-{kind: 1, offset: "onreset", len: 0, typ: NTI24363, name: "onreset", sons: null}, 
-{kind: 1, offset: "onselect", len: 0, typ: NTI24367, name: "onselect", sons: null}, 
-{kind: 1, offset: "onsubmit", len: 0, typ: NTI24371, name: "onsubmit", sons: null}, 
-{kind: 1, offset: "onunload", len: 0, typ: NTI24375, name: "onunload", sons: null}]};
-NTI24204.node = NNI24204;
-NTI24204.base = NTI3408;
-NTI24222.base = NTI24204;
-NTI24230.base = NTI24222;
-NTI27004.base = NTI24230;
-NTI27002.base = NTI27004;
-var NNI27088 = {kind: 2, len: 3, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "canvas", len: 0, typ: NTI27002, name: "canvas", sons: null}, 
+{kind: 1, offset: "style", len: 0, typ: NTI25256, name: "style", sons: null}]};
+NTI25222.node = NNI25222;
+var NNI25204 = {kind: 2, len: 20, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "onabort", len: 0, typ: NTI25299, name: "onabort", sons: null}, 
+{kind: 1, offset: "onblur", len: 0, typ: NTI25303, name: "onblur", sons: null}, 
+{kind: 1, offset: "onchange", len: 0, typ: NTI25307, name: "onchange", sons: null}, 
+{kind: 1, offset: "onclick", len: 0, typ: NTI25311, name: "onclick", sons: null}, 
+{kind: 1, offset: "ondblclick", len: 0, typ: NTI25315, name: "ondblclick", sons: null}, 
+{kind: 1, offset: "onerror", len: 0, typ: NTI25319, name: "onerror", sons: null}, 
+{kind: 1, offset: "onfocus", len: 0, typ: NTI25323, name: "onfocus", sons: null}, 
+{kind: 1, offset: "onkeydown", len: 0, typ: NTI25327, name: "onkeydown", sons: null}, 
+{kind: 1, offset: "onkeypress", len: 0, typ: NTI25331, name: "onkeypress", sons: null}, 
+{kind: 1, offset: "onkeyup", len: 0, typ: NTI25335, name: "onkeyup", sons: null}, 
+{kind: 1, offset: "onload", len: 0, typ: NTI25339, name: "onload", sons: null}, 
+{kind: 1, offset: "onmousedown", len: 0, typ: NTI25343, name: "onmousedown", sons: null}, 
+{kind: 1, offset: "onmousemove", len: 0, typ: NTI25347, name: "onmousemove", sons: null}, 
+{kind: 1, offset: "onmouseout", len: 0, typ: NTI25351, name: "onmouseout", sons: null}, 
+{kind: 1, offset: "onmouseover", len: 0, typ: NTI25355, name: "onmouseover", sons: null}, 
+{kind: 1, offset: "onmouseup", len: 0, typ: NTI25359, name: "onmouseup", sons: null}, 
+{kind: 1, offset: "onreset", len: 0, typ: NTI25363, name: "onreset", sons: null}, 
+{kind: 1, offset: "onselect", len: 0, typ: NTI25367, name: "onselect", sons: null}, 
+{kind: 1, offset: "onsubmit", len: 0, typ: NTI25371, name: "onsubmit", sons: null}, 
+{kind: 1, offset: "onunload", len: 0, typ: NTI25375, name: "onunload", sons: null}]};
+NTI25204.node = NNI25204;
+NTI25204.base = NTI3408;
+NTI25222.base = NTI25204;
+NTI25230.base = NTI25222;
+NTI28004.base = NTI25230;
+NTI28002.base = NTI28004;
+var NNI28088 = {kind: 2, len: 3, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "canvas", len: 0, typ: NTI28002, name: "canvas", sons: null}, 
 {kind: 1, offset: "drawingBufferWidth", len: 0, typ: NTI104, name: "drawingBufferWidth", sons: null}, 
 {kind: 1, offset: "drawingBufferHeight", len: 0, typ: NTI104, name: "drawingBufferHeight", sons: null}]};
-NTI27088.node = NNI27088;
-NTI27086.base = NTI27088;
-var NNI27064 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
-NTI27064.node = NNI27064;
-NTI27064.base = NTI3408;
-NTI27062.base = NTI27064;
-var NNI49003 = {kind: 2, offset: 0, typ: null, name: null, len: 2, sons: {34962: {kind: 1, offset: 34962, typ: NTI49003, name: "Vertex", len: 0, sons: null}, 
-34963: {kind: 1, offset: 34963, typ: NTI49003, name: "Index", len: 0, sons: null}}};
-NTI49003.node = NNI49003;
-var NNI26076 = {kind: 2, offset: 0, typ: null, name: null, len: 7, sons: {5120: {kind: 1, offset: 5120, typ: NTI26076, name: "dtBYTE", len: 0, sons: null}, 
-5121: {kind: 1, offset: 5121, typ: NTI26076, name: "dtUNSIGNED_BYTE", len: 0, sons: null}, 
-5122: {kind: 1, offset: 5122, typ: NTI26076, name: "dtSHORT", len: 0, sons: null}, 
-5123: {kind: 1, offset: 5123, typ: NTI26076, name: "dtUNSIGNED_SHORT", len: 0, sons: null}, 
-5124: {kind: 1, offset: 5124, typ: NTI26076, name: "dtINT", len: 0, sons: null}, 
-5125: {kind: 1, offset: 5125, typ: NTI26076, name: "dtUNSIGNED_INT", len: 0, sons: null}, 
-5126: {kind: 1, offset: 5126, typ: NTI26076, name: "dtFLOAT", len: 0, sons: null}}};
-NTI26076.node = NNI26076;
-var NNI49009 = {kind: 2, offset: 0, typ: null, name: null, len: 3, sons: {35040: {kind: 1, offset: 35040, typ: NTI49009, name: "Stream", len: 0, sons: null}, 
-35044: {kind: 1, offset: 35044, typ: NTI49009, name: "Static", len: 0, sons: null}, 
-35048: {kind: 1, offset: 35048, typ: NTI49009, name: "Dynamic", len: 0, sons: null}}};
-NTI49009.node = NNI49009;
-var NNI49017 = {kind: 2, len: 5, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "gl", len: 0, typ: NTI27086, name: "gl", sons: null}, 
-{kind: 1, offset: "glbuffer", len: 0, typ: NTI27062, name: "glbuffer", sons: null}, 
-{kind: 1, offset: "kind", len: 0, typ: NTI49003, name: "kind", sons: null}, 
-{kind: 1, offset: "datatype", len: 0, typ: NTI26076, name: "datatype", sons: null}, 
-{kind: 1, offset: "drawmode", len: 0, typ: NTI49009, name: "drawmode", sons: null}]};
-NTI49017.node = NNI49017;
+NTI28088.node = NNI28088;
+NTI28086.base = NTI28088;
+var NNI28064 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
+NTI28064.node = NNI28064;
+NTI28064.base = NTI3408;
+NTI28062.base = NTI28064;
+var NNI50003 = {kind: 2, offset: 0, typ: null, name: null, len: 2, sons: {"34962": {kind: 1, offset: 34962, typ: NTI50003, name: "Vertex", len: 0, sons: null}, 
+"34963": {kind: 1, offset: 34963, typ: NTI50003, name: "Index", len: 0, sons: null}}};
+NTI50003.node = NNI50003;
+var NNI27076 = {kind: 2, offset: 0, typ: null, name: null, len: 7, sons: {"5120": {kind: 1, offset: 5120, typ: NTI27076, name: "dtBYTE", len: 0, sons: null}, 
+"5121": {kind: 1, offset: 5121, typ: NTI27076, name: "dtUNSIGNED_BYTE", len: 0, sons: null}, 
+"5122": {kind: 1, offset: 5122, typ: NTI27076, name: "dtSHORT", len: 0, sons: null}, 
+"5123": {kind: 1, offset: 5123, typ: NTI27076, name: "dtUNSIGNED_SHORT", len: 0, sons: null}, 
+"5124": {kind: 1, offset: 5124, typ: NTI27076, name: "dtINT", len: 0, sons: null}, 
+"5125": {kind: 1, offset: 5125, typ: NTI27076, name: "dtUNSIGNED_INT", len: 0, sons: null}, 
+"5126": {kind: 1, offset: 5126, typ: NTI27076, name: "dtFLOAT", len: 0, sons: null}}};
+NTI27076.node = NNI27076;
+var NNI50009 = {kind: 2, offset: 0, typ: null, name: null, len: 3, sons: {"35040": {kind: 1, offset: 35040, typ: NTI50009, name: "Stream", len: 0, sons: null}, 
+"35044": {kind: 1, offset: 35044, typ: NTI50009, name: "Static", len: 0, sons: null}, 
+"35048": {kind: 1, offset: 35048, typ: NTI50009, name: "Dynamic", len: 0, sons: null}}};
+NTI50009.node = NNI50009;
+var NNI50017 = {kind: 2, len: 5, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "gl", len: 0, typ: NTI28086, name: "gl", sons: null}, 
+{kind: 1, offset: "glbuffer", len: 0, typ: NTI28062, name: "glbuffer", sons: null}, 
+{kind: 1, offset: "kind", len: 0, typ: NTI50003, name: "kind", sons: null}, 
+{kind: 1, offset: "datatype", len: 0, typ: NTI27076, name: "datatype", sons: null}, 
+{kind: 1, offset: "drawmode", len: 0, typ: NTI50009, name: "drawmode", sons: null}]};
+NTI50017.node = NNI50017;
 var NNI3428 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
 NTI3428.node = NNI3428;
 var NNI3426 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
 NTI3426.node = NNI3426;
 NTI3426.base = NTI3424;
 NTI3428.base = NTI3426;
-var NNI27052 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
-NTI27052.node = NNI27052;
-NTI27052.base = NTI3408;
-NTI27050.base = NTI27052;
-var NNI47004 = {kind: 2, offset: 0, typ: null, name: null, len: 7, sons: {0: {kind: 1, offset: 0, typ: NTI47004, name: "vec1", len: 0, sons: null}, 
-1: {kind: 1, offset: 1, typ: NTI47004, name: "vec2", len: 0, sons: null}, 
-2: {kind: 1, offset: 2, typ: NTI47004, name: "vec3", len: 0, sons: null}, 
-3: {kind: 1, offset: 3, typ: NTI47004, name: "vec4", len: 0, sons: null}, 
-4: {kind: 1, offset: 4, typ: NTI47004, name: "mat3", len: 0, sons: null}, 
-5: {kind: 1, offset: 5, typ: NTI47004, name: "mat4", len: 0, sons: null}, 
-10: {kind: 1, offset: 10, typ: NTI47004, name: "UNKNOWN", len: 0, sons: null}}};
-NTI47004.node = NNI47004;
-var NNI47028 = {kind: 2, len: 6, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "location", len: 0, typ: NTI27050, name: "location", sons: null}, 
+var NNI28052 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
+NTI28052.node = NNI28052;
+NTI28052.base = NTI3408;
+NTI28050.base = NTI28052;
+var NNI48006 = {kind: 2, offset: 0, typ: null, name: null, len: 7, sons: {"1": {kind: 1, offset: 1, typ: NTI48006, name: "float", len: 0, sons: null}, 
+"2": {kind: 1, offset: 2, typ: NTI48006, name: "vec2", len: 0, sons: null}, 
+"3": {kind: 1, offset: 3, typ: NTI48006, name: "vec3", len: 0, sons: null}, 
+"4": {kind: 1, offset: 4, typ: NTI48006, name: "vec4", len: 0, sons: null}, 
+"9": {kind: 1, offset: 9, typ: NTI48006, name: "mat3", len: 0, sons: null}, 
+"16": {kind: 1, offset: 16, typ: NTI48006, name: "mat4", len: 0, sons: null}, 
+"100": {kind: 1, offset: 100, typ: NTI48006, name: "UNKNOWN", len: 0, sons: null}}};
+NTI48006.node = NNI48006;
+var NNI48031 = {kind: 2, len: 6, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "location", len: 0, typ: NTI28050, name: "location", sons: null}, 
 {kind: 1, offset: "name", len: 0, typ: NTI138, name: "name", sons: null}, 
-{kind: 1, offset: "kind", len: 0, typ: NTI47004, name: "kind", sons: null}, 
+{kind: 1, offset: "kind", len: 0, typ: NTI48006, name: "kind", sons: null}, 
 {kind: 1, offset: "size", len: 0, typ: NTI104, name: "size", sons: null}, 
-{kind: 1, offset: "datatype", len: 0, typ: NTI26076, name: "datatype", sons: null}, 
+{kind: 1, offset: "datatype", len: 0, typ: NTI27076, name: "datatype", sons: null}, 
 {kind: 1, offset: "normalize", len: 0, typ: NTI130, name: "normalize", sons: null}]};
-NTI47028.node = NNI47028;
-NTI47196.base = NTI47028;
-var NNI47020 = {kind: 2, len: 6, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "name", len: 0, typ: NTI138, name: "name", sons: null}, 
+NTI48031.node = NNI48031;
+NTI48199.base = NTI48031;
+var NNI48023 = {kind: 2, len: 6, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "name", len: 0, typ: NTI138, name: "name", sons: null}, 
 {kind: 1, offset: "location", len: 0, typ: NTI114, name: "location", sons: null}, 
-{kind: 1, offset: "kind", len: 0, typ: NTI47004, name: "kind", sons: null}, 
+{kind: 1, offset: "kind", len: 0, typ: NTI48006, name: "kind", sons: null}, 
 {kind: 1, offset: "size", len: 0, typ: NTI104, name: "size", sons: null}, 
-{kind: 1, offset: "datatype", len: 0, typ: NTI26076, name: "datatype", sons: null}, 
+{kind: 1, offset: "datatype", len: 0, typ: NTI27076, name: "datatype", sons: null}, 
 {kind: 1, offset: "normalize", len: 0, typ: NTI130, name: "normalize", sons: null}]};
-NTI47020.node = NNI47020;
-NTI47198.base = NTI47020;
-var NNI47195 = {kind: 2, len: 2, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "Field0", len: 0, typ: NTI47196, name: "Field0", sons: null}, 
-{kind: 1, offset: "Field1", len: 0, typ: NTI47198, name: "Field1", sons: null}]};
-NTI47195.node = NNI47195;
+NTI48023.node = NNI48023;
+NTI48201.base = NTI48023;
+var NNI48198 = {kind: 2, len: 2, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "Field0", len: 0, typ: NTI48199, name: "Field0", sons: null}, 
+{kind: 1, offset: "Field1", len: 0, typ: NTI48201, name: "Field1", sons: null}]};
+NTI48198.node = NNI48198;
 var NNI3454 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
 NTI3454.node = NNI3454;
 NTI3454.base = NTI3424;
-NTI39675.base = NTI138;
-var NNI47097 = {kind: 2, len: 3, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "Field0", len: 0, typ: NTI104, name: "Field0", sons: null}, 
-{kind: 1, offset: "Field1", len: 0, typ: NTI26076, name: "Field1", sons: null}, 
+NTI40675.base = NTI138;
+var NNI48100 = {kind: 2, len: 3, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "Field0", len: 0, typ: NTI104, name: "Field0", sons: null}, 
+{kind: 1, offset: "Field1", len: 0, typ: NTI27076, name: "Field1", sons: null}, 
 {kind: 1, offset: "Field2", len: 0, typ: NTI130, name: "Field2", sons: null}]};
-NTI47097.node = NNI47097;
-var NNI47175 = {kind: 2, len: 3, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "Field0", len: 0, typ: NTI104, name: "Field0", sons: null}, 
-{kind: 1, offset: "Field1", len: 0, typ: NTI26076, name: "Field1", sons: null}, 
+NTI48100.node = NNI48100;
+var NNI48178 = {kind: 2, len: 3, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "Field0", len: 0, typ: NTI104, name: "Field0", sons: null}, 
+{kind: 1, offset: "Field1", len: 0, typ: NTI27076, name: "Field1", sons: null}, 
 {kind: 1, offset: "Field2", len: 0, typ: NTI130, name: "Field2", sons: null}]};
-NTI47175.node = NNI47175;
-var NNI27072 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
-NTI27072.node = NNI27072;
-NTI27072.base = NTI3408;
-NTI27070.base = NTI27072;
-NTI47850.base = NTI47028;
-NTI47852.base = NTI47020;
-var NNI47848 = {kind: 2, len: 3, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "glprogram", len: 0, typ: NTI27070, name: "glprogram", sons: null}, 
-{kind: 1, offset: "uniforms", len: 0, typ: NTI47850, name: "uniforms", sons: null}, 
-{kind: 1, offset: "attributes", len: 0, typ: NTI47852, name: "attributes", sons: null}]};
-NTI47848.node = NNI47848;
+NTI48178.node = NNI48178;
+var NNI28072 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
+NTI28072.node = NNI28072;
+NTI28072.base = NTI3408;
+NTI28070.base = NTI28072;
+NTI48850.base = NTI48031;
+NTI48852.base = NTI48023;
+var NNI48848 = {kind: 2, len: 3, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "glprogram", len: 0, typ: NTI28070, name: "glprogram", sons: null}, 
+{kind: 1, offset: "uniforms", len: 0, typ: NTI48850, name: "uniforms", sons: null}, 
+{kind: 1, offset: "attributes", len: 0, typ: NTI48852, name: "attributes", sons: null}]};
+NTI48848.node = NNI48848;
 NTI3404.base = NTI104;
-var NNI50002 = {kind: 2, len: 5, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "vb", len: 0, typ: NTI49017, name: "vb", sons: null}, 
-{kind: 1, offset: "ib", len: 0, typ: NTI49017, name: "ib", sons: null}, 
-{kind: 1, offset: "shader", len: 0, typ: NTI47848, name: "shader", sons: null}, 
+var NNI51002 = {kind: 2, len: 6, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "gl", len: 0, typ: NTI28086, name: "gl", sons: null}, 
+{kind: 1, offset: "vb", len: 0, typ: NTI50017, name: "vb", sons: null}, 
+{kind: 1, offset: "ib", len: 0, typ: NTI50017, name: "ib", sons: null}, 
+{kind: 1, offset: "shader", len: 0, typ: NTI48848, name: "shader", sons: null}, 
 {kind: 1, offset: "il", len: 0, typ: NTI3404, name: "il", sons: null}, 
 {kind: 1, offset: "vl", len: 0, typ: NTI3404, name: "vl", sons: null}]};
-NTI50002.node = NNI50002;
+NTI51002.node = NNI51002;
 var NNI3458 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
 NTI3458.node = NNI3458;
 NTI3458.base = NTI3424;
@@ -834,136 +835,136 @@ e_13659.message = nimCopy(null, makeNimstrLit("division by zero"), NTI138);
 e_13659.parent = null;
 raiseException(e_13659, "DivByZeroError");
 }
-var canvas_51001 = /**/[document.getElementById("sgl-canvas")];
-function sysFatal_21621(message_21627) {
+var canvas_52001 = /**/[document.getElementById("sgl-canvas")];
+function sysFatal_22021(message_22027) {
 
 var F={procname:"sysFatal.sysFatal",prev:framePtr,filename:"lib\\system.nim",line:0};
 framePtr = F;
 F.line = 2617;
-var e_21629 = null;
-e_21629 = {m_type: NTI3446, parent: null, name: null, message: null, trace: null};
+var e_22029 = null;
+e_22029 = {m_type: NTI3446, parent: null, name: null, message: null, trace: null};
 F.line = 2619;
-e_21629.message = nimCopy(null, message_21627, NTI138);
+e_22029.message = nimCopy(null, message_22027, NTI138);
 F.line = 2620;
-raiseException(e_21629, "AssertionError");
+raiseException(e_22029, "AssertionError");
 framePtr = F.prev;
 }
-function raiseAssert_21616(msg_21618) {
+function raiseAssert_22016(msg_22018) {
 
 var F={procname:"system.raiseAssert",prev:framePtr,filename:"lib\\system.nim",line:0};
 framePtr = F;
-sysFatal_21621(msg_21618);
+sysFatal_22021(msg_22018);
 framePtr = F.prev;
 }
-function failedAssertImpl_21639(msg_21641) {
+function failedAssertImpl_22039(msg_22041) {
 
 var F={procname:"system.failedAssertImpl",prev:framePtr,filename:"lib\\system.nim",line:0};
 framePtr = F;
-raiseAssert_21616(msg_21641);
+raiseAssert_22016(msg_22041);
 framePtr = F.prev;
 }
-function getContextWebgl_27957(c_27959) {
+function getContextWebgl_28957(c_28959) {
 
-var result_27960 = null;
+var result_28960 = null;
 var F={procname:"webgl.getContextWebgl",prev:framePtr,filename:"C:\\Users\\stisa\\.nimble\\pkgs\\webgl-#head\\webgl.nim",line:0};
 framePtr = F;
 F.line = 425;
-result_27960 = c_27959.getContext("webgl");
-if ((result_27960 === null)) {
+result_28960 = c_28959.getContext("webgl");
+if ((result_28960 === null)) {
 F.line = 426;
-result_27960 = c_27959.getContext("experimental-webgl");
+result_28960 = c_28959.getContext("experimental-webgl");
 }
 
-if (!(!((result_27960 === null)))) {
-failedAssertImpl_21639(makeNimstrLit("not isNil(result) "));
+if (!(!((result_28960 === null)))) {
+failedAssertImpl_22039(makeNimstrLit("not isNil(result) "));
 }
 
 framePtr = F.prev;
-return result_27960;
+return result_28960;
 }
-var gl_51002 = /**/[getContextWebgl_27957(canvas_51001[0])];
-function resizeToDisplaySize_46029(c_46031, pixelratio_46032) {
+var gl_52002 = /**/[getContextWebgl_28957(canvas_52001[0])];
+function resizeToDisplaySize_47142(c_47144, pixelratio_47145) {
 
 var Tmp1;
-var result_46033 = false;
+var result_47146 = false;
 var F={procname:"utils.resizeToDisplaySize",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\utils.nim",line:0};
 framePtr = F;
-F.line = 10;
-var multiplier_46038 = nimMax(1.0000000000000000e+000, pixelratio_46032);
-F.line = 11;
-var width_46039 = mulInt(c_46031.clientWidth, (multiplier_46038|0));
-F.line = 12;
-var height_46040 = mulInt(c_46031.clientHeight, (multiplier_46038|0));
-if (!((c_46031.width == width_46039))) Tmp1 = true; else {Tmp1 = !((c_46031.height == height_46040)); }if (Tmp1) {
-F.line = 15;
-c_46031.width = width_46039;
-F.line = 16;
-c_46031.height = height_46040;
-F.line = 17;
-result_46033 = true;
+F.line = 49;
+var multiplier_47151 = nimMax(1.0000000000000000e+000, pixelratio_47145);
+F.line = 50;
+var width_47152 = mulInt(c_47144.clientWidth, (multiplier_47151|0));
+F.line = 51;
+var height_47153 = mulInt(c_47144.clientHeight, (multiplier_47151|0));
+if (!((c_47144.width == width_47152))) Tmp1 = true; else {Tmp1 = !((c_47144.height == height_47153)); }if (Tmp1) {
+F.line = 54;
+c_47144.width = width_47152;
+F.line = 55;
+c_47144.height = height_47153;
+F.line = 56;
+result_47146 = true;
 }
 
-F.line = 18;
-result_46033 = false;
+F.line = 57;
+result_47146 = false;
 framePtr = F.prev;
-return result_46033;
+return result_47146;
 }
-resizeToDisplaySize_46029(canvas_51001[0], 1.0000000000000000e+000);
-var vertices_51009 = /**/[nimCopy(null, [-5.0000000000000000e-001, 5.0000000000000000e-001, 0.0, -5.0000000000000000e-001, -5.0000000000000000e-001, 0.0, 5.0000000000000000e-001, -5.0000000000000000e-001, 0.0], NTI51004)];
-var indices_51012 = /**/[nimCopy(null, [0, 1, 2], NTI51010)];
-var vertCode_51013 = /**/[makeNimstrLit("attribute vec3 coordinates;\x0Avoid main(void) {\x0A gl_Position = vec4(coordinates, 1.0);\x0A}")];
-var fragCode_51014 = /**/[makeNimstrLit("void main(void){\x0A  gl_FragColor = vec4(0.0, 0.0, 0.0, 0.1);\x0A}")];
-function buffer_49023(gl_49025, kind_49026, drawmode_49028) {
+resizeToDisplaySize_47142(canvas_52001[0], 1.0000000000000000e+000);
+var vertices_52009 = /**/[nimCopy(null, [-5.0000000000000000e-001, 5.0000000000000000e-001, 0.0, -5.0000000000000000e-001, -5.0000000000000000e-001, 0.0, 5.0000000000000000e-001, -5.0000000000000000e-001, 0.0], NTI52004)];
+var indices_52012 = /**/[nimCopy(null, [0, 1, 2], NTI52010)];
+var vertCode_52013 = /**/[makeNimstrLit("attribute vec3 coordinates;\x0Avoid main(void) {\x0A gl_Position = vec4(coordinates, 1.0);\x0A}")];
+var fragCode_52014 = /**/[makeNimstrLit("void main(void){\x0A  gl_FragColor = vec4(0.0, 0.0, 0.0, 0.1);\x0A}")];
+function buffer_50023(gl_50025, kind_50026, drawmode_50028) {
 
 var Tmp1;
-var result_49029 = {gl: null, glbuffer: null, kind: 0, datatype: 0, drawmode: 0};
+var result_50029 = {gl: null, glbuffer: null, kind: 0, datatype: 0, drawmode: 0};
 var F={procname:"buffer.buffer",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\buffer.nim",line:0};
 framePtr = F;
 F.line = 22;
-if ((kind_49026 == 34963)) {
-Tmp1 = {gl: gl_49025, glbuffer: gl_49025.createBuffer(), kind: kind_49026, datatype: 5123, drawmode: drawmode_49028};
+if ((kind_50026 == 34963)) {
+Tmp1 = {gl: gl_50025, glbuffer: gl_50025.createBuffer(), kind: kind_50026, datatype: 5123, drawmode: drawmode_50028};
 }
 else {
-Tmp1 = {gl: gl_49025, glbuffer: gl_49025.createBuffer(), kind: kind_49026, datatype: 5126, drawmode: drawmode_49028};
+Tmp1 = {gl: gl_50025, glbuffer: gl_50025.createBuffer(), kind: kind_50026, datatype: 5126, drawmode: drawmode_50028};
 }
 
-nimCopy(result_49029, Tmp1, NTI49017);
+nimCopy(result_50029, Tmp1, NTI50017);
 framePtr = F.prev;
-return result_49029;
+return result_50029;
 }
-function getStatus_28029(gl_28031, what_28032) {
+function getStatus_29029(gl_29031, what_29032) {
 
-var result_28033 = false;
+var result_29033 = false;
 var F={procname:"webgl.getStatus",prev:framePtr,filename:"C:\\Users\\stisa\\.nimble\\pkgs\\webgl-#head\\webgl.nim",line:0};
 framePtr = F;
 F.line = 446;
-result_28033 = gl_28031.getShaderParameter(what_28032, gl_28031.COMPILE_STATUS);framePtr = F.prev;
-return result_28033;
+result_29033 = gl_29031.getShaderParameter(what_29032, gl_29031.COMPILE_STATUS);framePtr = F.prev;
+return result_29033;
 }
-function getStatus_28034(gl_28036, what_28037) {
+function getStatus_29034(gl_29036, what_29037) {
 
-var result_28038 = false;
+var result_29038 = false;
 var F={procname:"webgl.getStatus",prev:framePtr,filename:"C:\\Users\\stisa\\.nimble\\pkgs\\webgl-#head\\webgl.nim",line:0};
 framePtr = F;
 F.line = 448;
-result_28038 = gl_28036.getProgramParameter(what_28037, gl_28036.LINK_STATUS);framePtr = F.prev;
-return result_28038;
+result_29038 = gl_29036.getProgramParameter(what_29037, gl_29036.LINK_STATUS);framePtr = F.prev;
+return result_29038;
 }
-function newSeq_47215(len_47219) {
+function newSeq_48218(len_48222) {
 
-var result_47221 = null;
+var result_48224 = null;
 var F={procname:"newSeq.newSeq",prev:framePtr,filename:"lib\\system.nim",line:0};
 framePtr = F;
-result_47221 = new Array(len_47219); for (var i=0;i<len_47219;++i) {result_47221[i]={location: null, name: null, kind: 0, size: 0, datatype: 0, normalize: false};}framePtr = F.prev;
-return result_47221;
+result_48224 = new Array(len_48222); for (var i=0;i<len_48222;++i) {result_48224[i]={location: null, name: null, kind: 0, size: 0, datatype: 0, normalize: false};}framePtr = F.prev;
+return result_48224;
 }
-function newSeq_47254(len_47258) {
+function newSeq_48257(len_48261) {
 
-var result_47260 = null;
+var result_48263 = null;
 var F={procname:"newSeq.newSeq",prev:framePtr,filename:"lib\\system.nim",line:0};
 framePtr = F;
-result_47260 = new Array(len_47258); for (var i=0;i<len_47258;++i) {result_47260[i]={name: null, location: 0, kind: 0, size: 0, datatype: 0, normalize: false};}framePtr = F.prev;
-return result_47260;
+result_48263 = new Array(len_48261); for (var i=0;i<len_48261;++i) {result_48263[i]={name: null, location: 0, kind: 0, size: 0, datatype: 0, normalize: false};}framePtr = F.prev;
+return result_48263;
 }
 function raiseIndexError() {
 
@@ -973,246 +974,246 @@ e_13695.message = nimCopy(null, makeNimstrLit("index out of bounds"), NTI138);
 e_13695.parent = null;
 raiseException(e_13695, "IndexError");
 }
-function nsuSplitWhitespace(s_39655) {
+function nsuSplitWhitespace(s_40655) {
 
-var result_39657 = null;
-result_39657 = nimCopy(null, [], NTI39675);
+var result_40657 = null;
+result_40657 = nimCopy(null, [], NTI40675);
 L1: do {
-var x_39677 = null;
-var last_39693 = 0;
-var splits_39695 = -1;
+var x_40677 = null;
+var last_40693 = 0;
+var splits_40695 = -1;
 L2: do {
 L3: while (true) {
-if (!(last_39693 < (s_39655 != null ? s_39655.length-1 : 0))) break L3;
+if (!(last_40693 < (s_40655 != null ? s_40655.length-1 : 0))) break L3;
 L4: do {
 L5: while (true) {
-if (!(SetConstr(32, 9, 11, 13, 10, 12)[s_39655[last_39693]] != undefined)) break L5;
-last_39693 += 1;
+if (!(SetConstr(32, 9, 11, 13, 10, 12)[s_40655[last_40693]] != undefined)) break L5;
+last_40693 += 1;
 }
 } while(false);
-var first_39697 = last_39693;
+var first_40697 = last_40693;
 L6: do {
 L7: while (true) {
-if (!((last_39693 < (s_39655 != null ? s_39655.length-1 : 0)) && !((SetConstr(32, 9, 11, 13, 10, 12)[s_39655[last_39693]] != undefined)))) break L7;
-last_39693 += 1;
+if (!((last_40693 < (s_40655 != null ? s_40655.length-1 : 0)) && !((SetConstr(32, 9, 11, 13, 10, 12)[s_40655[last_40693]] != undefined)))) break L7;
+last_40693 += 1;
 }
 } while(false);
-if ((first_39697 <= (last_39693 - 1))) {
-if ((splits_39695 == 0)) {
-last_39693 = (s_39655 != null ? s_39655.length-1 : 0);
+if ((first_40697 <= (last_40693 - 1))) {
+if ((splits_40695 == 0)) {
+last_40693 = (s_40655 != null ? s_40655.length-1 : 0);
 }
 
-x_39677 = (s_39655.slice(first_39697, ((last_39693 - 1))+1).concat(0));
-if (result_39657 != null) { result_39657.push(x_39677); } else { result_39657 = [x_39677]; };
-if ((splits_39695 == 0)) {
+x_40677 = (s_40655.slice(first_40697, ((last_40693 - 1))+1).concat(0));
+if (result_40657 != null) { result_40657.push(x_40677); } else { result_40657 = [x_40677]; };
+if ((splits_40695 == 0)) {
 break L2;
 }
 
-splits_39695 -= 1;
+splits_40695 -= 1;
 }
 
 }
 } while(false);
 } while(false);
-return result_39657;
+return result_40657;
 }
-function nsuStrip(s_39157, leading_39158, trailing_39159, chars_39161) {
+function nsuStrip(s_40157, leading_40158, trailing_40159, chars_40161) {
 
 var Tmp5;
-var result_39162 = null;
-var first_39163 = 0;
-var last_39164 = ((s_39157 != null ? s_39157.length-1 : 0) - 1);
-if (leading_39158) {
+var result_40162 = null;
+var first_40163 = 0;
+var last_40164 = ((s_40157 != null ? s_40157.length-1 : 0) - 1);
+if (leading_40158) {
 L1: do {
 L2: while (true) {
-if (!(chars_39161[s_39157[first_39163]] != undefined)) break L2;
-first_39163 += 1;
+if (!(chars_40161[s_40157[first_40163]] != undefined)) break L2;
+first_40163 += 1;
 }
 } while(false);
 }
 
-if (trailing_39159) {
+if (trailing_40159) {
 L3: do {
 L4: while (true) {
-if (!(0 <= last_39164)) Tmp5 = false; else {Tmp5 = (chars_39161[s_39157[last_39164]] != undefined); }if (!Tmp5) break L4;
-last_39164 -= 1;
+if (!(0 <= last_40164)) Tmp5 = false; else {Tmp5 = (chars_40161[s_40157[last_40164]] != undefined); }if (!Tmp5) break L4;
+last_40164 -= 1;
 }
 } while(false);
 }
 
-result_39162 = nimCopy(null, (s_39157.slice(first_39163, (last_39164)+1).concat(0)), NTI138);
-return result_39162;
+result_40162 = nimCopy(null, (s_40157.slice(first_40163, (last_40164)+1).concat(0)), NTI138);
+return result_40162;
 }
-function attribute_47035(name_47037, kind_47038) {
+function attribute_48038(name_48040, kind_48041) {
 
 var Tmp1;
 var Tmp2;
-var result_47039 = {name: null, location: 0, kind: 0, size: 0, datatype: 0, normalize: false};
+var result_48042 = {name: null, location: 0, kind: 0, size: 0, datatype: 0, normalize: false};
 var F={procname:"shader.attribute",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\shader.nim",line:0};
 framePtr = F;
-F.line = 69;
-F.line = 69;
-switch (toJSStr(kind_47038)) {
-case "vec1": Tmp1 = 0;
+F.line = 53;
+F.line = 53;
+switch (toJSStr(kind_48041)) {
+case "float": Tmp1 = 1;
 
 break;
-case "vec2": Tmp1 = 1;
+case "vec2": Tmp1 = 2;
 
 break;
-case "vec3": Tmp1 = 2;
+case "vec3": Tmp1 = 3;
 
 break;
-case "vec4": Tmp1 = 3;
+case "vec4": Tmp1 = 4;
 
 break;
-case "mat3": Tmp1 = 4;
+case "mat3": Tmp1 = 9;
 
 break;
-case "mat4": Tmp1 = 5;
+case "mat4": Tmp1 = 16;
 
 break;
 default: 
-Tmp1 = 10;
+Tmp1 = 100;
 break;
 }
-var k_47095 = Tmp1;
-F.line = 77;
-var colontmp__51016 = {Field0: 0, Field1: 0, Field2: false};
-F.line = 77;
-var sz_47109 = 0;
-F.line = 77;
-var dt_47110 = 0;
-F.line = 77;
-var nrm_47111 = false;
-F.line = 77;
-F.line = 77;
-switch (k_47095) {
-case 0: Tmp2 = {Field0: 1, Field1: 5126, Field2: false};
+var k_48098 = Tmp1;
+F.line = 61;
+var colontmp__52016 = {Field0: 0, Field1: 0, Field2: false};
+F.line = 61;
+var sz_48112 = 0;
+F.line = 61;
+var dt_48113 = 0;
+F.line = 61;
+var nrm_48114 = false;
+F.line = 61;
+F.line = 61;
+switch (k_48098) {
+case 1: Tmp2 = {Field0: 1, Field1: 5126, Field2: false};
 
 break;
-case 1: Tmp2 = {Field0: 2, Field1: 5126, Field2: false};
+case 2: Tmp2 = {Field0: 2, Field1: 5126, Field2: false};
 
 break;
-case 2: Tmp2 = {Field0: 3, Field1: 5126, Field2: false};
+case 3: Tmp2 = {Field0: 3, Field1: 5126, Field2: false};
 
 break;
-case 3: Tmp2 = {Field0: 4, Field1: 5126, Field2: false};
+case 4: Tmp2 = {Field0: 4, Field1: 5126, Field2: false};
 
 break;
-case 4: Tmp2 = {Field0: 9, Field1: 5126, Field2: false};
+case 9: Tmp2 = {Field0: 9, Field1: 5126, Field2: false};
 
 break;
-case 5: Tmp2 = {Field0: 16, Field1: 5126, Field2: false};
+case 16: Tmp2 = {Field0: 16, Field1: 5126, Field2: false};
 
 break;
 default: 
 Tmp2 = {Field0: 0, Field1: 5122, Field2: false};
 break;
 }
-nimCopy(colontmp__51016, Tmp2, NTI47097);
-F.line = 77;
-sz_47109 = colontmp__51016["Field0"];
-F.line = 77;
-dt_47110 = colontmp__51016["Field1"];
-F.line = 77;
-nrm_47111 = colontmp__51016["Field2"];
-F.line = 85;
-nimCopy(result_47039, {name: name_47037, kind: k_47095, datatype: dt_47110, size: sz_47109, normalize: nrm_47111, location: 0}, NTI47020);
+nimCopy(colontmp__52016, Tmp2, NTI48100);
+F.line = 61;
+sz_48112 = colontmp__52016["Field0"];
+F.line = 61;
+dt_48113 = colontmp__52016["Field1"];
+F.line = 61;
+nrm_48114 = colontmp__52016["Field2"];
+F.line = 69;
+nimCopy(result_48042, {name: name_48040, kind: k_48098, datatype: dt_48113, size: sz_48112, normalize: nrm_48114, location: 0}, NTI48023);
 framePtr = F.prev;
-return result_47039;
+return result_48042;
 }
-function uniform_47113(name_47115, kind_47116) {
+function uniform_48116(name_48118, kind_48119) {
 
 var Tmp1;
 var Tmp2;
-var result_47117 = {location: null, name: null, kind: 0, size: 0, datatype: 0, normalize: false};
+var result_48120 = {location: null, name: null, kind: 0, size: 0, datatype: 0, normalize: false};
 var F={procname:"shader.uniform",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\shader.nim",line:0};
 framePtr = F;
-F.line = 88;
-F.line = 88;
-switch (toJSStr(kind_47116)) {
-case "vec1": Tmp1 = 0;
+F.line = 72;
+F.line = 72;
+switch (toJSStr(kind_48119)) {
+case "float": Tmp1 = 1;
 
 break;
-case "vec2": Tmp1 = 1;
+case "vec2": Tmp1 = 2;
 
 break;
-case "vec3": Tmp1 = 2;
+case "vec3": Tmp1 = 3;
 
 break;
-case "vec4": Tmp1 = 3;
+case "vec4": Tmp1 = 4;
 
 break;
-case "mat3": Tmp1 = 4;
+case "mat3": Tmp1 = 9;
 
 break;
-case "mat4": Tmp1 = 5;
+case "mat4": Tmp1 = 16;
 
 break;
 default: 
-Tmp1 = 10;
+Tmp1 = 100;
 break;
 }
-var k_47173 = Tmp1;
-F.line = 96;
-var colontmp__51017 = {Field0: 0, Field1: 0, Field2: false};
-F.line = 96;
-var sz_47187 = 0;
-F.line = 96;
-var dt_47188 = 0;
-F.line = 96;
-var nrm_47189 = false;
-F.line = 96;
-F.line = 96;
-switch (k_47173) {
-case 0: Tmp2 = {Field0: 1, Field1: 5126, Field2: false};
+var k_48176 = Tmp1;
+F.line = 80;
+var colontmp__52017 = {Field0: 0, Field1: 0, Field2: false};
+F.line = 80;
+var sz_48190 = 0;
+F.line = 80;
+var dt_48191 = 0;
+F.line = 80;
+var nrm_48192 = false;
+F.line = 80;
+F.line = 80;
+switch (k_48176) {
+case 1: Tmp2 = {Field0: 1, Field1: 5126, Field2: false};
 
 break;
-case 1: Tmp2 = {Field0: 2, Field1: 5126, Field2: false};
+case 2: Tmp2 = {Field0: 2, Field1: 5126, Field2: false};
 
 break;
-case 2: Tmp2 = {Field0: 3, Field1: 5126, Field2: false};
+case 3: Tmp2 = {Field0: 3, Field1: 5126, Field2: false};
 
 break;
-case 3: Tmp2 = {Field0: 4, Field1: 5126, Field2: false};
+case 4: Tmp2 = {Field0: 4, Field1: 5126, Field2: false};
 
 break;
-case 4: Tmp2 = {Field0: 9, Field1: 5126, Field2: false};
+case 9: Tmp2 = {Field0: 9, Field1: 5126, Field2: false};
 
 break;
-case 5: Tmp2 = {Field0: 16, Field1: 5126, Field2: false};
+case 16: Tmp2 = {Field0: 16, Field1: 5126, Field2: false};
 
 break;
 default: 
 Tmp2 = {Field0: 0, Field1: 5122, Field2: false};
 break;
 }
-nimCopy(colontmp__51017, Tmp2, NTI47175);
-F.line = 96;
-sz_47187 = colontmp__51017["Field0"];
-F.line = 96;
-dt_47188 = colontmp__51017["Field1"];
-F.line = 96;
-nrm_47189 = colontmp__51017["Field2"];
-F.line = 105;
-nimCopy(result_47117, {name: name_47115, kind: k_47173, datatype: dt_47188, size: sz_47187, normalize: nrm_47189, location: null}, NTI47028);
+nimCopy(colontmp__52017, Tmp2, NTI48178);
+F.line = 80;
+sz_48190 = colontmp__52017["Field0"];
+F.line = 80;
+dt_48191 = colontmp__52017["Field1"];
+F.line = 80;
+nrm_48192 = colontmp__52017["Field2"];
+F.line = 89;
+nimCopy(result_48120, {name: name_48118, kind: k_48176, datatype: dt_48191, size: sz_48190, normalize: nrm_48192, location: null}, NTI48031);
 framePtr = F.prev;
-return result_47117;
+return result_48120;
 }
-function extractAttrsAndUnifs_47191(vs_47193, fs_47194) {
+function extractAttrsAndUnifs_48194(vs_48196, fs_48197) {
 
-var result_47200 = {Field0: null, Field1: null};
+var result_48203 = {Field0: null, Field1: null};
 var F={procname:"shader.extractAttrsAndUnifs",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\shader.nim",line:0};
 framePtr = F;
-F.line = 108;
-nimCopy(result_47200, {Field0: newSeq_47215(0), Field1: newSeq_47254(0)}, NTI47195);
+F.line = 92;
+nimCopy(result_48203, {Field0: newSeq_48218(0), Field1: newSeq_48257(0)}, NTI48198);
 L1: do {
-F.line = 111;
-var line_47280 = null;
+F.line = 95;
+var line_48283 = null;
 F.line = 749;
-var first_47370 = 0;
+var first_48373 = 0;
 F.line = 750;
-var last_47372 = 0;
+var last_48375 = 0;
 L2: do {
 F.line = 751;
 L3: while (true) {
@@ -1220,21 +1221,21 @@ if (!true) break L3;
 L4: do {
 F.line = 752;
 L5: while (true) {
-if (!!((SetConstr(0, 13, 10)[vs_47193[chckIndx(last_47372, 0, vs_47193.length)-0]] != undefined))) break L5;
-last_47372 = addInt(last_47372, 1);
+if (!!((SetConstr(0, 13, 10)[vs_48196[chckIndx(last_48375, 0, vs_48196.length)-0]] != undefined))) break L5;
+last_48375 = addInt(last_48375, 1);
 }
 } while(false);
 F.line = 753;
-line_47280 = (vs_47193.slice(first_47370, (subInt(last_47372, 1))+1).concat(0));
-F.line = 112;
-var splitted_47294 = nsuSplitWhitespace(nsuStrip(line_47280, true, true, SetConstr([9, 13], 32, [58, 59])));
-if (((splitted_47294 != null ? splitted_47294.length : 0) == 3)) {
-F.line = 114;
-switch (toJSStr(nsuStrip(splitted_47294[0], true, true, SetConstr(32, 9, 11, 13, 10, 12)))) {
-case "attribute": if (result_47200.Field1 != null) { result_47200.Field1.push(attribute_47035(splitted_47294[2], splitted_47294[1])); } else { result_47200.Field1 = [attribute_47035(splitted_47294[2], splitted_47294[1])]; };
+line_48283 = (vs_48196.slice(first_48373, (subInt(last_48375, 1))+1).concat(0));
+F.line = 96;
+var splitted_48297 = nsuSplitWhitespace(nsuStrip(line_48283, true, true, SetConstr([9, 13], 32, [58, 59])));
+if (((splitted_48297 != null ? splitted_48297.length : 0) == 3)) {
+F.line = 98;
+switch (toJSStr(nsuStrip(splitted_48297[0], true, true, SetConstr(32, 9, 11, 13, 10, 12)))) {
+case "attribute": if (result_48203.Field1 != null) { result_48203.Field1.push(attribute_48038(splitted_48297[2], splitted_48297[1])); } else { result_48203.Field1 = [attribute_48038(splitted_48297[2], splitted_48297[1])]; };
 
 break;
-case "uniform": if (result_47200.Field0 != null) { result_47200.Field0.push(uniform_47113(splitted_47294[2], splitted_47294[1])); } else { result_47200.Field0 = [uniform_47113(splitted_47294[2], splitted_47294[1])]; };
+case "uniform": if (result_48203.Field0 != null) { result_48203.Field0.push(uniform_48116(splitted_48297[2], splitted_48297[1])); } else { result_48203.Field0 = [uniform_48116(splitted_48297[2], splitted_48297[1])]; };
 
 break;
 default: 
@@ -1244,14 +1245,14 @@ break;
 else {
 }
 
-if ((vs_47193[chckIndx(last_47372, 0, vs_47193.length)-0] == 10)) {
-last_47372 = addInt(last_47372, 1);
+if ((vs_48196[chckIndx(last_48375, 0, vs_48196.length)-0] == 10)) {
+last_48375 = addInt(last_48375, 1);
 }
 else {
-if ((vs_47193[chckIndx(last_47372, 0, vs_47193.length)-0] == 13)) {
-last_47372 = addInt(last_47372, 1);
-if ((vs_47193[chckIndx(last_47372, 0, vs_47193.length)-0] == 10)) {
-last_47372 = addInt(last_47372, 1);
+if ((vs_48196[chckIndx(last_48375, 0, vs_48196.length)-0] == 13)) {
+last_48375 = addInt(last_48375, 1);
+if ((vs_48196[chckIndx(last_48375, 0, vs_48196.length)-0] == 10)) {
+last_48375 = addInt(last_48375, 1);
 }
 
 }
@@ -1261,17 +1262,17 @@ break L2;
 }
 }
 F.line = 760;
-first_47370 = last_47372;
+first_48373 = last_48375;
 }
 } while(false);
 } while(false);
 L6: do {
-F.line = 123;
-var line_47323 = null;
+F.line = 107;
+var line_48326 = null;
 F.line = 749;
-var first_47377 = 0;
+var first_48380 = 0;
 F.line = 750;
-var last_47379 = 0;
+var last_48382 = 0;
 L7: do {
 F.line = 751;
 L8: while (true) {
@@ -1279,21 +1280,21 @@ if (!true) break L8;
 L9: do {
 F.line = 752;
 L10: while (true) {
-if (!!((SetConstr(0, 13, 10)[fs_47194[chckIndx(last_47379, 0, fs_47194.length)-0]] != undefined))) break L10;
-last_47379 = addInt(last_47379, 1);
+if (!!((SetConstr(0, 13, 10)[fs_48197[chckIndx(last_48382, 0, fs_48197.length)-0]] != undefined))) break L10;
+last_48382 = addInt(last_48382, 1);
 }
 } while(false);
 F.line = 753;
-line_47323 = (fs_47194.slice(first_47377, (subInt(last_47379, 1))+1).concat(0));
-F.line = 124;
-var splitted_47337 = nsuSplitWhitespace(nsuStrip(line_47323, true, true, SetConstr([9, 13], 32, [58, 59])));
-if (((splitted_47337 != null ? splitted_47337.length : 0) == 3)) {
-F.line = 127;
-switch (toJSStr(nsuStrip(splitted_47337[0], true, true, SetConstr(32, 9, 11, 13, 10, 12)))) {
-case "attribute": if (result_47200.Field1 != null) { result_47200.Field1.push(attribute_47035(splitted_47337[2], splitted_47337[1])); } else { result_47200.Field1 = [attribute_47035(splitted_47337[2], splitted_47337[1])]; };
+line_48326 = (fs_48197.slice(first_48380, (subInt(last_48382, 1))+1).concat(0));
+F.line = 108;
+var splitted_48340 = nsuSplitWhitespace(nsuStrip(line_48326, true, true, SetConstr([9, 13], 32, [58, 59])));
+if (((splitted_48340 != null ? splitted_48340.length : 0) == 3)) {
+F.line = 111;
+switch (toJSStr(nsuStrip(splitted_48340[0], true, true, SetConstr(32, 9, 11, 13, 10, 12)))) {
+case "attribute": if (result_48203.Field1 != null) { result_48203.Field1.push(attribute_48038(splitted_48340[2], splitted_48340[1])); } else { result_48203.Field1 = [attribute_48038(splitted_48340[2], splitted_48340[1])]; };
 
 break;
-case "uniform": if (result_47200.Field0 != null) { result_47200.Field0.push(uniform_47113(splitted_47337[2], splitted_47337[1])); } else { result_47200.Field0 = [uniform_47113(splitted_47337[2], splitted_47337[1])]; };
+case "uniform": if (result_48203.Field0 != null) { result_48203.Field0.push(uniform_48116(splitted_48340[2], splitted_48340[1])); } else { result_48203.Field0 = [uniform_48116(splitted_48340[2], splitted_48340[1])]; };
 
 break;
 default: 
@@ -1303,14 +1304,14 @@ break;
 else {
 }
 
-if ((fs_47194[chckIndx(last_47379, 0, fs_47194.length)-0] == 10)) {
-last_47379 = addInt(last_47379, 1);
+if ((fs_48197[chckIndx(last_48382, 0, fs_48197.length)-0] == 10)) {
+last_48382 = addInt(last_48382, 1);
 }
 else {
-if ((fs_47194[chckIndx(last_47379, 0, fs_47194.length)-0] == 13)) {
-last_47379 = addInt(last_47379, 1);
-if ((fs_47194[chckIndx(last_47379, 0, fs_47194.length)-0] == 10)) {
-last_47379 = addInt(last_47379, 1);
+if ((fs_48197[chckIndx(last_48382, 0, fs_48197.length)-0] == 13)) {
+last_48382 = addInt(last_48382, 1);
+if ((fs_48197[chckIndx(last_48382, 0, fs_48197.length)-0] == 10)) {
+last_48382 = addInt(last_48382, 1);
 }
 
 }
@@ -1320,168 +1321,168 @@ break L7;
 }
 }
 F.line = 760;
-first_47377 = last_47379;
+first_48380 = last_48382;
 }
 } while(false);
 } while(false);
 framePtr = F.prev;
-return result_47200;
+return result_48203;
 }
-function shader_47854(gl_47856, vssrc_47857, fssrc_47858, usethis_47859) {
+function shader_48854(gl_48856, vssrc_48857, fssrc_48858, usethis_48859) {
 
-var result_47860 = {glprogram: null, uniforms: null, attributes: null};
+var result_48860 = {glprogram: null, uniforms: null, attributes: null};
 var F={procname:"shader.shader",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\shader.nim",line:0};
 framePtr = F;
-F.line = 165;
-var vs_47870 = gl_47856.createShader(35633);
-gl_47856.shaderSource(vs_47870, toJSStr(vssrc_47857));
-gl_47856.compileShader(vs_47870);
-if (!(getStatus_28029(gl_47856, vs_47870))) {
+F.line = 150;
+var vs_48870 = gl_48856.createShader(35633);
+gl_48856.shaderSource(vs_48870, toJSStr(vssrc_48857));
+gl_48856.compileShader(vs_48870);
+if (!(getStatus_29029(gl_48856, vs_48870))) {
 rawEcho(makeNimstrLit("error vertex shader"));
 }
 
-F.line = 170;
-var fs_47882 = gl_47856.createShader(35632);
-gl_47856.shaderSource(fs_47882, toJSStr(fssrc_47858));
-gl_47856.compileShader(fs_47882);
-if (!(getStatus_28029(gl_47856, fs_47882))) {
+F.line = 155;
+var fs_48883 = gl_48856.createShader(35632);
+gl_48856.shaderSource(fs_48883, toJSStr(fssrc_48858));
+gl_48856.compileShader(fs_48883);
+if (!(getStatus_29029(gl_48856, fs_48883))) {
 rawEcho(makeNimstrLit("error fragment shader"));
 }
 
-F.line = 175;
-var prog_47885 = gl_47856.createProgram();
-gl_47856.attachShader(prog_47885, vs_47870);
-gl_47856.attachShader(prog_47885, fs_47882);
-gl_47856.linkProgram(prog_47885);
-if (!(getStatus_28034(gl_47856, prog_47885))) {
+F.line = 160;
+var prog_48887 = gl_48856.createProgram();
+gl_48856.attachShader(prog_48887, vs_48870);
+gl_48856.attachShader(prog_48887, fs_48883);
+gl_48856.linkProgram(prog_48887);
+if (!(getStatus_29034(gl_48856, prog_48887))) {
 rawEcho(makeNimstrLit("error linking program"));
 }
 
-F.line = 181;
-var ua_47888 = extractAttrsAndUnifs_47191(vssrc_47857, fssrc_47858);
-F.line = 182;
-result_47860.uniforms = nimCopy(null, ua_47888.Field0, NTI47196);
-F.line = 183;
-result_47860.attributes = nimCopy(null, ua_47888.Field1, NTI47198);
-F.line = 184;
-result_47860.glprogram = prog_47885;
-gl_47856.deleteShader(vs_47870);
-gl_47856.deleteShader(fs_47882);
+F.line = 166;
+var ua_48891 = extractAttrsAndUnifs_48194(vssrc_48857, fssrc_48858);
+F.line = 167;
+result_48860.uniforms = nimCopy(null, ua_48891.Field0, NTI48199);
+F.line = 168;
+result_48860.attributes = nimCopy(null, ua_48891.Field1, NTI48201);
+F.line = 169;
+result_48860.glprogram = prog_48887;
+gl_48856.deleteShader(vs_48870);
+gl_48856.deleteShader(fs_48883);
 L1: do {
-F.line = 190;
-var a_48003 = null;
+F.line = 175;
+var a_49003 = null;
 F.line = 3553;
-var i_48408 = 0;
+var i_49408 = 0;
 F.line = 3554;
-var L_48410 = (result_47860.attributes != null ? result_47860.attributes.length : 0);
+var L_49410 = (result_48860.attributes != null ? result_48860.attributes.length : 0);
 L2: do {
 F.line = 3555;
 L3: while (true) {
-if (!(i_48408 < L_48410)) break L3;
+if (!(i_49408 < L_49410)) break L3;
 F.line = 3556;
-a_48003 = result_47860.attributes[chckIndx(i_48408, 0, result_47860.attributes.length)-0];
-F.line = 191;
-a_48003.location = gl_47856.getAttribLocation(result_47860.glprogram, toJSStr(a_48003.name));
-if (!(!(((a_48003.location|0) == -1)))) {
-failedAssertImpl_21639((makeNimstrLit("\x0D\x0A  not (int(a.location) == -1) Problems with attribute: ").slice(0,-1)).concat(a_48003.name.slice(0,-1),makeNimstrLit(", misspelled?")));
+a_49003 = result_48860.attributes[chckIndx(i_49408, 0, result_48860.attributes.length)-0];
+F.line = 176;
+a_49003.location = gl_48856.getAttribLocation(result_48860.glprogram, toJSStr(a_49003.name));
+if (!(!(((a_49003.location|0) == -1)))) {
+failedAssertImpl_22039((makeNimstrLit("\x0D\x0A  not (int(a.location) == -1) Problems with attribute: ").slice(0,-1)).concat(a_49003.name.slice(0,-1),makeNimstrLit(", misspelled?")));
 }
 
-i_48408 = addInt(i_48408, 1);
-if (!(((result_47860.attributes != null ? result_47860.attributes.length : 0) == L_48410))) {
-failedAssertImpl_21639(makeNimstrLit("len(a) == L seq modified while iterating over it"));
+i_49408 = addInt(i_49408, 1);
+if (!(((result_48860.attributes != null ? result_48860.attributes.length : 0) == L_49410))) {
+failedAssertImpl_22039(makeNimstrLit("len(a) == L seq modified while iterating over it"));
 }
 
 }
 } while(false);
 } while(false);
 L4: do {
-F.line = 193;
-var u_48403 = null;
+F.line = 178;
+var u_49403 = null;
 F.line = 3553;
-var i_48414 = 0;
+var i_49414 = 0;
 F.line = 3554;
-var L_48416 = (result_47860.uniforms != null ? result_47860.uniforms.length : 0);
+var L_49416 = (result_48860.uniforms != null ? result_48860.uniforms.length : 0);
 L5: do {
 F.line = 3555;
 L6: while (true) {
-if (!(i_48414 < L_48416)) break L6;
+if (!(i_49414 < L_49416)) break L6;
 F.line = 3556;
-u_48403 = result_47860.uniforms[chckIndx(i_48414, 0, result_47860.uniforms.length)-0];
-F.line = 194;
-u_48403.location = gl_47856.getUniformLocation(result_47860.glprogram, toJSStr(u_48403.name));
-i_48414 = addInt(i_48414, 1);
-if (!(((result_47860.uniforms != null ? result_47860.uniforms.length : 0) == L_48416))) {
-failedAssertImpl_21639(makeNimstrLit("len(a) == L seq modified while iterating over it"));
+u_49403 = result_48860.uniforms[chckIndx(i_49414, 0, result_48860.uniforms.length)-0];
+F.line = 179;
+u_49403.location = gl_48856.getUniformLocation(result_48860.glprogram, toJSStr(u_49403.name));
+i_49414 = addInt(i_49414, 1);
+if (!(((result_48860.uniforms != null ? result_48860.uniforms.length : 0) == L_49416))) {
+failedAssertImpl_22039(makeNimstrLit("len(a) == L seq modified while iterating over it"));
 }
 
 }
 } while(false);
 } while(false);
-gl_47856.useProgram(result_47860.glprogram);
+gl_48856.useProgram(result_48860.glprogram);
 framePtr = F.prev;
-return result_47860;
+return result_48860;
 }
-function bindBuffers_49052(bs_49055) {
+function bindBuffers_50052(bs_50055) {
 
 var F={procname:"buffer.bindBuffers",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\buffer.nim",line:0};
 framePtr = F;
 L1: do {
 F.line = 40;
-var b_49081 = {gl: null, glbuffer: null, kind: 0, datatype: 0, drawmode: 0};
+var b_50081 = {gl: null, glbuffer: null, kind: 0, datatype: 0, drawmode: 0};
 F.line = 2016;
-var i_49096 = 0;
+var i_50096 = 0;
 L2: do {
 F.line = 2017;
 L3: while (true) {
-if (!(i_49096 < (bs_49055 != null ? bs_49055.length : 0))) break L3;
+if (!(i_50096 < (bs_50055 != null ? bs_50055.length : 0))) break L3;
 F.line = 2018;
-b_49081 = bs_49055[chckIndx(i_49096, 0, bs_49055.length)-0];
-b_49081.gl.bindBuffer(b_49081.kind, b_49081.glbuffer);
-i_49096 = addInt(i_49096, 1);
+b_50081 = bs_50055[chckIndx(i_50096, 0, bs_50055.length)-0];
+b_50081.gl.bindBuffer(b_50081.kind, b_50081.glbuffer);
+i_50096 = addInt(i_50096, 1);
 }
 } while(false);
 } while(false);
 framePtr = F.prev;
 }
-function state_50008(gl_50010, vs_50011, fs_50012) {
+function state_51009(gl_51011, vs_51012, fs_51013) {
 
-var result_50013 = {vb: {gl: null, glbuffer: null, kind: 0, datatype: 0, drawmode: 0}, ib: {gl: null, glbuffer: null, kind: 0, datatype: 0, drawmode: 0}, shader: {glprogram: null, uniforms: null, attributes: null}, il: 0, vl: 0};
+var result_51014 = {gl: null, vb: {gl: null, glbuffer: null, kind: 0, datatype: 0, drawmode: 0}, ib: {gl: null, glbuffer: null, kind: 0, datatype: 0, drawmode: 0}, shader: {glprogram: null, uniforms: null, attributes: null}, il: 0, vl: 0};
 var F={procname:"state.state",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
 framePtr = F;
-F.line = 13;
-F.line = 13;
-var vb_50015 = buffer_49023(gl_50010, 34962, 35044);
 F.line = 14;
-var ib_50017 = buffer_49023(gl_50010, 34963, 35044);
+F.line = 14;
+var vb_51016 = buffer_50023(gl_51011, 34962, 35044);
 F.line = 15;
-var shd_50018 = shader_47854(gl_50010, vs_50011, fs_50012, true);
-gl_50010.clearColor(5.0000000000000000e-001, 5.0000000000000000e-001, 5.0000000000000000e-001, 9.0000000000000002e-001);
-gl_50010.enable(2929);
-gl_50010.clear(16384);
-resizeToDisplaySize_46029(gl_50010.canvas, 1.0000000000000000e+000);
-gl_50010.viewport(0, 0, gl_50010.canvas.width, gl_50010.canvas.height);
-bindBuffers_49052([vb_50015, ib_50017]);
-nimCopy(result_50013, {vb: vb_50015, ib: ib_50017, shader: shd_50018, il: 0, vl: 0}, NTI50002);
+var ib_51018 = buffer_50023(gl_51011, 34963, 35044);
+F.line = 16;
+var shd_51019 = shader_48854(gl_51011, vs_51012, fs_51013, true);
+gl_51011.clearColor(0.0, 0.0, 0.0, 0.0);
+gl_51011.enable(2929);
+gl_51011.clear(16384);
+resizeToDisplaySize_47142(gl_51011.canvas, 1.0000000000000000e+000);
+gl_51011.viewport(0, 0, gl_51011.canvas.clientWidth, gl_51011.canvas.clientHeight);
+bindBuffers_50052([vb_51016, ib_51018]);
+nimCopy(result_51014, {gl: gl_51011, vb: vb_51016, ib: ib_51018, shader: shd_51019, il: 0, vl: 0}, NTI51002);
 framePtr = F.prev;
-return result_50013;
+return result_51014;
 }
-var stt_51015 = /**/[state_50008(gl_51002[0], vertCode_51013[0], fragCode_51014[0])];
-function upload_51035(b_51039, data_51042) {
+var stt_52015 = /**/[state_51009(gl_52002[0], vertCode_52013[0], fragCode_52014[0])];
+function upload_52035(b_52039, data_52042) {
 
 var F={procname:"upload.upload",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\buffer.nim",line:0};
 framePtr = F;
-b_51039.gl.bindBuffer(b_51039.kind, b_51039.glbuffer);
-b_51039.gl.bufferData(b_51039.kind, new Float32Array(data_51042), b_51039.drawmode);
-b_51039.gl.bindBuffer(b_51039.kind, null);
+b_52039.gl.bindBuffer(b_52039.kind, b_52039.glbuffer);
+b_52039.gl.bufferData(b_52039.kind, new Float32Array(data_52042), b_52039.drawmode);
+b_52039.gl.bindBuffer(b_52039.kind, null);
 framePtr = F.prev;
 }
-function upload_51082(b_51086, data_51089) {
+function upload_52082(b_52086, data_52089) {
 
 var F={procname:"upload.upload",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\buffer.nim",line:0};
 framePtr = F;
-b_51086.gl.bindBuffer(b_51086.kind, b_51086.glbuffer);
-b_51086.gl.bufferData(b_51086.kind, new Uint16Array(data_51089), b_51086.drawmode);
-b_51086.gl.bindBuffer(b_51086.kind, null);
+b_52086.gl.bindBuffer(b_52086.kind, b_52086.glbuffer);
+b_52086.gl.bufferData(b_52086.kind, new Uint16Array(data_52089), b_52086.drawmode);
+b_52086.gl.bindBuffer(b_52086.kind, null);
 framePtr = F.prev;
 }
 function raiseRangeError() {
@@ -1492,91 +1493,91 @@ e_13677.message = nimCopy(null, makeNimstrLit("value out of range"), NTI138);
 e_13677.parent = null;
 raiseException(e_13677, "RangeError");
 }
-function upload_51022(s_51027, vertices_51030, indices_51033) {
+function upload_52022(s_52027, vertices_52030, indices_52033) {
 
 var F={procname:"upload.upload",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
 framePtr = F;
-upload_51035(s_51027.vb, vertices_51030);
-upload_51082(s_51027.ib, indices_51033);
-bindBuffers_49052([s_51027.vb, s_51027.ib]);
-F.line = 31;
-s_51027.il = chckRange((indices_51033 != null ? indices_51033.length : 0), 0, 2147483647);
-F.line = 32;
-s_51027.vl = chckRange((vertices_51030 != null ? vertices_51030.length : 0), 0, 2147483647);
+upload_52035(s_52027.vb, vertices_52030);
+upload_52082(s_52027.ib, indices_52033);
+bindBuffers_50052([s_52027.vb, s_52027.ib]);
+F.line = 38;
+s_52027.il = chckRange((indices_52033 != null ? indices_52033.length : 0), 0, 2147483647);
+F.line = 39;
+s_52027.vl = chckRange((vertices_52030 != null ? vertices_52030.length : 0), 0, 2147483647);
 framePtr = F.prev;
 }
-upload_51022(stt_51015[0], vertices_51009[0], indices_51012[0]);
-function X5BX5D__47380(list_47383, name_47384) {
+upload_52022(stt_52015[0], vertices_52009[0], indices_52012[0]);
+function X5BX5D__48383(list_48386, name_48387) {
 
-var result_47385 = {name: null, location: 0, kind: 0, size: 0, datatype: 0, normalize: false};
+var result_48388 = {name: null, location: 0, kind: 0, size: 0, datatype: 0, normalize: false};
 var F={procname:"shader.[]",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\shader.nim",line:0};
 framePtr = F;
 BeforeRet: do {
 L1: do {
-F.line = 139;
-var ua_47602 = {name: null, location: 0, kind: 0, size: 0, datatype: 0, normalize: false};
+F.line = 123;
+var ua_48602 = {name: null, location: 0, kind: 0, size: 0, datatype: 0, normalize: false};
 F.line = 3544;
-var i_47621 = 0;
+var i_48621 = 0;
 F.line = 3545;
-var L_47623 = (list_47383 != null ? list_47383.length : 0);
+var L_48623 = (list_48386 != null ? list_48386.length : 0);
 L2: do {
 F.line = 3546;
 L3: while (true) {
-if (!(i_47621 < L_47623)) break L3;
+if (!(i_48621 < L_48623)) break L3;
 F.line = 3547;
-ua_47602 = list_47383[chckIndx(i_47621, 0, list_47383.length)-0];
-if (eqStrings(ua_47602.name, name_47384)) {
-F.line = 140;
-nimCopy(result_47385, ua_47602, NTI47020);
+ua_48602 = list_48386[chckIndx(i_48621, 0, list_48386.length)-0];
+if (eqStrings(ua_48602.name, name_48387)) {
+F.line = 124;
+nimCopy(result_48388, ua_48602, NTI48023);
 break BeforeRet;
 }
 
-i_47621 = addInt(i_47621, 1);
-if (!(((list_47383 != null ? list_47383.length : 0) == L_47623))) {
-failedAssertImpl_21639(makeNimstrLit("len(a) == L seq modified while iterating over it"));
+i_48621 = addInt(i_48621, 1);
+if (!(((list_48386 != null ? list_48386.length : 0) == L_48623))) {
+failedAssertImpl_22039(makeNimstrLit("len(a) == L seq modified while iterating over it"));
 }
 
 }
 } while(false);
 } while(false);
-F.line = 141;
-nimCopy(result_47385, attribute_47035(name_47384, makeNimstrLit("UNKNOWN")), NTI47020);
-F.line = 142;
+F.line = 125;
+nimCopy(result_48388, attribute_48038(name_48387, makeNimstrLit("UNKNOWN")), NTI48023);
+F.line = 126;
 F.line = 2597;
-var e_47609 = null;
-e_47609 = {m_type: NTI3456, parent: null, name: null, message: null, trace: null};
+var e_48609 = null;
+e_48609 = {m_type: NTI3456, parent: null, name: null, message: null, trace: null};
 F.line = 2599;
-e_47609.message = nimCopy(null, (makeNimstrLit("Attribute not found: ").slice(0,-1)).concat(name_47384), NTI138);
+e_48609.message = nimCopy(null, (makeNimstrLit("Attribute not found: ").slice(0,-1)).concat(name_48387), NTI138);
 F.line = 2600;
-e_47609.parent = null;
-raiseException(e_47609, "FieldError");
+e_48609.parent = null;
+raiseException(e_48609, "FieldError");
 } while (false); 
 framePtr = F.prev;
-return result_47385;
+return result_48388;
 }
-function point_47825(gl_47827, a_47828) {
+function point_48825(gl_48827, a_48828) {
 
 var F={procname:"shader.point",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\shader.nim",line:0};
 framePtr = F;
-gl_47827.vertexAttribPointer(a_47828.location, a_47828.size, a_47828.datatype, a_47828.normalize, 0, 0);
-gl_47827.enableVertexAttribArray(a_47828.location);
+gl_48827.vertexAttribPointer(a_48828.location, a_48828.size, a_48828.datatype, a_48828.normalize, 0, 0);
+gl_48827.enableVertexAttribArray(a_48828.location);
 framePtr = F.prev;
 }
-function point_50064(s_50066, name_50067) {
+function point_51074(s_51076, name_51077) {
 
 var F={procname:"state.point",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
 framePtr = F;
-F.line = 43;
-var coord_50068 = X5BX5D__47380(s_50066.shader.attributes, name_50067);
-point_47825(s_50066.vb.gl, coord_50068);
+F.line = 50;
+var coord_51078 = X5BX5D__48383(s_51076.shader.attributes, name_51077);
+point_48825(s_51076.gl, coord_51078);
 framePtr = F.prev;
 }
-point_50064(stt_51015[0], makeNimstrLit("coordinates"));
-function drawAsTriangle_50069(s_50071) {
+point_51074(stt_52015[0], makeNimstrLit("coordinates"));
+function drawAsTriangle_51079(s_51081) {
 
 var F={procname:"state.drawAsTriangle",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
 framePtr = F;
-s_50071.vb.gl.drawElements(4, s_50071.il, s_50071.ib.datatype, 0);
+s_51081.gl.drawElements(4, s_51081.il, s_51081.ib.datatype, 0);
 framePtr = F.prev;
 }
-drawAsTriangle_50069(stt_51015[0]);
+drawAsTriangle_51079(stt_52015[0]);
