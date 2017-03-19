@@ -838,33 +838,33 @@ framePtr = F.prev;
 return result_28960;
 }
 var gl_51002 = /**/[getContextWebgl_28957(canvas_51001[0])];
-function resizeToDisplaySize_47142(c_47144, pixelratio_47145) {
+function resizeToDisplaySize_47192(c_47194, pixelratio_47195) {
 
 var Tmp1;
-var result_47146 = false;
+var result_47196 = false;
 var F={procname:"utils.resizeToDisplaySize",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\utils.nim",line:0};
 framePtr = F;
-F.line = 49;
-var multiplier_47151 = nimMax(1.0000000000000000e+000, pixelratio_47145);
-F.line = 50;
-var width_47152 = mulInt(c_47144.clientWidth, (multiplier_47151|0));
-F.line = 51;
-var height_47153 = mulInt(c_47144.clientHeight, (multiplier_47151|0));
-if (!((c_47144.width == width_47152))) Tmp1 = true; else {Tmp1 = !((c_47144.height == height_47153)); }if (Tmp1) {
-F.line = 54;
-c_47144.width = width_47152;
-F.line = 55;
-c_47144.height = height_47153;
-F.line = 56;
-result_47146 = true;
+F.line = 63;
+var multiplier_47201 = nimMax(1.0000000000000000e+000, pixelratio_47195);
+F.line = 64;
+var width_47202 = mulInt(c_47194.clientWidth, (multiplier_47201|0));
+F.line = 65;
+var height_47203 = mulInt(c_47194.clientHeight, (multiplier_47201|0));
+if (!((c_47194.width == width_47202))) Tmp1 = true; else {Tmp1 = !((c_47194.height == height_47203)); }if (Tmp1) {
+F.line = 68;
+c_47194.width = width_47202;
+F.line = 69;
+c_47194.height = height_47203;
+F.line = 70;
+result_47196 = true;
 }
 
-F.line = 57;
-result_47146 = false;
+F.line = 71;
+result_47196 = false;
 framePtr = F.prev;
-return result_47146;
+return result_47196;
 }
-resizeToDisplaySize_47142(canvas_51001[0], 1.0000000000000000e+000);
+resizeToDisplaySize_47192(canvas_51001[0], 1.0000000000000000e+000);
 var vertices_51009 = /**/[nimCopy(null, [-5.0000000000000000e-001, 5.0000000000000000e-001, 0.0, -5.0000000000000000e-001, -5.0000000000000000e-001, 0.0, 5.0000000000000000e-001, -5.0000000000000000e-001, 0.0], NTI51004)];
 var indices_51012 = /**/[nimCopy(null, [0, 1, 2], NTI51010)];
 function buffer_50023(gl_50025, kind_50026, drawmode_50028) {

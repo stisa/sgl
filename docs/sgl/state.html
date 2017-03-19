@@ -1223,7 +1223,7 @@ function main() {
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#State"
     title="State = object
-  gl: WebGLRenderingContext
+  gl*: WebGLRenderingContext
   vb: Buffer
   ib: Buffer
   shader: Shader
@@ -1249,6 +1249,8 @@ function main() {
     title="point(s: State; name: string)"><wbr />point<span class="attachedType" style="visibility:hidden">State</span></a></li>
   <li><a class="reference" href="#drawAsTriangle,State"
     title="drawAsTriangle(s: State)"><wbr />draw<wbr />As<wbr />Triangle<span class="attachedType" style="visibility:hidden">State</span></a></li>
+  <li><a class="reference" href="#drawElementsAs,State,PrimitiveMode"
+    title="drawElementsAs(s: State; pm: PrimitiveMode)"><wbr />draw<wbr />Elements<wbr />As<span class="attachedType" style="visibility:hidden">State</span></a></li>
   <li><a class="reference" href="#attribute,State,string,openArray[T]"
     title="attribute[T: int | float](s: State; name: string; val: openArray[T])"><wbr />attribute<span class="attachedType" style="visibility:hidden">State</span></a></li>
   <li><a class="reference" href="#uniform,State,string,openArray[T]"
@@ -1282,7 +1284,7 @@ function main() {
 <h1><a class="toc-backref" href="#7">Types</a></h1>
 <dl class="item">
 <dt id="State"><a name="State"></a><pre><span class="Identifier">State</span> <span class="Other">=</span> <span class="Keyword">object</span>
-  <span class="Identifier">gl</span><span class="Other">:</span> <span class="Identifier">WebGLRenderingContext</span>
+  <span class="Identifier">gl</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">WebGLRenderingContext</span>
   <span class="Identifier">vb</span><span class="Other">:</span> <span class="Identifier">Buffer</span>
   <span class="Identifier">ib</span><span class="Other">:</span> <span class="Identifier">Buffer</span>
   <span class="Identifier">shader</span><span class="Other">:</span> <span class="Identifier">Shader</span>
@@ -1367,67 +1369,76 @@ class="link-seesrc" target="_blank">Source</a>
 <a href="/edit/devel/sgl/state.nim#L53" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
+<dt id="drawElementsAs"><a name="drawElementsAs,State,PrimitiveMode"></a><pre><span class="Keyword">proc</span> <span class="Identifier">drawElementsAs</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">State</span><span class="Other">;</span> <span class="Identifier">pm</span><span class="Other">:</span> <span class="Identifier">PrimitiveMode</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+
+&nbsp;&nbsp;<a
+href="/tree/master/sgl/state.nim#L57"
+class="link-seesrc" target="_blank">Source</a>
+<a href="/edit/devel/sgl/state.nim#L57" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
 <dt id="attribute"><a name="attribute,State,string,openArray[T]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">attribute</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Operator">|</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">State</span><span class="Other">;</span> <span class="Identifier">name</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">val</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
-href="/tree/master/sgl/state.nim#L56"
+href="/tree/master/sgl/state.nim#L61"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/sgl/state.nim#L56" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/sgl/state.nim#L61" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="uniform"><a name="uniform,State,string,openArray[T]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">uniform</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Operator">|</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">State</span><span class="Other">;</span> <span class="Identifier">name</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">val</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
-href="/tree/master/sgl/state.nim#L64"
+href="/tree/master/sgl/state.nim#L69"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/sgl/state.nim#L64" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/sgl/state.nim#L69" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="[]="><a name="[]=,State,string,openArray[T]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">`[]=`</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Operator">|</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">State</span><span class="Other">;</span> <span class="Identifier">name</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">val</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
-href="/tree/master/sgl/state.nim#L103"
+href="/tree/master/sgl/state.nim#L108"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/sgl/state.nim#L103" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/sgl/state.nim#L108" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="[]="><a name="[]=,State,string,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">`[]=`</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Operator">|</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">State</span><span class="Other">;</span> <span class="Identifier">name</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">u</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
-href="/tree/master/sgl/state.nim#L110"
+href="/tree/master/sgl/state.nim#L115"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/sgl/state.nim#L110" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/sgl/state.nim#L115" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="[]="><a name="[]=,State,string,T,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">`[]=`</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Operator">|</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">State</span><span class="Other">;</span> <span class="Identifier">name</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">u</span><span class="Other">,</span> <span class="Identifier">v</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
-href="/tree/master/sgl/state.nim#L120"
+href="/tree/master/sgl/state.nim#L125"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/sgl/state.nim#L120" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/sgl/state.nim#L125" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="[]="><a name="[]=,State,string,T,T,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">`[]=`</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Operator">|</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">State</span><span class="Other">;</span> <span class="Identifier">name</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">u</span><span class="Other">,</span> <span class="Identifier">v</span><span class="Other">,</span> <span class="Identifier">w</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
-href="/tree/master/sgl/state.nim#L131"
+href="/tree/master/sgl/state.nim#L135"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/sgl/state.nim#L131" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/sgl/state.nim#L135" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="[]="><a name="[]=,State,string,T,T,T,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">`[]=`</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Operator">|</span> <span class="Identifier">float</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">State</span><span class="Other">;</span> <span class="Identifier">name</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">u</span><span class="Other">,</span> <span class="Identifier">v</span><span class="Other">,</span> <span class="Identifier">w</span><span class="Other">,</span> <span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
-href="/tree/master/sgl/state.nim#L142"
+href="/tree/master/sgl/state.nim#L145"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/sgl/state.nim#L142" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/sgl/state.nim#L145" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -1440,7 +1451,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-03-18 00:49:24 UTC</small>
+        <small>Made with Nim. Generated: 2017-03-19 22:41:19 UTC</small>
       </div>
     </div>
   </div>

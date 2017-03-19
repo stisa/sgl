@@ -888,31 +888,31 @@ failedAssertImpl_22039(makeNimstrLit("not isNil(result) "));
 framePtr = F.prev;
 return result_28960;
 }
-function resizeToDisplaySize_47142(c_47144, pixelratio_47145) {
+function resizeToDisplaySize_47192(c_47194, pixelratio_47195) {
 
 var Tmp1;
-var result_47146 = false;
+var result_47196 = false;
 var F={procname:"utils.resizeToDisplaySize",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\utils.nim",line:0};
 framePtr = F;
-F.line = 49;
-var multiplier_47151 = nimMax(1.0000000000000000e+000, pixelratio_47145);
-F.line = 50;
-var width_47152 = mulInt(c_47144.clientWidth, (multiplier_47151|0));
-F.line = 51;
-var height_47153 = mulInt(c_47144.clientHeight, (multiplier_47151|0));
-if (!((c_47144.width == width_47152))) Tmp1 = true; else {Tmp1 = !((c_47144.height == height_47153)); }if (Tmp1) {
-F.line = 54;
-c_47144.width = width_47152;
-F.line = 55;
-c_47144.height = height_47153;
-F.line = 56;
-result_47146 = true;
+F.line = 63;
+var multiplier_47201 = nimMax(1.0000000000000000e+000, pixelratio_47195);
+F.line = 64;
+var width_47202 = mulInt(c_47194.clientWidth, (multiplier_47201|0));
+F.line = 65;
+var height_47203 = mulInt(c_47194.clientHeight, (multiplier_47201|0));
+if (!((c_47194.width == width_47202))) Tmp1 = true; else {Tmp1 = !((c_47194.height == height_47203)); }if (Tmp1) {
+F.line = 68;
+c_47194.width = width_47202;
+F.line = 69;
+c_47194.height = height_47203;
+F.line = 70;
+result_47196 = true;
 }
 
-F.line = 57;
-result_47146 = false;
+F.line = 71;
+result_47196 = false;
 framePtr = F.prev;
-return result_47146;
+return result_47196;
 }
 function buffer_50023(gl_50025, kind_50026, drawmode_50028) {
 
@@ -1459,29 +1459,29 @@ var shd_51019 = shader_48854(gl_51011, vs_51012, fs_51013, true);
 gl_51011.clearColor(0.0, 0.0, 0.0, 0.0);
 gl_51011.enable(2929);
 gl_51011.clear(16384);
-resizeToDisplaySize_47142(gl_51011.canvas, 1.0000000000000000e+000);
-gl_51011.viewport(0, 0, gl_51011.canvas.clientWidth, gl_51011.canvas.clientHeight);
+resizeToDisplaySize_47192(gl_51011.canvas, window.devicePixelRatio);
+gl_51011.viewport(0, 0, gl_51011.drawingBufferWidth, gl_51011.drawingBufferHeight);
 bindBuffers_50052([vb_51016, ib_51018]);
 nimCopy(result_51014, {gl: gl_51011, vb: vb_51016, ib: ib_51018, shader: shd_51019, il: 0, vl: 0}, NTI51002);
 framePtr = F.prev;
 return result_51014;
 }
-function initState_51033(canvasId_51035, vs_51036, fs_51037) {
+function initState_51032(canvasId_51034, vs_51035, fs_51036) {
 
-var result_51038 = {gl: null, vb: {gl: null, glbuffer: null, kind: 0, datatype: 0, drawmode: 0}, ib: {gl: null, glbuffer: null, kind: 0, datatype: 0, drawmode: 0}, shader: {glprogram: null, uniforms: null, attributes: null}, il: 0, vl: 0};
+var result_51037 = {gl: null, vb: {gl: null, glbuffer: null, kind: 0, datatype: 0, drawmode: 0}, ib: {gl: null, glbuffer: null, kind: 0, datatype: 0, drawmode: 0}, shader: {glprogram: null, uniforms: null, attributes: null}, il: 0, vl: 0};
 var F={procname:"state.initState",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
 framePtr = F;
 F.line = 29;
-var canvas_51039 = document.getElementById("sgl-canvas");
+var canvas_51038 = document.getElementById("sgl-canvas");
 F.line = 30;
-var gl_51040 = getContextWebgl_28957(canvas_51039);
-resizeToDisplaySize_47142(canvas_51039, 1.0000000000000000e+000);
+var gl_51039 = getContextWebgl_28957(canvas_51038);
+resizeToDisplaySize_47192(canvas_51038, window.devicePixelRatio);
 F.line = 32;
-nimCopy(result_51038, state_51009(gl_51040, vs_51036, fs_51037), NTI51002);
+nimCopy(result_51037, state_51009(gl_51039, vs_51035, fs_51036), NTI51002);
 framePtr = F.prev;
-return result_51038;
+return result_51037;
 }
-var stt_52023 = /**/[initState_51033(makeNimstrLit("sgl-canvas"), vertCode_52001[0], fragCode_52002[0])];
+var stt_52023 = /**/[initState_51032(makeNimstrLit("sgl-canvas"), vertCode_52001[0], fragCode_52002[0])];
 function upload_52043(b_52047, data_52050) {
 
 var F={procname:"upload.upload",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\buffer.nim",line:0};
@@ -1578,16 +1578,16 @@ gl_48827.vertexAttribPointer(a_48828.location, a_48828.size, a_48828.datatype, a
 gl_48827.enableVertexAttribArray(a_48828.location);
 framePtr = F.prev;
 }
-function point_51074(s_51076, name_51077) {
+function point_51072(s_51074, name_51075) {
 
 var F={procname:"state.point",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
 framePtr = F;
 F.line = 50;
-var coord_51078 = X5BX5D__48383(s_51076.shader.attributes, name_51077);
-point_48825(s_51076.gl, coord_51078);
+var coord_51076 = X5BX5D__48383(s_51074.shader.attributes, name_51075);
+point_48825(s_51074.gl, coord_51076);
 framePtr = F.prev;
 }
-point_51074(stt_52023[0], makeNimstrLit("coordinates"));
+point_51072(stt_52023[0], makeNimstrLit("coordinates"));
 function X5BX5D__48625(list_48628, name_48629) {
 
 var result_48630 = {location: null, name: null, kind: 0, size: 0, datatype: 0, normalize: false};
@@ -1708,7 +1708,7 @@ function attribute_52167(s_52171, name_52173, val_52176) {
 
 var F={procname:"attribute.attribute",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
 framePtr = F;
-F.line = 57;
+F.line = 62;
 var a_52177 = X5BX5D__48383(s_52171.shader.attributes, name_52173);
 if (!(((val_52176 != null ? val_52176.length : 0) == a_52177.kind))) {
 raiseAssert_22016((makeNimstrLit("len(val) == ord a.kind ").slice(0,-1)).concat(cstrToNimstr(((val_52176 != null ? val_52176.length : 0))+"").slice(0,-1),makeNimstrLit(" ").slice(0,-1),cstrToNimstr((a_52177.kind)+"")));
@@ -1722,14 +1722,14 @@ function dollar__53220(x_53225) {
 var result_53226 = null;
 var F={procname:"$.$",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\utils.nim",line:0};
 framePtr = F;
-F.line = 39;
+F.line = 42;
 result_53226 = nimCopy(null, makeNimstrLit("["), NTI138);
 L1: do {
-F.line = 40;
+F.line = 43;
 var i_53243 = 0;
 F.line = 3735;
 var colontmp__53245 = 0;
-F.line = 40;
+F.line = 43;
 colontmp__53245 = (x_53225 != null ? x_53225.length : 0);
 F.line = 3736;
 var i_53248 = 0;
@@ -1756,9 +1756,9 @@ function uniform_52412(s_52416, name_52418, val_52421) {
 
 var F={procname:"uniform.uniform",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
 framePtr = F;
-F.line = 65;
+F.line = 70;
 var un_52422 = X5BX5D__48625(s_52416.shader.uniforms, name_52418);
-F.line = 66;
+F.line = 71;
 switch (un_52422.kind) {
 case 1: if (!(((val_52421 != null ? val_52421.length : 0) == 1))) {
 raiseAssert_22016(makeNimstrLit("len(val) == 1 "));
@@ -1811,7 +1811,7 @@ s_52416.gl.uniformMatrix4fv(un_52422.location, false, new Float32Array(val_52421
 
 break;
 default: 
-F.line = 101;
+F.line = 106;
 F.line = 2597;
 var e_53255 = null;
 e_53255 = {m_type: NTI3456, parent: null, name: null, message: null, trace: null};
@@ -1828,7 +1828,7 @@ function X5BX5Deq__52155(s_52159, name_52161, val_52164) {
 
 var F={procname:"[]=.[]=",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
 framePtr = F;
-F.line = 104;
+F.line = 109;
 switch (X5BX5D__49417(s_52159.shader, name_52161)) {
 case 1: attribute_52167(s_52159, name_52161, val_52164);
 
@@ -1842,11 +1842,12 @@ framePtr = F.prev;
 X5BX5Deq__52155(stt_52023[0], makeNimstrLit("rotation"), rotation_52011[0]);
 X5BX5Deq__52155(stt_52023[0], makeNimstrLit("u_color"), [0.0, 0.0, 0.0, 1.0000000000000000e+000]);
 var theta_53282 = /**/[0.0];
-function drawAsTriangle_51079(s_51081) {
+function drawAsTriangle_51077(s_51079) {
 
 var F={procname:"state.drawAsTriangle",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
 framePtr = F;
-s_51081.gl.drawElements(4, s_51081.il, s_51081.ib.datatype, 0);
+s_51079.gl.viewport(0, 0, s_51079.gl.drawingBufferWidth, s_51079.gl.drawingBufferHeight);
+s_51079.gl.drawElements(4, s_51079.il, s_51079.ib.datatype, 0);
 framePtr = F.prev;
 }
 function pluseq__45704(x_45709, x_45709_Idx, y_45711) {
@@ -1857,11 +1858,11 @@ F.line = 3439;
 x_45709[x_45709_Idx] = (x_45709[x_45709_Idx] + y_45711);
 framePtr = F.prev;
 }
-function degToRad_53297(d_53301) {
+function degToRad_47164(d_47168) {
 
-var result_53302 = 0.0;
-result_53302 = (d_53301 * 1.7453292519943295e-002);
-return result_53302;
+var result_47169 = 0.0;
+result_47169 = (d_47168 * 1.7453292519943295e-002);
+return result_47169;
 }
 function requestAnimationFrame_29023(fn_29028) {
 
@@ -1874,16 +1875,16 @@ function draw_53283(dt_53285) {
 
 var F={procname:"triangle3.draw",prev:framePtr,filename:"triangle3.nim",line:0};
 framePtr = F;
-drawAsTriangle_51079(stt_52023[0]);
+drawAsTriangle_51077(stt_52023[0]);
 pluseq__45704(theta_53282, 0, 1.0000000000000000e+000);
 F.line = 46;
-rotation_52011[0][0] = Math.cos(degToRad_53297(theta_53282[0]));
+rotation_52011[0][0] = Math.cos(degToRad_47164(theta_53282[0]));
 F.line = 47;
-rotation_52011[0][1] = -(Math.sin(degToRad_53297(theta_53282[0])));
+rotation_52011[0][1] = -(Math.sin(degToRad_47164(theta_53282[0])));
 F.line = 48;
-rotation_52011[0][3] = Math.sin(degToRad_53297(theta_53282[0]));
+rotation_52011[0][3] = Math.sin(degToRad_47164(theta_53282[0]));
 F.line = 49;
-rotation_52011[0][4] = Math.cos(degToRad_53297(theta_53282[0]));
+rotation_52011[0][4] = Math.cos(degToRad_47164(theta_53282[0]));
 X5BX5Deq__52155(stt_52023[0], makeNimstrLit("rotation"), rotation_52011[0]);
 requestAnimationFrame_29023(draw_53283);
 framePtr = F.prev;

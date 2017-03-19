@@ -1,5 +1,6 @@
 from webgl import Canvas,Float32Array,Uint16Array,Int32Array
-
+from dom import Window
+from math import cos,sin,degtorad
 type Bufferables* = openarray[uint|int|float|float32|uint16|int32]
 type IndexBufferables* = openarray[uint|int|uint16|int32]
 type VertexBufferables* = openarray[float|float32]
@@ -23,6 +24,8 @@ void main() {
 }
 """
 
+proc devicePixelRatio*(w:Window):float {.importcpp:"#.devicePixelRatio".}
+
 proc jenkins_one_at_a_time_hash(key:string):int =
   var hash = 0
   for c in key:
@@ -42,6 +45,17 @@ proc `$`* [T](x:openarray[T]):string =
       add result, ", "
     add result, $x[i]
   add result, "]"
+
+proc projection3*(w,h:float):array[9,float] =
+  result[0] = 2/w
+  result[4] = -2/h
+  result[8] = 1
+
+proc rotation3*(theta:float):array[9,float] =
+  result[0] = cos(degtorad(theta))
+  result[1] = -sin(degtorad(theta))
+  result[3] = sin(degtorad(theta))
+  result[4] = cos(degtorad(theta))
 
 proc resizeToDisplaySize*(c:Canvas, pixelratio:float=1):bool {.discardable.} =
   ## Resize the canvas to display size.

@@ -2,7 +2,7 @@ import webgl, dom
 import shader,buffer,utils
 
 type State* = object
-  gl: WebglRenderingContext
+  gl*: WebglRenderingContext
   vb: Buffer # VertexBuffer
   ib: Buffer # IndexBuffer
   shader: Shader
@@ -18,8 +18,8 @@ proc state*(gl:WebglRenderingContext,vs,fs:string):State =
   gl.clearColor(0.0, 0.0, 0.0, 0.0);
   gl.enable(0x0B71);
   gl.clear(bbColor);
-  gl.canvas.resizeToDisplaySize()
-  gl.viewport(0,0,gl.canvas.clientwidth,gl.canvas.clientheight);
+  gl.canvas.resizeToDisplaySize(window.devicePixelRatio)
+  gl.viewport(0,0,gl.drawingbufferwidth,gl.drawingbufferheight);
   
   bindBuffers(vb,ib)
   
@@ -28,7 +28,7 @@ proc state*(gl:WebglRenderingContext,vs,fs:string):State =
 proc initState*(canvasId:string="sgl-canvas",vs,fs:string):State =
   var canvas = dom.document.getElementById("sgl-canvas").Canvas;
   var gl = canvas.getContextWebgl()
-  canvas.resizeToDisplaySize
+  canvas.resizeToDisplaySize(window.devicePixelRatio)
   result = gl.state(vs,fs)
 
 proc upload*(s: var State,vertices:VertexBufferables,indices:IndexBufferables) =
@@ -51,7 +51,12 @@ proc point*(s:State,name:string) =
   s.gl.point(coord)
 
 proc drawAsTriangle*(s:State) =
+  s.gl.viewport(0,0,s.gl.drawingbufferwidth,s.gl.drawingbufferheight)
   s.gl.drawElements(pmTriangles, s.il, s.ib.datatype,0) #0x1403 ??
+
+proc drawElementsAs*(s:State,pm:PrimitiveMode) =
+  s.gl.viewport(0,0,s.gl.drawingbufferwidth,s.gl.drawingbufferheight)
+  s.gl.drawElements(pm, s.il, s.ib.datatype,0) #0x1403 ??
 
 proc attribute*[T:int|float](s:State, name:string, val:openarray[T]) =
   let a = s.shader.attributes[name]
@@ -115,37 +120,34 @@ proc `[]=`*[T:int|float](s:State, name:string, u:T) =
   elif T is int:
     s.gl.uniform1i(un.location,u)
   else:
-    raise newException(FieldError,"Uniform " & name & ":" & $val & " doesn't match any data layout")
+    raise newException(FieldError,"Uniform " & name & ": unknown type")
 
 proc `[]=`*[T:int|float](s:State, name:string, u,v:T) =
   let un = s.shader.uniforms[name]
   doassert un.kind == DataKind.Vec2
-  doassert(val.len == 2)
   when T is float:
     s.gl.uniform2f(un.location,u,v)
   elif T is int:
     s.gl.uniform2i(un.location,u,v)
   else:
-    raise newException(FieldError,"Uniform " & name & ":" & $val & " doesn't match any data layout")
+    raise newException(FieldError,"Uniform " & name & ": unknown type")
 
 proc `[]=`*[T:int|float](s:State, name:string, u,v,w:T) =
   let un = s.shader.uniforms[name]
   doassert un.kind == DataKind.Vec3
-  doassert(val.len == 3)
   when T is float:
     s.gl.uniform3f(un.location,u,v,w)
   elif T is int:
     s.gl.uniform3i(un.location,u,v,w)
   else:
-    raise newException(FieldError,"Uniform " & name & ":" & $val & " doesn't match any data layout")
+    raise newException(FieldError,"Uniform " & name & ": unknown type")
 
 proc `[]=`*[T:int|float](s:State, name:string, u,v,w,t:T) =
   let un = s.shader.uniforms[name]
   doassert un.kind == DataKind.Vec4
-  doassert(val.len == 4)
   when T is float:
     s.gl.uniform4fv(un.location,u,v,w,t)
   elif T is int:
     s.gl.uniform4iv(un.location,u,v,w,t)
   else:
-    raise newException(FieldError,"Uniform " & name & ":" & $val & " doesn't match any data layout")
+    raise newException(FieldError,"Uniform " & name & ": unknown type")
