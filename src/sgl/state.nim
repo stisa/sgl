@@ -5,7 +5,7 @@ type State* = object
   gl*: WebglRenderingContext
   vb: Buffer # VertexBuffer
   ib: Buffer # IndexBuffer
-  shader: Shader
+  shader*: Shader
   il : Natural # Indices len
   vl : Natural # Vertices len
 
@@ -58,7 +58,7 @@ proc drawElementsAs*(s:State,pm:PrimitiveMode) =
   s.gl.viewport(0,0,s.gl.drawingbufferwidth,s.gl.drawingbufferheight)
   s.gl.drawElements(pm, s.il, s.ib.datatype,0) #0x1403 ??
 
-proc attribute*[T:int|float](s:State, name:string, val:openarray[T]) =
+proc attribute*[T:int|float|float32](s:State, name:string, val:openarray[T]) =
   let a = s.shader.attributes[name]
   doassert(val.len == ord a.kind, $val.len & " " & $(ord a.kind))
   when T is float:
@@ -66,46 +66,46 @@ proc attribute*[T:int|float](s:State, name:string, val:openarray[T]) =
   elif T is int:
     s.ib.upload(val)
 
-proc uniform*[T:int|float](s:State, name:string, val:openarray[T]) =
+proc uniform*[T:int|float|float32](s:State, name:string, val:openarray[T]) =
   let un = s.shader.uniforms[name]
   case un.kind:
   of DataKind.Vec1:
     doassert(val.len == 1)
-    when T is float:
+    when T is SomeReal:
       s.gl.uniform1fv(un.location,val.toJSA)
     elif T is int:
       s.gl.uniform1iv(un.location,val.toJSA)
   of DataKind.Vec2:
     doassert(val.len == 2)
-    when T is float:
+    when T is SomeReal:
       s.gl.uniform2fv(un.location,val.toJSA)
     elif T is int:
       s.gl.uniform2iv(un.location,val.toJSA)
   of DataKind.Vec3:
     doassert(val.len == 3)
-    when T is float:
+    when T is SomeReal:
       s.gl.uniform3fv(un.location,val.toJSA)
     elif T is int:
       s.gl.uniform3iv(un.location,val.toJSA)
   of DataKind.Vec4:
     doassert(val.len == 4)
-    when T is float:
+    when T is SomeReal:
       s.gl.uniform4fv(un.location,val.toJSA)
     elif T is int:
       s.gl.uniform4iv(un.location,val.toJSA)
   of DataKind.Mat3:
     doassert(val.len == 9)
-    doassert T is float
+    doassert T is SomeReal
     # false-> nomralize?
     s.gl.uniformMatrix3fv(un.location,false,val.toJSA)
   of DataKind.Mat4:
     doassert(val.len == 16)
-    doassert T is float
+    doassert T is SomeReal
     s.gl.uniformMatrix4fv(un.location,false,val.toJSA)
   else:
     raise newException(FieldError,"Uniform " & name & ":" & $val & " doesn't match any data layout")
 
-proc `[]=`*[T:int|float](s:State, name:string, val:openarray[T]) =
+proc `[]=`*[T:int|float|float32](s:State, name:string, val:openarray[T]) =
   case s.shader[name]:
   of UnifOrAttr.A:
     s.attribute(name,val)

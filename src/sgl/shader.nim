@@ -6,13 +6,13 @@ type UnifOrAttr* {.pure.}= enum
   U,A
 
 type DataKind* {.pure.}= enum
+  Unknown = (0,"UNKNOWN")
   Vec1 = (1,"float")
   Vec2 = (2,"vec2")
   Vec3 = (3,"vec3")
   Vec4 = (4,"vec4")
   Mat3 = (9,"mat3")
   Mat4 = (16,"mat4")
-  Unknown = (100,"UNKNOWN")
 
 type Attribute* = object
   name*: string
@@ -25,10 +25,16 @@ type Attribute* = object
 type Uniform* = object
   location*: WebGLUniformLocation
   name*:string
-  kind*: DataKind
   size*: int
   datatype*:DataType
   normalize*:bool
+  case kind*: DataKind
+  of DataKind.Mat3 : 
+    mat3: array[9,float]
+  of DataKind.Mat4 : 
+    mat4: array[16,float]
+  else:
+    discard
 
 #[
   const VertexFormatMap :array[
@@ -117,7 +123,7 @@ proc extractAttrsAndUnifs(vs,fs:string):tuple[uniforms:seq[Uniform],attributes:s
          discard #echo("unknown splitted:"& $splitted)
     else: discard #echo("unknown splitted len:"& $splitted)
 
-proc `[]`*(list:seq[Attribute],name:string):Attribute =
+proc `[]`*(list:seq[Attribute],name:string): Attribute =
   ## Search into the list of attributes by name.
   ## Since I don't usually have tons of names, a simple linear search will do
   for ua in list:
@@ -125,7 +131,7 @@ proc `[]`*(list:seq[Attribute],name:string):Attribute =
   result = attribute(name,"UNKNOWN") #Nim shuts up about init
   raise newException(FieldError,"Attribute not found: "&name)
 
-proc `[]`*(list:seq[Uniform],name:string):Uniform =
+proc `[]`*(list:seq[Uniform],name:string): Uniform =
   ## Search into the list of uniforms by name.
   ## Since I don't usually have tons of names, a simple linear search will do
   for ua in list:

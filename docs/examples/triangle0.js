@@ -387,31 +387,31 @@ e_13659.parent = null;
 raiseException(e_13659, "DivByZeroError");
 }
 var canvas_30001 = /**/[document.getElementById("sgl-canvas")];
-function sysFatal_22021(message_22027) {
+function sysFatal_21821(message_21827) {
 
 var F={procname:"sysFatal.sysFatal",prev:framePtr,filename:"lib\\system.nim",line:0};
 framePtr = F;
 F.line = 2617;
-var e_22029 = null;
-e_22029 = {m_type: NTI3446, parent: null, name: null, message: null, trace: null};
+var e_21829 = null;
+e_21829 = {m_type: NTI3446, parent: null, name: null, message: null, trace: null};
 F.line = 2619;
-e_22029.message = nimCopy(null, message_22027, NTI138);
+e_21829.message = nimCopy(null, message_21827, NTI138);
 F.line = 2620;
-raiseException(e_22029, "AssertionError");
+raiseException(e_21829, "AssertionError");
 framePtr = F.prev;
 }
-function raiseAssert_22016(msg_22018) {
+function raiseAssert_21816(msg_21818) {
 
 var F={procname:"system.raiseAssert",prev:framePtr,filename:"lib\\system.nim",line:0};
 framePtr = F;
-sysFatal_22021(msg_22018);
+sysFatal_21821(msg_21818);
 framePtr = F.prev;
 }
-function failedAssertImpl_22039(msg_22041) {
+function failedAssertImpl_21839(msg_21841) {
 
 var F={procname:"system.failedAssertImpl",prev:framePtr,filename:"lib\\system.nim",line:0};
 framePtr = F;
-raiseAssert_22016(msg_22041);
+raiseAssert_21816(msg_21841);
 framePtr = F.prev;
 }
 function getContextWebgl_28957(c_28959) {
@@ -427,7 +427,7 @@ result_28960 = c_28959.getContext("experimental-webgl");
 }
 
 if (!(!((result_28960 === null)))) {
-failedAssertImpl_22039(makeNimstrLit("not isNil(result) "));
+failedAssertImpl_21839(makeNimstrLit("not isNil(result) "));
 }
 
 framePtr = F.prev;

@@ -48,7 +48,9 @@ proc `$`* [T](x:openarray[T]):string =
 
 proc projection3*(w,h:float):array[9,float] =
   result[0] = 2/w
-  result[4] = -2/h
+  result[4] = 2/h
+  result[6] = -1
+  result[7] = -1
   result[8] = 1
 
 proc rotation3*(theta:float):array[9,float] =
@@ -56,6 +58,21 @@ proc rotation3*(theta:float):array[9,float] =
   result[1] = -sin(degtorad(theta))
   result[3] = sin(degtorad(theta))
   result[4] = cos(degtorad(theta))
+  result[8] = 1
+
+proc scale3*(sx=1.0,sy:float=1.0):array[9,float] =
+  # Row-major+post multiply
+  result[0] = sx
+  result[4] = sy
+  result[8] = 1
+
+proc translation3*(dx=0.0,dy:float=0.0):array[9,float] =
+  # Row-major+post multiply
+  result[0] = 1
+  result[4] = 1
+  result[6] = dx
+  result[7] = dy
+  result[8] = 1
 
 proc resizeToDisplaySize*(c:Canvas, pixelratio:float=1):bool {.discardable.} =
   ## Resize the canvas to display size.
@@ -75,3 +92,40 @@ proc toJSA*(v:openarray[float]) :Float32Array {.importcpp: "new Float32Array(#)"
 proc toJSA*(v:openarray[uint16]) :Uint16Array {.importcpp: "new Uint16Array(#)".} # might be a lie
 proc toJSA*(v:openarray[int32]) :Int32Array {.importcpp: "new Uint16Array(#)".} # might be a lie
 proc toJSA*(v:openarray[int]) :Int32Array {.importcpp: "new Int32Array(#)".} # might be a lie
+
+
+template setupFpsCounter*(onID:string = "body"){.dirty}=
+  ## Setup an fps counter as a child of element "onID"
+  ## You the need to pass the delta time to updateFpsCounter
+  ## to update.
+  # FIXME: not sure about reported fps.
+  import dom
+  from math import round
+
+  var fps_time = 0.0
+  var fps_frames = 0
+ 
+  proc appendFpsCounter*(toID:string="body") =
+    var fel = document.createElement("P")
+    fel.innerHTML = "FPS Counter"
+    #proc setAttribute*(n: Node, name, value: cstring)
+    fel.setAttribute("ID","_fpsCounter_")
+    fel.setAttribute("STYLE","position:relative;top:-2em;left:1em;border:0.1em solid black; max-width:5em;text-align:right;background-color:ghostwhite; z-index:10;")
+    if toID=="body":
+      document.body.appendChild(fel)
+    else:
+      let parent = document.getElementById(toID)
+      #echo "appending to ",toid
+      parent.appendChild(fel)
+  appendFpsCounter(onID)
+
+  proc updateFpsCounter*(dt : float) =
+    var dom_counter = dom.document.getElementById("_fpsCounter_")
+    fps_time+= dt
+    inc fps_frames
+
+    if(fps_time>1000):
+      var fps=1000 * fps_frames.float/fps_time
+      dom_counter.innerHTML = $round(fps) & " FPS"
+      fps_time = 0.0
+      fps_frames = 0
