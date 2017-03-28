@@ -5,14 +5,17 @@ type State* = object
   gl*: WebglRenderingContext
   vb: Buffer # VertexBuffer
   ib: Buffer # IndexBuffer
+  cb: Buffer # ColorBuffer
   shader*: Shader
   il : Natural # Indices len
   vl : Natural # Vertices len
+  cl: Natural # Colors len
 
 
 proc state*(gl:WebglRenderingContext,vs,fs:string):State =
   let vb = gl.buffer(BufferKind.Vertex)
   let ib = gl.buffer(BufferKind.Index)
+  let cb = gl.buffer(BufferKind.Vertex)
   let shd = gl.shader(vs,fs)
   
   gl.clearColor(0.0, 0.0, 0.0, 0.0);
@@ -23,7 +26,7 @@ proc state*(gl:WebglRenderingContext,vs,fs:string):State =
   
   bindBuffers(vb,ib)
   
-  State(gl:gl,vb:vb,ib:ib,shader:shd,il:0,vl:0)
+  State(gl:gl,vb:vb,ib:ib,cb:cb,shader:shd,il:0,vl:0)
 
 proc initState*(canvasId:string="sgl-canvas",vs,fs:string):State =
   var canvas = dom.document.getElementById("sgl-canvas").Canvas;
@@ -45,6 +48,11 @@ proc upload*(s: var State,vertices:VertexBufferables) =
 proc upload*(s: var State,indices:IndexBufferables) =
   s.ib.upload(indices)
   s.il = indices.len
+
+proc `color=`*(s: var State,vertices:VertexBufferables) =
+  # TODO: upload(colorbuffers)
+  s.cb.upload(vertices)
+  s.cl = vertices.len
 
 proc point*(s:State,name:string) =
   var coord = s.shader.attributes[name] #shd.attributes["coordinates"]

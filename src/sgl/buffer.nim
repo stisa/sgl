@@ -34,7 +34,7 @@ proc upload*(b:Buffer,data:Bufferables) =
   # Pass the vertex data to the buffer
   b.gl.bufferData(b.kind.uint, data.toJSA, b.drawmode.uint)
   # Unbind the buffer
-  b.gl.bindBuffer(b.kind.uint, nil)
+  # b.gl.bindBuffer(b.kind.uint, nil)
 
 proc bindBuffers*(bs:varargs[Buffer]) =
   for b in bs: 
