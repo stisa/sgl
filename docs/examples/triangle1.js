@@ -899,23 +899,21 @@ var F={procname:"upload.upload",prev:framePtr,filename:"C:\\Users\\stisa\\OneDri
 framePtr = F;
 b_51021.gl.bindBuffer(b_51021.kind, b_51021.glbuffer);
 b_51021.gl.bufferData(b_51021.kind, new Float32Array(data_51024), b_51021.drawmode);
-b_51021.gl.bindBuffer(b_51021.kind, null);
 framePtr = F.prev;
 }
 upload_51017(vb_51014[0], vertices_51009[0]);
-var ib_51064 = /**/[buffer_50023(gl_51002[0], 34963, 35044)];
-function upload_51067(b_51071, data_51074) {
+var ib_51053 = /**/[buffer_50023(gl_51002[0], 34963, 35044)];
+function upload_51056(b_51060, data_51063) {
 
 var F={procname:"upload.upload",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\buffer.nim",line:0};
 framePtr = F;
-b_51071.gl.bindBuffer(b_51071.kind, b_51071.glbuffer);
-b_51071.gl.bufferData(b_51071.kind, new Uint16Array(data_51074), b_51071.drawmode);
-b_51071.gl.bindBuffer(b_51071.kind, null);
+b_51060.gl.bindBuffer(b_51060.kind, b_51060.glbuffer);
+b_51060.gl.bufferData(b_51060.kind, new Uint16Array(data_51063), b_51060.drawmode);
 framePtr = F.prev;
 }
-upload_51067(ib_51064[0], indices_51012[0]);
-var vertCode_51113 = /**/[makeNimstrLit("attribute vec3 coordinates;\x0Avoid main(void) {\x0A gl_Position = vec4(coordinates, 1.0);\x0A}")];
-var fragCode_51114 = /**/[makeNimstrLit("void main(void){\x0A  gl_FragColor = vec4(0.0, 0.0, 0.0, 0.1);\x0A}")];
+upload_51056(ib_51053[0], indices_51012[0]);
+var vertCode_51091 = /**/[makeNimstrLit("attribute vec3 coordinates;\x0Avoid main(void) {\x0A gl_Position = vec4(coordinates, 1.0);\x0A}")];
+var fragCode_51092 = /**/[makeNimstrLit("void main(void){\x0A  gl_FragColor = vec4(0.0, 0.0, 0.0, 0.1);\x0A}")];
 function getStatus_29029(gl_29031, what_29032) {
 
 var result_29033 = false;
@@ -1062,7 +1060,7 @@ break;
 }
 var k_48105 = Tmp1;
 F.line = 67;
-var colontmp__51116 = {Field0: 0, Field1: 0, Field2: false};
+var colontmp__51094 = {Field0: 0, Field1: 0, Field2: false};
 F.line = 67;
 var sz_48119 = 0;
 F.line = 67;
@@ -1094,13 +1092,13 @@ default:
 Tmp2 = {Field0: 0, Field1: 5122, Field2: false};
 break;
 }
-nimCopy(colontmp__51116, Tmp2, NTI48107);
+nimCopy(colontmp__51094, Tmp2, NTI48107);
 F.line = 67;
-sz_48119 = colontmp__51116["Field0"];
+sz_48119 = colontmp__51094["Field0"];
 F.line = 67;
-dt_48120 = colontmp__51116["Field1"];
+dt_48120 = colontmp__51094["Field1"];
 F.line = 67;
-nrm_48121 = colontmp__51116["Field2"];
+nrm_48121 = colontmp__51094["Field2"];
 F.line = 75;
 nimCopy(result_48049, {name: name_48047, kind: k_48105, datatype: dt_48120, size: sz_48119, normalize: nrm_48121, location: 0}, NTI48022);
 framePtr = F.prev;
@@ -1140,7 +1138,7 @@ break;
 }
 var k_48183 = Tmp1;
 F.line = 86;
-var colontmp__51117 = {Field0: 0, Field1: 0, Field2: false};
+var colontmp__51095 = {Field0: 0, Field1: 0, Field2: false};
 F.line = 86;
 var sz_48197 = 0;
 F.line = 86;
@@ -1172,13 +1170,13 @@ default:
 Tmp2 = {Field0: 0, Field1: 5122, Field2: false};
 break;
 }
-nimCopy(colontmp__51117, Tmp2, NTI48185);
+nimCopy(colontmp__51095, Tmp2, NTI48185);
 F.line = 86;
-sz_48197 = colontmp__51117["Field0"];
+sz_48197 = colontmp__51095["Field0"];
 F.line = 86;
-dt_48198 = colontmp__51117["Field1"];
+dt_48198 = colontmp__51095["Field1"];
 F.line = 86;
-nrm_48199 = colontmp__51117["Field2"];
+nrm_48199 = colontmp__51095["Field2"];
 F.line = 95;
 nimCopy(result_48127, {name: name_48125, kind: k_48183, datatype: dt_48198, size: sz_48197, normalize: nrm_48199, location: null, mat3: new Float64Array(9), mat4: new Float64Array(16)}, NTI48030);
 framePtr = F.prev;
@@ -1406,30 +1404,30 @@ gl_48856.useProgram(result_48860.glprogram);
 framePtr = F.prev;
 return result_48860;
 }
-var shd_51115 = shader_48854(gl_51002[0], vertCode_51113[0], fragCode_51114[0], true);
-function bindBuffers_50052(bs_50055) {
+var shd_51093 = shader_48854(gl_51002[0], vertCode_51091[0], fragCode_51092[0], true);
+function bindBuffers_50051(bs_50054) {
 
 var F={procname:"buffer.bindBuffers",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\buffer.nim",line:0};
 framePtr = F;
 L1: do {
 F.line = 40;
-var b_50081 = {gl: null, glbuffer: null, kind: 0, datatype: 0, drawmode: 0};
+var b_50080 = {gl: null, glbuffer: null, kind: 0, datatype: 0, drawmode: 0};
 F.line = 2016;
-var i_50096 = 0;
+var i_50095 = 0;
 L2: do {
 F.line = 2017;
 L3: while (true) {
-if (!(i_50096 < (bs_50055 != null ? bs_50055.length : 0))) break L3;
+if (!(i_50095 < (bs_50054 != null ? bs_50054.length : 0))) break L3;
 F.line = 2018;
-b_50081 = bs_50055[chckIndx(i_50096, 0, bs_50055.length)-0];
-b_50081.gl.bindBuffer(b_50081.kind, b_50081.glbuffer);
-i_50096 = addInt(i_50096, 1);
+b_50080 = bs_50054[chckIndx(i_50095, 0, bs_50054.length)-0];
+b_50080.gl.bindBuffer(b_50080.kind, b_50080.glbuffer);
+i_50095 = addInt(i_50095, 1);
 }
 } while(false);
 } while(false);
 framePtr = F.prev;
 }
-bindBuffers_50052([vb_51014[0], ib_51064[0]]);
+bindBuffers_50051([vb_51014[0], ib_51053[0]]);
 function X5BX5D__48390(list_48393, name_48394) {
 
 var result_48395 = {name: null, location: 0, kind: 0, size: 0, datatype: 0, normalize: false};
@@ -1478,7 +1476,7 @@ raiseException(e_48609, "FieldError");
 framePtr = F.prev;
 return result_48395;
 }
-var coord_51120 = /**/[X5BX5D__48390(shd_51115.attributes, makeNimstrLit("coordinates"))];
+var coord_51098 = /**/[X5BX5D__48390(shd_51093.attributes, makeNimstrLit("coordinates"))];
 function point_48825(gl_48827, a_48828) {
 
 var F={procname:"shader.point",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\shader.nim",line:0};
@@ -1487,7 +1485,7 @@ gl_48827.vertexAttribPointer(a_48828.location, a_48828.size, a_48828.datatype, a
 gl_48827.enableVertexAttribArray(a_48828.location);
 framePtr = F.prev;
 }
-point_48825(gl_51002[0], coord_51120[0]);
+point_48825(gl_51002[0], coord_51098[0]);
 gl_51002[0].clearColor(5.0000000000000000e-001, 5.0000000000000000e-001, 5.0000000000000000e-001, 9.0000000000000002e-001);
 gl_51002[0].enable(2929);
 gl_51002[0].clear(16384);

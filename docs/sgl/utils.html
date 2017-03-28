@@ -1258,14 +1258,14 @@ void main() {
     title="devicePixelRatio(w: Window): float"><wbr />device<wbr />Pixel<wbr />Ratio<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#$,openArray[T]"
     title="`$`[T](x: openArray[T]): string"><wbr />`$`<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#projection3,float32,float32"
-    title="projection3(w, h: float32): array[9, float32]"><wbr />projection3<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#rotation3,float32"
-    title="rotation3(theta: float32): array[9, float32]"><wbr />rotation3<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#scale3,float,float32"
-    title="scale3(sx = 1.0&#x27;f64; sy: float32 = 1.0&#x27;f64): array[9, float32]"><wbr />scale3<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#translation3,float,float32"
-    title="translation3(dx = 0.0&#x27;f64; dy: float32 = 0.0&#x27;f64): array[9, float32]"><wbr />translation3<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#projection3,float,float"
+    title="projection3(w, h: float): array[9, float]"><wbr />projection3<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#rotation3,float"
+    title="rotation3(theta: float): array[9, float]"><wbr />rotation3<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#scale3,float,float"
+    title="scale3(sx = 1.0&#x27;f64; sy: float = 1.0&#x27;f64): array[9, float]"><wbr />scale3<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#translation3,float,float"
+    title="translation3(dx = 0.0&#x27;f64; dy: float = 0.0&#x27;f64): array[9, float]"><wbr />translation3<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#resizeToDisplaySize,Canvas,float"
     title="resizeToDisplaySize(c: Canvas; pixelratio: float = 1): bool"><wbr />resize<wbr />To<wbr />Display<wbr />Size<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#toJSA,openArray[float32]"
@@ -1390,7 +1390,7 @@ class="link-seesrc" target="_blank">Source</a>
 <a href="/edit/devel/sgl/utils.nim#L41" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
-<dt id="projection3"><a name="projection3,float32,float32"></a><pre><span class="Keyword">proc</span> <span class="Identifier">projection3</span><span class="Other">(</span><span class="Identifier">w</span><span class="Other">,</span> <span class="Identifier">h</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">9</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="projection3"><a name="projection3,float,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">projection3</span><span class="Other">(</span><span class="Identifier">w</span><span class="Other">,</span> <span class="Identifier">h</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">9</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
@@ -1399,7 +1399,7 @@ class="link-seesrc" target="_blank">Source</a>
 <a href="/edit/devel/sgl/utils.nim#L49" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
-<dt id="rotation3"><a name="rotation3,float32"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rotation3</span><span class="Other">(</span><span class="Identifier">theta</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">9</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="rotation3"><a name="rotation3,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rotation3</span><span class="Other">(</span><span class="Identifier">theta</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">9</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
@@ -1408,7 +1408,7 @@ class="link-seesrc" target="_blank">Source</a>
 <a href="/edit/devel/sgl/utils.nim#L56" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
-<dt id="scale3"><a name="scale3,float,float32"></a><pre><span class="Keyword">proc</span> <span class="Identifier">scale3</span><span class="Other">(</span><span class="Identifier">sx</span> <span class="Other">=</span> <span class="FloatNumber">1.0'f64</span><span class="Other">;</span> <span class="Identifier">sy</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">1.0'f64</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">9</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="scale3"><a name="scale3,float,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">scale3</span><span class="Other">(</span><span class="Identifier">sx</span> <span class="Other">=</span> <span class="FloatNumber">1.0'f64</span><span class="Other">;</span> <span class="Identifier">sy</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">1.0'f64</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">9</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
@@ -1417,8 +1417,7 @@ class="link-seesrc" target="_blank">Source</a>
 <a href="/edit/devel/sgl/utils.nim#L63" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
-<dt id="translation3"><a name="translation3,float,float32"></a><pre><span class="Keyword">proc</span> <span class="Identifier">translation3</span><span class="Other">(</span><span class="Identifier">dx</span> <span class="Other">=</span> <span class="FloatNumber">0.0'f64</span><span class="Other">;</span> <span class="Identifier">dy</span><span class="Other">:</span> <span class="Identifier">float32</span> <span class="Other">=</span> <span class="FloatNumber">0.0'f64</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">9</span><span class="Other">,</span> <span class="Identifier">float32</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="translation3"><a name="translation3,float,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">translation3</span><span class="Other">(</span><span class="Identifier">dx</span> <span class="Other">=</span> <span class="FloatNumber">0.0'f64</span><span class="Other">;</span> <span class="Identifier">dy</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">0.0'f64</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">9</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
@@ -1506,7 +1505,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-03-23 19:46:22 UTC</small>
+        <small>Made with Nim. Generated: 2017-03-28 18:40:55 UTC</small>
       </div>
     </div>
   </div>

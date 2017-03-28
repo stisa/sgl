@@ -412,12 +412,14 @@ var NNI48848 = {kind: 2, len: 3, offset: 0, typ: null, name: null, sons: [{kind:
 {kind: 1, offset: "attributes", len: 0, typ: NTI48852, name: "attributes", sons: null}]};
 NTI48848.node = NNI48848;
 NTI3404.base = NTI104;
-var NNI51002 = {kind: 2, len: 6, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "gl", len: 0, typ: NTI28086, name: "gl", sons: null}, 
+var NNI51002 = {kind: 2, len: 8, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "gl", len: 0, typ: NTI28086, name: "gl", sons: null}, 
 {kind: 1, offset: "vb", len: 0, typ: NTI50017, name: "vb", sons: null}, 
 {kind: 1, offset: "ib", len: 0, typ: NTI50017, name: "ib", sons: null}, 
+{kind: 1, offset: "cb", len: 0, typ: NTI50017, name: "cb", sons: null}, 
 {kind: 1, offset: "shader", len: 0, typ: NTI48848, name: "shader", sons: null}, 
 {kind: 1, offset: "il", len: 0, typ: NTI3404, name: "il", sons: null}, 
-{kind: 1, offset: "vl", len: 0, typ: NTI3404, name: "vl", sons: null}]};
+{kind: 1, offset: "vl", len: 0, typ: NTI3404, name: "vl", sons: null}, 
+{kind: 1, offset: "cl", len: 0, typ: NTI3404, name: "cl", sons: null}]};
 NTI51002.node = NNI51002;
 var NNI3458 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
 NTI3458.node = NNI3458;
@@ -1429,67 +1431,67 @@ gl_48856.useProgram(result_48860.glprogram);
 framePtr = F.prev;
 return result_48860;
 }
-function bindBuffers_50052(bs_50055) {
+function bindBuffers_50051(bs_50054) {
 
 var F={procname:"buffer.bindBuffers",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\buffer.nim",line:0};
 framePtr = F;
 L1: do {
 F.line = 40;
-var b_50081 = {gl: null, glbuffer: null, kind: 0, datatype: 0, drawmode: 0};
+var b_50080 = {gl: null, glbuffer: null, kind: 0, datatype: 0, drawmode: 0};
 F.line = 2016;
-var i_50096 = 0;
+var i_50095 = 0;
 L2: do {
 F.line = 2017;
 L3: while (true) {
-if (!(i_50096 < (bs_50055 != null ? bs_50055.length : 0))) break L3;
+if (!(i_50095 < (bs_50054 != null ? bs_50054.length : 0))) break L3;
 F.line = 2018;
-b_50081 = bs_50055[chckIndx(i_50096, 0, bs_50055.length)-0];
-b_50081.gl.bindBuffer(b_50081.kind, b_50081.glbuffer);
-i_50096 = addInt(i_50096, 1);
+b_50080 = bs_50054[chckIndx(i_50095, 0, bs_50054.length)-0];
+b_50080.gl.bindBuffer(b_50080.kind, b_50080.glbuffer);
+i_50095 = addInt(i_50095, 1);
 }
 } while(false);
 } while(false);
 framePtr = F.prev;
 }
-function state_51009(gl_51011, vs_51012, fs_51013) {
+function state_51011(gl_51013, vs_51014, fs_51015) {
 
-var result_51014 = {gl: null, vb: {gl: null, glbuffer: null, kind: 0, datatype: 0, drawmode: 0}, ib: {gl: null, glbuffer: null, kind: 0, datatype: 0, drawmode: 0}, shader: {glprogram: null, uniforms: null, attributes: null}, il: 0, vl: 0};
+var result_51016 = {gl: null, vb: {gl: null, glbuffer: null, kind: 0, datatype: 0, drawmode: 0}, ib: {gl: null, glbuffer: null, kind: 0, datatype: 0, drawmode: 0}, cb: {gl: null, glbuffer: null, kind: 0, datatype: 0, drawmode: 0}, shader: {glprogram: null, uniforms: null, attributes: null}, il: 0, vl: 0, cl: 0};
 var F={procname:"state.state",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
 framePtr = F;
-F.line = 14;
-F.line = 14;
-var vb_51016 = buffer_50023(gl_51011, 34962, 35044);
-F.line = 15;
-var ib_51018 = buffer_50023(gl_51011, 34963, 35044);
 F.line = 16;
-var shd_51019 = shader_48854(gl_51011, vs_51012, fs_51013, true);
-gl_51011.clearColor(0.0, 0.0, 0.0, 0.0);
-gl_51011.enable(2929);
-gl_51011.clear(16384);
-resizeToDisplaySize_47213(gl_51011.canvas, window.devicePixelRatio);
-gl_51011.viewport(0, 0, gl_51011.drawingBufferWidth, gl_51011.drawingBufferHeight);
-bindBuffers_50052([vb_51016, ib_51018]);
-nimCopy(result_51014, {gl: gl_51011, vb: vb_51016, ib: ib_51018, shader: shd_51019, il: 0, vl: 0}, NTI51002);
+F.line = 16;
+var vb_51018 = buffer_50023(gl_51013, 34962, 35044);
+F.line = 17;
+var ib_51020 = buffer_50023(gl_51013, 34963, 35044);
+F.line = 18;
+var cb_51022 = buffer_50023(gl_51013, 34962, 35044);
+F.line = 19;
+var shd_51023 = shader_48854(gl_51013, vs_51014, fs_51015, true);
+gl_51013.clearColor(0.0, 0.0, 0.0, 0.0);
+gl_51013.enable(2929);
+gl_51013.clear(16384);
+resizeToDisplaySize_47213(gl_51013.canvas, window.devicePixelRatio);
+gl_51013.viewport(0, 0, gl_51013.drawingBufferWidth, gl_51013.drawingBufferHeight);
+bindBuffers_50051([vb_51018, ib_51020]);
+nimCopy(result_51016, {gl: gl_51013, vb: vb_51018, ib: ib_51020, cb: cb_51022, shader: shd_51023, il: 0, vl: 0, cl: 0}, NTI51002);
 framePtr = F.prev;
-return result_51014;
+return result_51016;
 }
-var stt_52015 = /**/[state_51009(gl_52002[0], vertCode_52013[0], fragCode_52014[0])];
+var stt_52015 = /**/[state_51011(gl_52002[0], vertCode_52013[0], fragCode_52014[0])];
 function upload_52035(b_52039, data_52042) {
 
 var F={procname:"upload.upload",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\buffer.nim",line:0};
 framePtr = F;
 b_52039.gl.bindBuffer(b_52039.kind, b_52039.glbuffer);
 b_52039.gl.bufferData(b_52039.kind, new Float32Array(data_52042), b_52039.drawmode);
-b_52039.gl.bindBuffer(b_52039.kind, null);
 framePtr = F.prev;
 }
-function upload_52082(b_52086, data_52089) {
+function upload_52071(b_52075, data_52078) {
 
 var F={procname:"upload.upload",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\buffer.nim",line:0};
 framePtr = F;
-b_52086.gl.bindBuffer(b_52086.kind, b_52086.glbuffer);
-b_52086.gl.bufferData(b_52086.kind, new Uint16Array(data_52089), b_52086.drawmode);
-b_52086.gl.bindBuffer(b_52086.kind, null);
+b_52075.gl.bindBuffer(b_52075.kind, b_52075.glbuffer);
+b_52075.gl.bufferData(b_52075.kind, new Uint16Array(data_52078), b_52075.drawmode);
 framePtr = F.prev;
 }
 function raiseRangeError() {
@@ -1505,11 +1507,11 @@ function upload_52022(s_52027, vertices_52030, indices_52033) {
 var F={procname:"upload.upload",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
 framePtr = F;
 upload_52035(s_52027.vb, vertices_52030);
-upload_52082(s_52027.ib, indices_52033);
-bindBuffers_50052([s_52027.vb, s_52027.ib]);
-F.line = 38;
+upload_52071(s_52027.ib, indices_52033);
+bindBuffers_50051([s_52027.vb, s_52027.ib]);
+F.line = 41;
 s_52027.il = chckRange((indices_52033 != null ? indices_52033.length : 0), 0, 2147483647);
-F.line = 39;
+F.line = 42;
 s_52027.vl = chckRange((vertices_52030 != null ? vertices_52030.length : 0), 0, 2147483647);
 framePtr = F.prev;
 }
@@ -1570,22 +1572,22 @@ gl_48827.vertexAttribPointer(a_48828.location, a_48828.size, a_48828.datatype, a
 gl_48827.enableVertexAttribArray(a_48828.location);
 framePtr = F.prev;
 }
-function point_51072(s_51074, name_51075) {
+function point_51085(s_51087, name_51088) {
 
 var F={procname:"state.point",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
 framePtr = F;
-F.line = 50;
-var coord_51076 = X5BX5D__48390(s_51074.shader.attributes, name_51075);
-point_48825(s_51074.gl, coord_51076);
+F.line = 58;
+var coord_51089 = X5BX5D__48390(s_51087.shader.attributes, name_51088);
+point_48825(s_51087.gl, coord_51089);
 framePtr = F.prev;
 }
-point_51072(stt_52015[0], makeNimstrLit("coordinates"));
-function drawAsTriangle_51077(s_51079) {
+point_51085(stt_52015[0], makeNimstrLit("coordinates"));
+function drawAsTriangle_51090(s_51092) {
 
 var F={procname:"state.drawAsTriangle",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
 framePtr = F;
-s_51079.gl.viewport(0, 0, s_51079.gl.drawingBufferWidth, s_51079.gl.drawingBufferHeight);
-s_51079.gl.drawElements(4, s_51079.il, s_51079.ib.datatype, 0);
+s_51092.gl.viewport(0, 0, s_51092.gl.drawingBufferWidth, s_51092.gl.drawingBufferHeight);
+s_51092.gl.drawElements(4, s_51092.il, s_51092.ib.datatype, 0);
 framePtr = F.prev;
 }
-drawAsTriangle_51077(stt_52015[0]);
+drawAsTriangle_51090(stt_52015[0]);
