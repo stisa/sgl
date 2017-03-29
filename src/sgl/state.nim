@@ -29,13 +29,15 @@ proc state*(gl:WebglRenderingContext,vs,fs:string):State =
   
   State(gl:gl,vb:vb,ib:ib,cb:cb,shader:shd,il:0,vl:0)
 
-proc initState*(canvasId:string="sgl-canvas",vs,fs:string):State =
+proc initState*(canvasId:string="sgl-canvas",vs=DefaultVS,fs:string=DefaultFS):State =
+  ## Initialize the rendering context on canvas, with the shader source passed in.
   var canvas = dom.document.getElementById("sgl-canvas").Canvas;
   var gl = canvas.getContextWebgl()
   canvas.resizeToDisplaySize(window.devicePixelRatio)
   result = gl.state(vs,fs)
 
 proc upload*(s: var State,vertices:VertexBufferables,indices:IndexBufferables) =
+  ## Upload and bind the vertex and index buffers
   s.vb.upload(vertices)
   s.ib.upload(indices)
   bindBuffers(s.vb,s.ib)
@@ -43,19 +45,23 @@ proc upload*(s: var State,vertices:VertexBufferables,indices:IndexBufferables) =
   s.vl = vertices.len
 
 proc upload*(s: var State,vertices:VertexBufferables) =
+  ## Upload the vertex buffer
   s.vb.upload(vertices)
   s.vl = vertices.len
 
 proc upload*(s: var State,indices:IndexBufferables) =
+  ## Upload the index buffer
   s.ib.upload(indices)
   s.il = indices.len
 
 proc `color=`*(s: var State,colors:VertexBufferables) =
+  ## Upload the color buffer
   # TODO: upload(colorbuffers)
   s.cb.upload(colors)
   s.cl = colors.len
 
 proc point*(s:State,name:string) =
+  ## Point attribute `name` to the currently bound VBO
   var coord = s.shader.attributes[name] #shd.attributes["coordinates"]
   s.gl.point(coord)
 
@@ -64,15 +70,18 @@ proc drawAsTriangle*(s:State) {.deprecated.}=
   s.gl.drawElements(pmTriangles, s.il, s.ib.datatype,0) #0x1403 ??
 
 proc drawArrayAs*(s:State,pm:PrimitiveMode,vertexlen:Natural=4,offset:Natural=0) =
+  ## Wrapper for drawArrays
   #s.gl.viewport(0,0,s.gl.drawingbufferwidth,s.gl.drawingbufferheight)
   s.gl.drawArrays(pm, offset,s.vl div vertexlen)
 
 
 proc drawElementsAs*(s:State,pm:PrimitiveMode) =
+  ## Wrappper for drawelements
   #s.gl.viewport(0,0,s.gl.drawingbufferwidth,s.gl.drawingbufferheight)
   s.gl.drawElements(pm, s.il, s.ib.datatype,0) #0x1403 ??
 
 proc attribute*[T:int|float|float32](s:State, name:string, val:openarray[T]) =
+  ## Set an attrivute to val.
   let a = s.shader.attributes[name]
   doassert(val.len == ord a.kind, $val.len & " " & $(ord a.kind))
   when T is float:
@@ -81,6 +90,7 @@ proc attribute*[T:int|float|float32](s:State, name:string, val:openarray[T]) =
     s.ib.upload(val)
 
 proc uniform*[T:int|float|float32](s:State, name:string, val:openarray[T]) =
+  ## Set an uniform to val.
   let un = s.shader.uniforms[name]
   case un.kind:
   of DataKind.Vec1:
@@ -120,6 +130,7 @@ proc uniform*[T:int|float|float32](s:State, name:string, val:openarray[T]) =
     raise newException(FieldError,"Uniform " & name & ":" & $val & " doesn't match any data layout")
 
 proc `[]=`*[T:int|float|float32](s:State, name:string, val:openarray[T]) =
+  ## Set an uniform or buffer to val.
   case s.shader[name]:
   of UnifOrAttr.A:
     s.attribute(name,val)
@@ -127,6 +138,7 @@ proc `[]=`*[T:int|float|float32](s:State, name:string, val:openarray[T]) =
     s.uniform(name,val)
 
 proc `[]=`*[T:int|float](s:State, name:string, u:T) =
+  ## Set an uniform to val.
   let un = s.shader.uniforms[name]
   doassert un.kind == DataKind.Vec1
   when T is float:
@@ -137,6 +149,7 @@ proc `[]=`*[T:int|float](s:State, name:string, u:T) =
     raise newException(FieldError,"Uniform " & name & ": unknown type")
 
 proc `[]=`*[T:int|float](s:State, name:string, u,v:T) =
+  ## Set an uniform to val.
   let un = s.shader.uniforms[name]
   doassert un.kind == DataKind.Vec2
   when T is float:
@@ -147,6 +160,7 @@ proc `[]=`*[T:int|float](s:State, name:string, u,v:T) =
     raise newException(FieldError,"Uniform " & name & ": unknown type")
 
 proc `[]=`*[T:int|float](s:State, name:string, u,v,w:T) =
+  ## Set an uniform to val.
   let un = s.shader.uniforms[name]
   doassert un.kind == DataKind.Vec3
   when T is float:
@@ -157,11 +171,12 @@ proc `[]=`*[T:int|float](s:State, name:string, u,v,w:T) =
     raise newException(FieldError,"Uniform " & name & ": unknown type")
 
 proc `[]=`*[T:int|float](s:State, name:string, u,v,w,t:T) =
+  ## Set an uniform to val.
   let un = s.shader.uniforms[name]
   doassert un.kind == DataKind.Vec4
   when T is float:
-    s.gl.uniform4fv(un.location,u,v,w,t)
+    s.gl.uniform4f(un.location,u,v,w,t)
   elif T is int:
-    s.gl.uniform4iv(un.location,u,v,w,t)
+    s.gl.uniform4i(un.location,u,v,w,t)
   else:
     raise newException(FieldError,"Uniform " & name & ": unknown type")

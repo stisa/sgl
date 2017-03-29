@@ -1488,7 +1488,7 @@ class="link-seesrc" target="_blank">Source</a>
 <dl class="item">
 <dt id="setupFpsCounter"><a name="setupFpsCounter.t,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">setupFpsCounter</span><span class="Other">(</span><span class="Identifier">onID</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;body&quot;</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">dirty</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
-Setup an fps counter as a child of element &quot;onID&quot; You the need to pass the delta time to updateFpsCounter to update.
+Setup an fps counter as a child of element &quot;onID&quot; You the need to pass the delta time to updateFpsCounter to update. Exports a proc <cite>updateFpsCounter(dt:float)</cite>, that you need to call in your loop, passing it the time between frames.
 &nbsp;&nbsp;<a
 href="/tree/master/sgl/utils.nim#L98"
 class="link-seesrc" target="_blank">Source</a>
@@ -1505,7 +1505,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-03-29 22:46:15 UTC</small>
+        <small>Made with Nim. Generated: 2017-03-29 23:58:08 UTC</small>
       </div>
     </div>
   </div>

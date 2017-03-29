@@ -146,6 +146,7 @@ proc uniform(name:string,kind:string):Uniform =
     raise newException(FieldError,"Uniform not found: "&name)
 ]#
 proc extractAttrsAndUnifs(vs,fs:string):tuple[uniforms:Table[string,Uniform],attributes:Table[string,Attribute]] =
+  # Extract uniforms and attributes from glsl sources. 
     result = (uniforms: initTable[string,Uniform](16),
               attributes: initTable[string,Attribute](16))
 
@@ -175,7 +176,7 @@ proc extractAttrsAndUnifs(vs,fs:string):tuple[uniforms:Table[string,Uniform],att
       else: discard #echo("unknown splitted len:"& $splitted)
 
 proc point*(gl:WebglRenderingContext,a:Attribute) =
-  # Point an attribute to the currently bound VBO
+  ## Point an attribute to the currently bound VBO
   gl.vertexAttribPointer(a.location, a.size, a.datatype, a.normalize, 0, 0)
   # Enable the attribute
   gl.enableVertexAttribArray(a.location)
@@ -186,7 +187,7 @@ type Shader* = object
   attributes*:Table[string,Attribute]
 
 proc shader*(gl:WebglRenderingContext,vssrc:string=DefaultVS,fssrc:string=DefaultFS,usethis:bool=true):Shader = 
-
+  ## Setup a Shader object
   let vs = gl.createShader(seVertexShader)
   gl.shadersource(vs,vssrc)
   gl.compileShader(vs)
@@ -222,7 +223,7 @@ proc shader*(gl:WebglRenderingContext,vssrc:string=DefaultVS,fssrc:string=Defaul
 
 
 proc `[]`*(s:Shader,name:string):UnifOrAttr =
-  # Until we can have return based overloading
+  ## Stub until we can have return based overloading
   var nota :bool
   var notu :bool
   try:

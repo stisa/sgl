@@ -99,6 +99,8 @@ template setupFpsCounter*(onID:string = "body"){.dirty}=
   ## Setup an fps counter as a child of element "onID"
   ## You the need to pass the delta time to updateFpsCounter
   ## to update.
+  ## Exports a proc `updateFpsCounter(dt:float)`, that you need to
+  ## call in your loop, passing it the time between frames.
   # FIXME: not sure about reported fps.
   import dom
   from math import round
