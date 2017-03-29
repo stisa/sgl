@@ -1,6 +1,10 @@
+{.push warning[ProveInit]:off.}
+
 import webgl
-import strutils
+import strutils,tables
 import utils
+
+export tables.`[]`, tables.`[]=`
 
 type UnifOrAttr* {.pure.}= enum
   U,A
@@ -55,7 +59,7 @@ type Uniform* = object
   ( 4, dtSHORT, false ),
   ( 4, dtSHORT, true )
 ]#
-proc attribute(name:string,kind:string):Attribute =
+proc attribute*(name:string,kind:string):Attribute = # don't export this
   let k = case kind:
     of $DataKind.Vec1: DataKind.Vec1
     of $DataKind.Vec2: DataKind.Vec2
@@ -94,51 +98,81 @@ proc uniform(name:string,kind:string):Uniform =
     
   result = Uniform(name:name,kind:k,datatype:dt,size:sz,normalize:nrm)
 
-proc extractAttrsAndUnifs(vs,fs:string):tuple[uniforms:seq[Uniform],attributes:seq[Attribute]] =
-  result = (uniforms: newseq[Uniform](),
-            attributes: newseq[Attribute]())
+#[
+  proc extractAttrsAndUnifs(vs,fs:string):tuple[uniforms:seq[Uniform],attributes:seq[Attribute]] =
+    result = (uniforms: newseq[Uniform](),
+              attributes: newseq[Attribute]())
 
-  for line in vs.splitLines: 
-    let splitted = line.strip( chars=WhiteSpace+{';',':'} ).splitWhitespace
-    if splitted.len == 3: # Assume three elements per line if it's an attribute or uniform'
-      case splitted[0].strip:
-      of "attribute":
-        result.attributes.add(attribute(splitted[2],splitted[1]))
-      of "uniform":
-        result.uniforms.add(uniform(splitted[2],splitted[1]))
-      else:
-        discard #echo("unknown splitted:"& $splitted)
-    else: discard #echo("unknown splitted len:"& $splitted)
+    for line in vs.splitLines: 
+      let splitted = line.strip( chars=WhiteSpace+{';',':'} ).splitWhitespace
+      if splitted.len == 3: # Assume three elements per line if it's an attribute or uniform'
+        case splitted[0].strip:
+        of "attribute":
+          result.attributes.add(attribute(splitted[2],splitted[1]))
+        of "uniform":
+          result.uniforms.add(uniform(splitted[2],splitted[1]))
+        else:
+          discard #echo("unknown splitted:"& $splitted)
+      else: discard #echo("unknown splitted len:"& $splitted)
 
-  for line in fs.splitLines: 
-    let splitted = line.strip( chars=WhiteSpace+{';',':'} ).splitWhitespace
-    
-    if splitted.len == 3: # Assume three elements per line if it's an attribute or uniform'
-      case splitted[0].strip:
-      of "attribute":
-        result.attributes.add(attribute(splitted[2],splitted[1]))
-      of "uniform":
-        result.uniforms.add(uniform(splitted[2],splitted[1]))
-      else:
-         discard #echo("unknown splitted:"& $splitted)
-    else: discard #echo("unknown splitted len:"& $splitted)
+    for line in fs.splitLines: 
+      let splitted = line.strip( chars=WhiteSpace+{';',':'} ).splitWhitespace
+      
+      if splitted.len == 3: # Assume three elements per line if it's an attribute or uniform'
+        case splitted[0].strip:
+        of "attribute":
+          result.attributes.add(attribute(splitted[2],splitted[1]))
+        of "uniform":
+          result.uniforms.add(uniform(splitted[2],splitted[1]))
+        else:
+          discard #echo("unknown splitted:"& $splitted)
+      else: discard #echo("unknown splitted len:"& $splitted)
 
-proc `[]`*(list:seq[Attribute],name:string): Attribute =
-  ## Search into the list of attributes by name.
-  ## Since I don't usually have tons of names, a simple linear search will do
-  for ua in list:
-    if ua.name == name : return ua
-  result = attribute(name,"UNKNOWN") #Nim shuts up about init
-  raise newException(FieldError,"Attribute not found: "&name)
+  proc `[]`*(list:seq[Attribute],name:string): Attribute =
+    ## Search into the list of attributes by name.
+    ## Since I don't usually have tons of names, a simple linear search will do
+    for ua in list:
+      if ua.name == name : return ua
+    result = attribute(name,"UNKNOWN") #Nim shuts up about init
+    raise newException(FieldError,"Attribute not found: "&name)
 
-proc `[]`*(list:seq[Uniform],name:string): Uniform =
-  ## Search into the list of uniforms by name.
-  ## Since I don't usually have tons of names, a simple linear search will do
-  for ua in list:
-    if ua.name == name : return ua
-  # If we couldn't find one, raise an error
-  result = uniform(name,"UNKNOWN") #Nim shuts up about init
-  raise newException(FieldError,"Uniform not found: "&name)
+  proc `[]`*(list:seq[Uniform],name:string): Uniform =
+    ## Search into the list of uniforms by name.
+    ## Since I don't usually have tons of names, a simple linear search will do
+    for ua in list:
+      if ua.name == name : return ua
+    # If we couldn't find one, raise an error
+    result = uniform(name,"UNKNOWN") #Nim shuts up about init
+    raise newException(FieldError,"Uniform not found: "&name)
+]#
+proc extractAttrsAndUnifs(vs,fs:string):tuple[uniforms:Table[string,Uniform],attributes:Table[string,Attribute]] =
+    result = (uniforms: initTable[string,Uniform](16),
+              attributes: initTable[string,Attribute](16))
+
+    for line in vs.splitLines: 
+      let splitted = line.strip( chars=WhiteSpace+{';',':'} ).splitWhitespace
+      if splitted.len == 3: # Assume three elements per line if it's an attribute or uniform'
+        case splitted[0].strip:
+        of "attribute":
+          result.attributes.add(splitted[2],attribute(splitted[2],splitted[1]))
+        of "uniform":
+          result.uniforms.add(splitted[2],uniform(splitted[2],splitted[1]))
+        else:
+          discard #echo("unknown splitted:"& $splitted)
+      else: discard #echo("unknown splitted len:"& $splitted)
+
+    for line in fs.splitLines: 
+      let splitted = line.strip( chars=WhiteSpace+{';',':'} ).splitWhitespace
+      
+      if splitted.len == 3: # Assume three elements per line if it's an attribute or uniform'
+        case splitted[0].strip:
+        of "attribute":
+          result.attributes.add(splitted[2],attribute(splitted[2],splitted[1]))
+        of "uniform":
+          result.uniforms.add(splitted[2],uniform(splitted[2],splitted[1]))
+        else:
+          discard #echo("unknown splitted:"& $splitted)
+      else: discard #echo("unknown splitted len:"& $splitted)
 
 proc point*(gl:WebglRenderingContext,a:Attribute) =
   # Point an attribute to the currently bound VBO
@@ -148,8 +182,8 @@ proc point*(gl:WebglRenderingContext,a:Attribute) =
 
 type Shader* = object
   glprogram* : WebglProgram
-  uniforms*: seq[Uniform]
-  attributes*:seq[Attribute]
+  uniforms*: Table[string,Uniform]
+  attributes*:Table[string,Attribute]
 
 proc shader*(gl:WebglRenderingContext,vssrc:string=DefaultVS,fssrc:string=DefaultFS,usethis:bool=true):Shader = 
 
@@ -178,10 +212,10 @@ proc shader*(gl:WebglRenderingContext,vssrc:string=DefaultVS,fssrc:string=Defaul
   gl.deleteShader(fs)
 
   # iterate over the u and a and get their location
-  for a in result.attributes.mitems:
+  for a in result.attributes.mvalues:
     a.location = gl.getAttribLocation(result.glprogram, a.name.cstring)
     assert( a.location.int != -1, "Problems with attribute: "&a.name&", misspelled?")
-  for u in result.uniforms.mitems:
+  for u in result.uniforms.mvalues:
     u.location = gl.getUniformLocation(result.glprogram, u.name)
     #TODO: check u.location.int "Problems with uniform"&u.name)
   gl.useProgram(result.glprogram)

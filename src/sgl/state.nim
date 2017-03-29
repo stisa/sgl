@@ -1,3 +1,4 @@
+{.warning[ProveInit]:off.}
 import webgl, dom
 import shader,buffer,utils
 

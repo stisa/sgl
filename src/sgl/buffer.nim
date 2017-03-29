@@ -1,3 +1,4 @@
+{.warning[ProveInit]:off.}
 import webgl,utils
 
 type BufferKind* {.pure.} = enum

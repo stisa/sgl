@@ -1,3 +1,4 @@
+{.warning[ProveInit]:off.}
 from webgl import Canvas,Float32Array,Uint16Array,Int32Array
 from dom import Window
 from math import cos,sin,degtorad
