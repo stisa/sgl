@@ -49,21 +49,26 @@ proc upload*(s: var State,indices:IndexBufferables) =
   s.ib.upload(indices)
   s.il = indices.len
 
-proc `color=`*(s: var State,vertices:VertexBufferables) =
+proc `color=`*(s: var State,colors:VertexBufferables) =
   # TODO: upload(colorbuffers)
-  s.cb.upload(vertices)
-  s.cl = vertices.len
+  s.cb.upload(colors)
+  s.cl = colors.len
 
 proc point*(s:State,name:string) =
   var coord = s.shader.attributes[name] #shd.attributes["coordinates"]
   s.gl.point(coord)
 
-proc drawAsTriangle*(s:State) =
-  s.gl.viewport(0,0,s.gl.drawingbufferwidth,s.gl.drawingbufferheight)
+proc drawAsTriangle*(s:State) {.deprecated.}=
+  #s.gl.viewport(0,0,s.gl.drawingbufferwidth,s.gl.drawingbufferheight)
   s.gl.drawElements(pmTriangles, s.il, s.ib.datatype,0) #0x1403 ??
 
+proc drawArrayAs*(s:State,pm:PrimitiveMode,vertexlen:Natural=4,offset:Natural=0) =
+  #s.gl.viewport(0,0,s.gl.drawingbufferwidth,s.gl.drawingbufferheight)
+  s.gl.drawArrays(pm, offset,s.vl div vertexlen)
+
+
 proc drawElementsAs*(s:State,pm:PrimitiveMode) =
-  s.gl.viewport(0,0,s.gl.drawingbufferwidth,s.gl.drawingbufferheight)
+  #s.gl.viewport(0,0,s.gl.drawingbufferwidth,s.gl.drawingbufferheight)
   s.gl.drawElements(pm, s.il, s.ib.datatype,0) #0x1403 ??
 
 proc attribute*[T:int|float|float32](s:State, name:string, val:openarray[T]) =
