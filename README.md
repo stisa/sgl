@@ -45,3 +45,8 @@ proc draw(dt:float=0) =
 # Start looping
 draw()
 ```
+
+TODO
+====
+- rename project and find a better name for state (?)
+- use a proper math lib (snail/graphics ? or just basic2d, basic3d ? or move the current one out of utils). Do i really need to? Math is up to the user anyway.
