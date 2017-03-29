@@ -39,8 +39,12 @@ stt["rotation"] = rotation
 stt["u_color"] = [0.0,0,0,1]
 
 var theta = 0.0
-proc draw(dt:float=0) = 
-  stt.drawAsTriangle #Draw the triangle
+proc draw(dt:float) = 
+  # Loop
+  requestAnimationFrame(draw)
+  
+  stt.drawElementsAs(pmLineLoop)
+
   # Update rotation uniform
   theta+=1.0
   rotation[0] = cos(degtorad(theta))
@@ -48,8 +52,7 @@ proc draw(dt:float=0) =
   rotation[3] = sin(degtorad(theta))
   rotation[4] = cos(degtorad(theta))
   stt["rotation"] = rotation
-  # Loop
-  requestAnimationFrame(draw)
+  
 
 # Start looping
-draw()
+draw(0.0)

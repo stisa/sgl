@@ -1586,7 +1586,6 @@ function drawAsTriangle_51090(s_51092) {
 
 var F={procname:"state.drawAsTriangle",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
 framePtr = F;
-s_51092.gl.viewport(0, 0, s_51092.gl.drawingBufferWidth, s_51092.gl.drawingBufferHeight);
 s_51092.gl.drawElements(4, s_51092.il, s_51092.ib.datatype, 0);
 framePtr = F.prev;
 }

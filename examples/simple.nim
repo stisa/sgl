@@ -1,9 +1,3 @@
-SGL
-===
-
-[docs](http://stisa.space/sgl)
-
-```nim
 import ../src/sgl
 
 # Vertex shader source code
@@ -39,9 +33,10 @@ proc draw(dt:float=0) =
   # Draw the triangle
   stt.drawElementsAs(pmTriangles) 
 
+  # make changes ...
+
   # Loop
   requestAnimationFrame(draw)
 
 # Start looping
 draw()
-```

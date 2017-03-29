@@ -1719,7 +1719,7 @@ function attribute_59159(s_59163, name_59165, val_59168) {
 
 var F={procname:"attribute.attribute",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
 framePtr = F;
-F.line = 70;
+F.line = 75;
 var a_59169 = X5BX5D__55390(s_59163.shader.attributes, name_59165);
 if (!(((val_59168 != null ? val_59168.length : 0) == a_59169.kind))) {
 raiseAssert_21816((makeNimstrLit("len(val) == ord a.kind ").slice(0,-1)).concat(cstrToNimstr(((val_59168 != null ? val_59168.length : 0))+"").slice(0,-1),makeNimstrLit(" ").slice(0,-1),cstrToNimstr((a_59169.kind)+"")));
@@ -1767,9 +1767,9 @@ function uniform_59412(s_59416, name_59418, val_59421) {
 
 var F={procname:"uniform.uniform",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
 framePtr = F;
-F.line = 78;
+F.line = 83;
 var un_59422 = X5BX5D__55625(s_59416.shader.uniforms, name_59418);
-F.line = 79;
+F.line = 84;
 switch (un_59422.kind) {
 case 1: if (!(((val_59421 != null ? val_59421.length : 0) == 1))) {
 raiseAssert_21816(makeNimstrLit("len(val) == 1 "));
@@ -1822,7 +1822,7 @@ s_59416.gl.uniformMatrix4fv(un_59422.location, false, new Float32Array(val_59421
 
 break;
 default: 
-F.line = 114;
+F.line = 119;
 F.line = 2597;
 var e_60259 = null;
 e_60259 = {m_type: NTI3456, parent: null, name: null, message: null, trace: null};
@@ -1839,7 +1839,7 @@ function X5BX5Deq__59147(s_59151, name_59153, val_59156) {
 
 var F={procname:"[]=.[]=",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
 framePtr = F;
-F.line = 117;
+F.line = 122;
 switch (X5BX5D__56417(s_59151.shader, name_59153)) {
 case 1: attribute_59159(s_59151, name_59153, val_59156);
 
@@ -1916,12 +1916,11 @@ result_21011 = (x_21009 / y_21010);
 framePtr = F.prev;
 return result_21011;
 }
-function drawElementsAs_58108(s_58110, pm_58111) {
+function drawElementsAs_58126(s_58128, pm_58129) {
 
 var F={procname:"state.drawElementsAs",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
 framePtr = F;
-s_58110.gl.viewport(0, 0, s_58110.gl.drawingBufferWidth, s_58110.gl.drawingBufferHeight);
-s_58110.gl.drawElements(pm_58111, s_58110.il, s_58110.ib.datatype, 0);
+s_58128.gl.drawElements(pm_58129, s_58128.il, s_58128.ib.datatype, 0);
 framePtr = F.prev;
 }
 function eqeq__60343(x_60349, y_60352) {
@@ -2004,7 +2003,7 @@ if ((slash__21007(1000, 60) < (dt_60306 - starttime_60302[0]))) {
 F.line = 66;
 starttime_60302[0] = dt_60306;
 counter_60301[0] = addInt(counter_60301[0], 1);
-drawElementsAs_58108(sgl_59037[0], 4);
+drawElementsAs_58126(sgl_59037[0], 4);
 if (!(eqeq__60343(rotation3_54159(theta_60300[0]), lastrotation_59025[0]))) {
 X5BX5Deq__59147(sgl_59037[0], makeNimstrLit("rotation"), rotation3_54159(theta_60300[0]));
 F.line = 75;

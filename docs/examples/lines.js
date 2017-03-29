@@ -1851,11 +1851,18 @@ framePtr = F.prev;
 X5BX5Deq__52133(stt_52023[0], makeNimstrLit("rotation"), rotation_52011[0]);
 X5BX5Deq__52133(stt_52023[0], makeNimstrLit("u_color"), [0.0, 0.0, 0.0, 1.0000000000000000e+000]);
 var theta_53086 = /**/[0.0];
-function drawAsTriangle_51090(s_51092) {
+function requestAnimationFrame_29023(fn_29028) {
 
-var F={procname:"state.drawAsTriangle",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
+var F={procname:"webgl.requestAnimationFrame",prev:framePtr,filename:"C:\\Users\\stisa\\.nimble\\pkgs\\webgl-#head\\webgl.nim",line:0};
 framePtr = F;
-s_51092.gl.drawElements(4, s_51092.il, s_51092.ib.datatype, 0);
+F.line = 443;
+window.requestAnimationFrame(fn_29028);framePtr = F.prev;
+}
+function drawElementsAs_51126(s_51128, pm_51129) {
+
+var F={procname:"state.drawElementsAs",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
+framePtr = F;
+s_51128.gl.drawElements(pm_51129, s_51128.il, s_51128.ib.datatype, 0);
 framePtr = F.prev;
 }
 function pluseq__45704(x_45709, x_45709_Idx, y_45711) {
@@ -1872,29 +1879,22 @@ var result_47171 = 0.0;
 result_47171 = (d_47170 * 1.7453292519943295e-002);
 return result_47171;
 }
-function requestAnimationFrame_29023(fn_29028) {
-
-var F={procname:"webgl.requestAnimationFrame",prev:framePtr,filename:"C:\\Users\\stisa\\.nimble\\pkgs\\webgl-#head\\webgl.nim",line:0};
-framePtr = F;
-F.line = 443;
-window.requestAnimationFrame(fn_29028);framePtr = F.prev;
-}
 function draw_53087(dt_53089) {
 
-var F={procname:"triangle3.draw",prev:framePtr,filename:"triangle3.nim",line:0};
+var F={procname:"lines.draw",prev:framePtr,filename:"lines.nim",line:0};
 framePtr = F;
-drawAsTriangle_51090(stt_52023[0]);
+requestAnimationFrame_29023(draw_53087);
+drawElementsAs_51126(stt_52023[0], 2);
 pluseq__45704(theta_53086, 0, 1.0000000000000000e+000);
-F.line = 46;
+F.line = 50;
 rotation_52011[0][0] = Math.cos(degToRad_47166(theta_53086[0]));
-F.line = 47;
+F.line = 51;
 rotation_52011[0][1] = -(Math.sin(degToRad_47166(theta_53086[0])));
-F.line = 48;
+F.line = 52;
 rotation_52011[0][3] = Math.sin(degToRad_47166(theta_53086[0]));
-F.line = 49;
+F.line = 53;
 rotation_52011[0][4] = Math.cos(degToRad_47166(theta_53086[0]));
 X5BX5Deq__52133(stt_52023[0], makeNimstrLit("rotation"), rotation_52011[0]);
-requestAnimationFrame_29023(draw_53087);
 framePtr = F.prev;
 }
 draw_53087(0.0);

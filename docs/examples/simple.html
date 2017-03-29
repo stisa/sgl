@@ -14,7 +14,7 @@
   <meta name="msapplication-TileColor" content="#FFFFFF">
   <meta name="msapplication-TileImage" content="http://stisa.space/favicon-144.png">
   <style>@media only screen and (min-width: 800px)  { .output { float:left; padding-right:1em;} } </style>
-  <title>Example: triangle3</title>  
+  <title>Example: simple</title>  
 </head>
 <body>
   <header class="sidebar">
@@ -33,24 +33,22 @@
   <section class="content">
     <section class="output" id="output">
       <!--TODO:meaningful output-->
-      <h2>Example: triangle3</h2>
+      <h2>Example: simple</h2>
       <canvas style="width:100%; height:100%; min-height:25em;" width="640" height="480" id="sgl-canvas">
         Your browser doesn't appear to support the 
         <code>&lt;canvas&gt;</code> element.
       </canvas>
-      <script type="text/javascript" src="./triangle3.js"></script>
+      <script type="text/javascript" src="./simple.js"></script>
     </section>
     <section class="examplecode">
       <h2>Code</h2>
-      <pre><code class="language-nim">import webgl, dom,math
-import ../src/sgl/[state,utils]
+      <pre><code class="language-nim">import ../src/sgl
 
 # Vertex shader source code
 var vertCode = """
-uniform mat3 rotation;
-attribute vec3 coordinates;
+attribute vec2 coordinates;
 void main(void) {
- gl_Position = vec4(rotation*coordinates, 1.0);
+ gl_Position = vec4(coordinates, 0.0, 1.0);
 }
 """
 #fragment shader source code
@@ -63,41 +61,29 @@ void main(void) {
 """
 
 let vertices = [
-  0.0,0.5,0.0,
-  -0.5,-0.5,0.0,
-  0.5,-0.5,0.0, 
-];
+  0.0,0.5,
+  -0.5,-0.5,
+  0.5,-0.5
+]
 
-var rotation = [
-  1.0,0,0,
-  0,1,0,
-  0,0,1,
-];
-
-var indices = [0'u16,1,2];
+var indices = [0'u16,1,2]
 
 var stt = initstate("sgl-canvas",vertcode,fragCode)
 stt.upload(vertices,indices)
 stt.point("coordinates")
-stt["rotation"] = rotation
 stt["u_color"] = [0.0,0,0,1]
 
-var theta = 0.0
 proc draw(dt:float=0) = 
-  stt.drawAsTriangle #Draw the triangle
-  # Update rotation uniform
-  theta+=1.0
-  rotation[0] = cos(degtorad(theta))
-  rotation[1] = -sin(degtorad(theta))
-  rotation[3] = sin(degtorad(theta))
-  rotation[4] = cos(degtorad(theta))
-  stt["rotation"] = rotation
+  # Draw the triangle
+  stt.drawElementsAs(pmTriangles) 
+
+  # make changes ...
+
   # Loop
   requestAnimationFrame(draw)
 
 # Start looping
 draw()
-
 </code></pre>
     </section>
   </section>

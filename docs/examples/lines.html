@@ -14,7 +14,7 @@
   <meta name="msapplication-TileColor" content="#FFFFFF">
   <meta name="msapplication-TileImage" content="http://stisa.space/favicon-144.png">
   <style>@media only screen and (min-width: 800px)  { .output { float:left; padding-right:1em;} } </style>
-  <title>Example: triangle3</title>  
+  <title>Example: lines</title>  
 </head>
 <body>
   <header class="sidebar">
@@ -33,12 +33,12 @@
   <section class="content">
     <section class="output" id="output">
       <!--TODO:meaningful output-->
-      <h2>Example: triangle3</h2>
+      <h2>Example: lines</h2>
       <canvas style="width:100%; height:100%; min-height:25em;" width="640" height="480" id="sgl-canvas">
         Your browser doesn't appear to support the 
         <code>&lt;canvas&gt;</code> element.
       </canvas>
-      <script type="text/javascript" src="./triangle3.js"></script>
+      <script type="text/javascript" src="./lines.js"></script>
     </section>
     <section class="examplecode">
       <h2>Code</h2>
@@ -83,8 +83,12 @@ stt["rotation"] = rotation
 stt["u_color"] = [0.0,0,0,1]
 
 var theta = 0.0
-proc draw(dt:float=0) = 
-  stt.drawAsTriangle #Draw the triangle
+proc draw(dt:float) = 
+  # Loop
+  requestAnimationFrame(draw)
+  
+  stt.drawElementsAs(pmLineLoop)
+
   # Update rotation uniform
   theta+=1.0
   rotation[0] = cos(degtorad(theta))
@@ -92,11 +96,10 @@ proc draw(dt:float=0) =
   rotation[3] = sin(degtorad(theta))
   rotation[4] = cos(degtorad(theta))
   stt["rotation"] = rotation
-  # Loop
-  requestAnimationFrame(draw)
+  
 
 # Start looping
-draw()
+draw(0.0)
 
 </code></pre>
     </section>
