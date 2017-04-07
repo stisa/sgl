@@ -21,7 +21,7 @@ proc state*(gl:WebglRenderingContext,vs,fs:string):State =
   
   gl.clearColor(0.0, 0.0, 0.0, 0.0);
   gl.enable(0x0B71);
-  gl.clear(bbColor);
+  gl.clear( ord(bbColor) or ord(bbDepth) )
   gl.canvas.resizeToDisplaySize(window.devicePixelRatio)
   gl.viewport(0,0,gl.drawingbufferwidth,gl.drawingbufferheight);
   
@@ -35,6 +35,9 @@ proc initState*(canvasId:string="sgl-canvas",vs=DefaultVS,fs:string=DefaultFS):S
   var gl = canvas.getContextWebgl()
   canvas.resizeToDisplaySize(window.devicePixelRatio)
   result = gl.state(vs,fs)
+
+proc width*(s:State):float {.inline.} = s.gl.canvas.clientwidth.float
+proc height*(s:State):float {.inline.}= s.gl.canvas.clientheight.float
 
 proc upload*(s: var State,vertices:VertexBufferables,indices:IndexBufferables) =
   ## Upload and bind the vertex and index buffers
@@ -69,10 +72,10 @@ proc drawAsTriangle*(s:State) {.deprecated.}=
   #s.gl.viewport(0,0,s.gl.drawingbufferwidth,s.gl.drawingbufferheight)
   s.gl.drawElements(pmTriangles, s.il, s.ib.datatype,0) #0x1403 ??
 
-proc drawArrayAs*(s:State,pm:PrimitiveMode,vertexlen:Natural=4,offset:Natural=0) =
+proc drawArrayAs*(s:State,pm:PrimitiveMode,vertexsize:Natural=4,offset:Natural=0) =
   ## Wrapper for drawArrays
   #s.gl.viewport(0,0,s.gl.drawingbufferwidth,s.gl.drawingbufferheight)
-  s.gl.drawArrays(pm, offset,s.vl div vertexlen)
+  s.gl.drawArrays(pm, offset,s.vl div vertexsize)
 
 
 proc drawElementsAs*(s:State,pm:PrimitiveMode) =
@@ -83,7 +86,7 @@ proc drawElementsAs*(s:State,pm:PrimitiveMode) =
 proc attribute*[T:int|float|float32](s:State, name:string, val:openarray[T]) =
   ## Set an attrivute to val.
   let a = s.shader.attributes[name]
-  doassert(val.len == ord a.kind, $val.len & " " & $(ord a.kind))
+  doassert(val.len == ord a.kind, $val.len & " should have been " & $(ord a.kind))
   when T is float:
     s.vb.upload(val)
   elif T is int:
@@ -117,13 +120,18 @@ proc uniform*[T:int|float|float32](s:State, name:string, val:openarray[T]) =
       s.gl.uniform4fv(un.location,val.toJSA)
     elif T is int:
       s.gl.uniform4iv(un.location,val.toJSA)
+  of DataKind.Mat2:
+    doassert(val.len == 4)
+    doassert T is SomeReal
+    # false-> nomralize?
+    s.gl.uniformMatrix2fv(un.location,false,val.toJSA)
   of DataKind.Mat3:
     doassert(val.len == 9)
     doassert T is SomeReal
     # false-> nomralize?
     s.gl.uniformMatrix3fv(un.location,false,val.toJSA)
   of DataKind.Mat4:
-    doassert(val.len == 16)
+    doassert(val.len == 16, "got: "& $val.len)
     doassert T is SomeReal
     s.gl.uniformMatrix4fv(un.location,false,val.toJSA)
   else:

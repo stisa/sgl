@@ -47,6 +47,10 @@ proc `$`* [T](x:openarray[T]):string =
     add result, $x[i]
   add result, "]"
 
+proc projection2*(w,h:float):array[4,float] =
+  result[0] = 2/w
+  result[3] = 2/h
+
 proc projection3*(w,h:float):array[9,float] =
   result[0] = 2/w
   result[4] = 2/h
@@ -56,10 +60,32 @@ proc projection3*(w,h:float):array[9,float] =
 
 proc rotation3*(theta:float):array[9,float] =
   result[0] = cos(degtorad(theta))
-  result[1] = -sin(degtorad(theta))
-  result[3] = sin(degtorad(theta))
+  result[1] = sin(degtorad(theta))
+  result[3] = -sin(degtorad(theta))
   result[4] = cos(degtorad(theta))
   result[8] = 1
+
+proc rotation3X*(theta:float):array[9,float] =
+  result[4] = cos(degtorad(theta))
+  result[5] = sin(degtorad(theta))
+  result[7] = -sin(degtorad(theta))
+  result[8] = cos(degtorad(theta))
+  result[0] = 1
+
+proc rotation3Y*(theta:float):array[9,float] =
+  result[0] = cos(degtorad(theta))
+  result[2] = -sin(degtorad(theta))
+  result[6] = sin(degtorad(theta))
+  result[8] = cos(degtorad(theta))
+  result[4] = 1
+
+proc rotation4Y*(theta:float):array[16,float] =
+  result[0] = cos(degtorad(theta))
+  result[2] = -sin(degtorad(theta))
+  result[8] = sin(degtorad(theta))
+  result[10] = cos(degtorad(theta))
+  result[5] = 1
+  result[15] = 1
 
 proc scale3*(sx=1.0,sy:float=1.0):array[9,float] =
   # Row-major+post multiply

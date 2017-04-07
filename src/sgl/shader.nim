@@ -17,6 +17,7 @@ type DataKind* {.pure.}= enum
   Vec4 = (4,"vec4")
   Mat3 = (9,"mat3")
   Mat4 = (16,"mat4")
+  Mat2 = (44, "mat2") # FIXME: I can't really use an enums
 
 type Attribute* = object
   name*: string
@@ -33,6 +34,8 @@ type Uniform* = object
   datatype*:DataType
   normalize*:bool
   case kind*: DataKind
+  of DataKind.Mat2 : 
+    mat2: array[4,float]
   of DataKind.Mat3 : 
     mat3: array[9,float]
   of DataKind.Mat4 : 
@@ -65,6 +68,7 @@ proc attribute*(name:string,kind:string):Attribute = # don't export this
     of $DataKind.Vec2: DataKind.Vec2
     of $DataKind.Vec3: DataKind.Vec3
     of $DataKind.Vec4: DataKind.Vec4
+    of $DataKind.Mat2: DataKind.Mat2
     of $DataKind.Mat3: DataKind.Mat3
     of $DataKind.Mat4: DataKind.Mat4
     else : DataKind.Unknown
@@ -73,6 +77,7 @@ proc attribute*(name:string,kind:string):Attribute = # don't export this
     of DataKind.Vec2: ( 2, dtFLOAT, false )
     of DataKind.Vec3: ( 3, dtFLOAT, false )
     of DataKind.Vec4: ( 4, dtFLOAT, false )
+    of DataKind.Mat2: ( 4, dtFLOAT, false )
     of DataKind.Mat3: ( 9, dtFLOAT, false )
     of DataKind.Mat4: ( 16, dtFLOAT, false )
     else: (0,dtShort,false)
@@ -84,6 +89,7 @@ proc uniform(name:string,kind:string):Uniform =
     of $DataKind.Vec2: DataKind.Vec2
     of $DataKind.Vec3: DataKind.Vec3
     of $DataKind.Vec4: DataKind.Vec4
+    of $DataKind.Mat2: DataKind.Mat2
     of $DataKind.Mat3: DataKind.Mat3
     of $DataKind.Mat4: DataKind.Mat4
     else : DataKind.Unknown
@@ -92,6 +98,7 @@ proc uniform(name:string,kind:string):Uniform =
     of DataKind.Vec2: ( 2, dtFLOAT, false )
     of DataKind.Vec3: ( 3, dtFLOAT, false )
     of DataKind.Vec4: ( 4, dtFLOAT, false )
+    of DataKind.Mat2: ( 4, dtFLOAT, false )
     of DataKind.Mat3: ( 9, dtFLOAT, false )
     of DataKind.Mat4: ( 16, dtFLOAT, false )
     else: (0,dtShort,false)
