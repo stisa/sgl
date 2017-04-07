@@ -38,8 +38,6 @@ let indices = [
   4, 7, 6,   4, 6, 5     # back
 ]
 
-
-
 var sgl = initstate("sgl-canvas",vertcode,fragCode)
 
 sgl.upload(positions,indices)

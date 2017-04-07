@@ -12,8 +12,6 @@ if (typeof Uint16Array === 'undefined') Uint16Array = Array;
 if (typeof Uint32Array === 'undefined') Uint32Array = Array;
 if (typeof Float32Array === 'undefined') Float32Array = Array;
 if (typeof Float64Array === 'undefined') Float64Array = Array;
-var NTI61168 = {size: 0,kind: 16,base: null,node: null,finalizer: null};
-var NTI61304 = {size: 0,kind: 16,base: null,node: null,finalizer: null};
 var NTI3456 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
 var NTI3448 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
 var NTI3450 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
@@ -99,7 +97,7 @@ var NTI28086 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
 var NTI64017 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
 var NTI3446 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
 var NTI118 = {size: 0,kind: 42,base: null,node: null,finalizer: null};
-var NTI66016 = {size: 0,kind: 16,base: null,node: null,finalizer: null};
+var NTI66018 = {size: 0,kind: 16,base: null,node: null,finalizer: null};
 var NTI128 = {size: 0,kind: 36,base: null,node: null,finalizer: null};
 var NTI66003 = {size: 0,kind: 16,base: null,node: null,finalizer: null};
 var NTI3440 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
@@ -134,7 +132,7 @@ var NNI3440 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
 NTI3440.node = NNI3440;
 NTI3440.base = NTI3438;
 NTI66003.base = NTI128;
-NTI66016.base = NTI118;
+NTI66018.base = NTI118;
 var NNI3446 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
 NTI3446.node = NNI3446;
 NTI3446.base = NTI3424;
@@ -456,8 +454,6 @@ NTI3450.base = NTI3448;
 var NNI3456 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
 NTI3456.node = NNI3456;
 NTI3456.base = NTI3424;
-NTI61304.base = NTI124;
-NTI61168.base = NTI124;
 function makeNimstrLit(c_14003) {
 
     var ln = c_14003.length;
@@ -876,51 +872,10 @@ e_13858.parent = null;
 raiseException(e_13858, "DivByZeroError");
 }
 var objectID_54232 = /**/[0];
-var vertCode_66001 = makeNimstrLit("  uniform mat3 translation;\x0A  uniform mat3 projection;\x0A  uniform mat3 rotation;\x0A  attribute vec2 coordinates;\x0A  void main(void) {\x0A    gl_Position = vec4( vec3( projection * translation * rotation * vec3(coordinates,1.0) ).xy, 0.0 , 1.0);\x0A  }\x0A  ");
-var fragCode_66002 = makeNimstrLit("  precision mediump float;\x0A  uniform vec4 u_color;\x0A  void main(void) {\x0A    gl_FragColor = u_color;\x0A  }\x0A  ");
-var vertices_66008 = nimCopy(null, [0.0, 0.0, 1.0000000000000000e+002, 0.0, 1.0000000000000000e+002, 1.0000000000000000e+002], NTI66003);
-function translation3_61299(dx_61301, dy_61302) {
-
-var result_61305 = new Float64Array(9);
-var F={procname:"utils.translation3",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\utils.nim",line:0};
-framePtr = F;
-F.line = 98;
-result_61305[0] = 1.0000000000000000e+000;
-F.line = 99;
-result_61305[4] = 1.0000000000000000e+000;
-F.line = 100;
-result_61305[6] = dx_61301;
-F.line = 101;
-result_61305[7] = dy_61302;
-F.line = 102;
-result_61305[8] = 1.0000000000000000e+000;
-framePtr = F.prev;
-return result_61305;
-}
-function degToRad_61171(d_61175) {
-
-var result_61176 = 0.0;
-result_61176 = (d_61175 * 1.7453292519943295e-002);
-return result_61176;
-}
-function rotation3_61164(theta_61166) {
-
-var result_61169 = new Float64Array(9);
-var F={procname:"utils.rotation3",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\utils.nim",line:0};
-framePtr = F;
-F.line = 62;
-result_61169[0] = Math.cos(degToRad_61171(theta_61166));
-F.line = 63;
-result_61169[1] = Math.sin(degToRad_61171(theta_61166));
-F.line = 64;
-result_61169[3] = -(Math.sin(degToRad_61171(theta_61166)));
-F.line = 65;
-result_61169[4] = Math.cos(degToRad_61171(theta_61166));
-F.line = 66;
-result_61169[8] = 1.0000000000000000e+000;
-framePtr = F.prev;
-return result_61169;
-}
+var fragCode_66001 = makeNimstrLit("    precision mediump float;\x0A    uniform vec4 color;\x0A    void main(void) {\x0A      gl_FragColor = color;\x0A    }\x0A  ");
+var vertcode_66002 = makeNimstrLit("    attribute vec3 coordinates;\x0A    uniform mat4 rot;\x0A    void main(void) {\x0A      gl_Position = rot*vec4(coordinates, 1.0);\x0A    }\x0A  ");
+var positions_66017 = nimCopy(null, [5.0000000000000000e-001, 5.0000000000000000e-001, 5.0000000000000000e-001, -5.0000000000000000e-001, 5.0000000000000000e-001, 5.0000000000000000e-001, -5.0000000000000000e-001, -5.0000000000000000e-001, 5.0000000000000000e-001, 5.0000000000000000e-001, -5.0000000000000000e-001, 5.0000000000000000e-001, 5.0000000000000000e-001, -5.0000000000000000e-001, -5.0000000000000000e-001, 5.0000000000000000e-001, 5.0000000000000000e-001, -5.0000000000000000e-001, -5.0000000000000000e-001, 5.0000000000000000e-001, -5.0000000000000000e-001, -5.0000000000000000e-001, -5.0000000000000000e-001, -5.0000000000000000e-001], NTI66003);
+var indices_66020 = nimCopy(null, [0, 1, 2, 0, 2, 3, 0, 3, 4, 0, 4, 5, 0, 5, 6, 0, 6, 1, 1, 6, 7, 1, 7, 2, 7, 4, 3, 7, 3, 2, 4, 7, 6, 4, 6, 5], NTI66018);
 function sysFatal_21821(message_21827) {
 
 var F={procname:"sysFatal.sysFatal",prev:framePtr,filename:"lib\\system.nim",line:0};
@@ -1909,74 +1864,37 @@ nimCopy(result_65058, state_65011(gl_65060, vs_65056, fs_65057), NTI65002);
 framePtr = F.prev;
 return result_65058;
 }
-var lasttranslation_66014 = /**/[translation3_61299(0.0, 0.0)];
-var lastrotation_66015 = /**/[rotation3_61164(0.0)];
-var indices_66018 = /**/[nimCopy(null, [0, 1, 2], NTI66016)];
-var sgl_66019 = /**/[initState_65053(makeNimstrLit("sgl-canvas"), vertCode_66001, fragCode_66002)];
-function rawGet_63276(t_63281, key_63283, hc_63285, hc_63285_Idx) {
+var sgl_66021 = /**/[initState_65053(makeNimstrLit("sgl-canvas"), vertcode_66002, fragCode_66001)];
+function upload_66041(b_66045, data_66048) {
 
-var Tmp3;
-var result_63286 = 0;
-var F={procname:"rawGet.rawGet",prev:framePtr,filename:"lib\\pure\\collections\\tableimpl.nim",line:0};
+var F={procname:"upload.upload",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\buffer.nim",line:0};
 framePtr = F;
-BeforeRet: do {
-F.line = 43;
-hc_63285[hc_63285_Idx] = hash_54836(key_63283);
-if ((hc_63285[hc_63285_Idx] == 0)) {
-F.line = 45;
-hc_63285[hc_63285_Idx] = 314159265;
-}
-
-F.line = 31;
-var h_63290 = (hc_63285[hc_63285_Idx] & (t_63281.data != null ? (t_63281.data.length-1) : -1));
-L1: do {
-F.line = 32;
-L2: while (true) {
-if (!isFilled_57464(t_63281.data[chckIndx(h_63290, 0, t_63281.data.length)-0].Field0)) break L2;
-if (!(t_63281.data[chckIndx(h_63290, 0, t_63281.data.length)-0].Field0 == hc_63285[hc_63285_Idx])) Tmp3 = false; else {Tmp3 = eqStrings(t_63281.data[chckIndx(h_63290, 0, t_63281.data.length)-0].Field1, key_63283); }if (Tmp3) {
-F.line = 38;
-result_63286 = h_63290;
-break BeforeRet;
-}
-
-F.line = 39;
-h_63290 = nextTry_57601(h_63290, (t_63281.data != null ? (t_63281.data.length-1) : -1));
-}
-} while(false);
-F.line = 75;
-result_63286 = subInt(-1, h_63290);
-} while (false); 
+b_66045.gl.bindBuffer(b_66045.kind, b_66045.glbuffer);
+b_66045.gl.bufferData(b_66045.kind, new Float32Array(data_66048), b_66045.drawmode);
 framePtr = F.prev;
-return result_63286;
 }
-function X5BX5D__63263(t_63269, key_63271) {
+function upload_66077(b_66081, data_66084) {
 
-var result_63272 = {location: null, name: null, size: 0, datatype: 0, normalize: false, kind: 0, mat2: new Float64Array(4), mat3: new Float64Array(9), mat4: new Float64Array(16)};
-var F={procname:"[].[]",prev:framePtr,filename:"lib\\pure\\collections\\tables.nim",line:0};
+var F={procname:"upload.upload",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\buffer.nim",line:0};
 framePtr = F;
-F.line = 146;
-var hc_63274 = [0];
-F.line = 147;
-var index_63295 = rawGet_63276(t_63269, key_63271, hc_63274, 0);
-if ((0 <= index_63295)) {
-F.line = 148;
-nimCopy(result_63272, t_63269.data[chckIndx(index_63295, 0, t_63269.data.length)-0].Field2, NTI62033);
-}
-else {
-F.line = 151;
-F.line = 2614;
-var e_63407 = null;
-e_63407 = {m_type: NTI3450, parent: null, name: null, message: null, trace: null};
-F.line = 2616;
-e_63407.message = nimCopy(null, (makeNimstrLit("key not found: ").slice(0,-1)).concat(key_63271), NTI138);
-F.line = 2617;
-e_63407.parent = null;
-raiseException(e_63407, "KeyError");
-}
-
+b_66081.gl.bindBuffer(b_66081.kind, b_66081.glbuffer);
+b_66081.gl.bufferData(b_66081.kind, new Uint16Array(data_66084), b_66081.drawmode);
 framePtr = F.prev;
-return result_63272;
 }
+function upload_66028(s_66033, vertices_66036, indices_66039) {
+
+var F={procname:"upload.upload",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
+framePtr = F;
+upload_66041(s_66033.vb, vertices_66036);
+upload_66077(s_66033.ib, indices_66039);
+bindBuffers_64050([s_66033.vb, s_66033.ib]);
+F.line = 47;
+s_66033.il = chckRange((indices_66039 != null ? indices_66039.length : 0), 0, 2147483647);
+F.line = 48;
+s_66033.vl = chckRange((vertices_66036 != null ? vertices_66036.length : 0), 0, 2147483647);
+framePtr = F.prev;
+}
+upload_66028(sgl_66021[0], positions_66017, indices_66020);
 function rawGet_63433(t_63438, key_63440, hc_63442, hc_63442_Idx) {
 
 var Tmp3;
@@ -2040,6 +1958,88 @@ raiseException(e_63607, "KeyError");
 
 framePtr = F.prev;
 return result_63429;
+}
+function point_63018(gl_63020, a_63021) {
+
+var F={procname:"shader.point",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\shader.nim",line:0};
+framePtr = F;
+gl_63020.vertexAttribPointer(a_63021.location, a_63021.size, a_63021.datatype, a_63021.normalize, 0, 0);
+gl_63020.enableVertexAttribArray(a_63021.location);
+framePtr = F.prev;
+}
+function point_65112(s_65114, name_65115) {
+
+var F={procname:"state.point",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
+framePtr = F;
+F.line = 68;
+var coord_65126 = X5BX5D__63420(s_65114.shader.attributes, name_65115);
+point_63018(s_65114.gl, coord_65126);
+framePtr = F.prev;
+}
+point_65112(sgl_66021[0], makeNimstrLit("coordinates"));
+function rawGet_63276(t_63281, key_63283, hc_63285, hc_63285_Idx) {
+
+var Tmp3;
+var result_63286 = 0;
+var F={procname:"rawGet.rawGet",prev:framePtr,filename:"lib\\pure\\collections\\tableimpl.nim",line:0};
+framePtr = F;
+BeforeRet: do {
+F.line = 43;
+hc_63285[hc_63285_Idx] = hash_54836(key_63283);
+if ((hc_63285[hc_63285_Idx] == 0)) {
+F.line = 45;
+hc_63285[hc_63285_Idx] = 314159265;
+}
+
+F.line = 31;
+var h_63290 = (hc_63285[hc_63285_Idx] & (t_63281.data != null ? (t_63281.data.length-1) : -1));
+L1: do {
+F.line = 32;
+L2: while (true) {
+if (!isFilled_57464(t_63281.data[chckIndx(h_63290, 0, t_63281.data.length)-0].Field0)) break L2;
+if (!(t_63281.data[chckIndx(h_63290, 0, t_63281.data.length)-0].Field0 == hc_63285[hc_63285_Idx])) Tmp3 = false; else {Tmp3 = eqStrings(t_63281.data[chckIndx(h_63290, 0, t_63281.data.length)-0].Field1, key_63283); }if (Tmp3) {
+F.line = 38;
+result_63286 = h_63290;
+break BeforeRet;
+}
+
+F.line = 39;
+h_63290 = nextTry_57601(h_63290, (t_63281.data != null ? (t_63281.data.length-1) : -1));
+}
+} while(false);
+F.line = 75;
+result_63286 = subInt(-1, h_63290);
+} while (false); 
+framePtr = F.prev;
+return result_63286;
+}
+function X5BX5D__63263(t_63269, key_63271) {
+
+var result_63272 = {location: null, name: null, size: 0, datatype: 0, normalize: false, kind: 0, mat2: new Float64Array(4), mat3: new Float64Array(9), mat4: new Float64Array(16)};
+var F={procname:"[].[]",prev:framePtr,filename:"lib\\pure\\collections\\tables.nim",line:0};
+framePtr = F;
+F.line = 146;
+var hc_63274 = [0];
+F.line = 147;
+var index_63295 = rawGet_63276(t_63269, key_63271, hc_63274, 0);
+if ((0 <= index_63295)) {
+F.line = 148;
+nimCopy(result_63272, t_63269.data[chckIndx(index_63295, 0, t_63269.data.length)-0].Field2, NTI62033);
+}
+else {
+F.line = 151;
+F.line = 2614;
+var e_63407 = null;
+e_63407 = {m_type: NTI3450, parent: null, name: null, message: null, trace: null};
+F.line = 2616;
+e_63407.message = nimCopy(null, (makeNimstrLit("key not found: ").slice(0,-1)).concat(key_63271), NTI138);
+F.line = 2617;
+e_63407.parent = null;
+raiseException(e_63407, "KeyError");
+}
+
+framePtr = F.prev;
+return result_63272;
 }
 function X5BX5D__63255(s_63257, name_63258) {
 
@@ -2109,25 +2109,17 @@ raiseException(e_63625, "FieldError");
 framePtr = F.prev;
 return result_63259;
 }
-function upload_66202(b_66206, data_66209) {
-
-var F={procname:"upload.upload",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\buffer.nim",line:0};
-framePtr = F;
-b_66206.gl.bindBuffer(b_66206.kind, b_66206.glbuffer);
-b_66206.gl.bufferData(b_66206.kind, new Float32Array(data_66209), b_66206.drawmode);
-framePtr = F.prev;
-}
-function attribute_66038(s_66042, name_66044, val_66047) {
+function attribute_66141(s_66145, name_66147, val_66150) {
 
 var F={procname:"attribute.attribute",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
 framePtr = F;
 F.line = 88;
-var a_66058 = X5BX5D__63420(s_66042.shader.attributes, name_66044);
-if (!(((val_66047 != null ? val_66047.length : 0) == a_66058.kind))) {
-raiseAssert_21816((makeNimstrLit("len(val) == ord a.kind ").slice(0,-1)).concat(cstrToNimstr(((val_66047 != null ? val_66047.length : 0))+"").slice(0,-1),makeNimstrLit(" should have been ").slice(0,-1),cstrToNimstr((a_66058.kind)+"")));
+var a_66161 = X5BX5D__63420(s_66145.shader.attributes, name_66147);
+if (!(((val_66150 != null ? val_66150.length : 0) == a_66161.kind))) {
+raiseAssert_21816((makeNimstrLit("len(val) == ord a.kind ").slice(0,-1)).concat(cstrToNimstr(((val_66150 != null ? val_66150.length : 0))+"").slice(0,-1),makeNimstrLit(" should have been ").slice(0,-1),cstrToNimstr((a_66161.kind)+"")));
 }
 
-upload_66202(s_66042.vb, val_66047);
+upload_66041(s_66145.vb, val_66150);
 framePtr = F.prev;
 }
 function dollar__67038(x_67043) {
@@ -2165,43 +2157,43 @@ if (result_67044 != null) { result_67044 = (result_67044.slice(0, -1)).concat(ma
 framePtr = F.prev;
 return result_67044;
 }
-function uniform_66239(s_66243, name_66245, val_66248) {
+function uniform_66212(s_66216, name_66218, val_66221) {
 
 var F={procname:"uniform.uniform",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
 framePtr = F;
 F.line = 97;
-var un_66259 = X5BX5D__63263(s_66243.shader.uniforms, name_66245);
+var un_66232 = X5BX5D__63263(s_66216.shader.uniforms, name_66218);
 F.line = 98;
-switch (un_66259.kind) {
-case 1: if (!(((val_66248 != null ? val_66248.length : 0) == 1))) {
+switch (un_66232.kind) {
+case 1: if (!(((val_66221 != null ? val_66221.length : 0) == 1))) {
 raiseAssert_21816(makeNimstrLit("len(val) == 1 "));
 }
 
-s_66243.gl.uniform1fv(un_66259.location, new Float32Array(val_66248));
+s_66216.gl.uniform1fv(un_66232.location, new Float32Array(val_66221));
 
 break;
-case 2: if (!(((val_66248 != null ? val_66248.length : 0) == 2))) {
+case 2: if (!(((val_66221 != null ? val_66221.length : 0) == 2))) {
 raiseAssert_21816(makeNimstrLit("len(val) == 2 "));
 }
 
-s_66243.gl.uniform2fv(un_66259.location, new Float32Array(val_66248));
+s_66216.gl.uniform2fv(un_66232.location, new Float32Array(val_66221));
 
 break;
-case 3: if (!(((val_66248 != null ? val_66248.length : 0) == 3))) {
+case 3: if (!(((val_66221 != null ? val_66221.length : 0) == 3))) {
 raiseAssert_21816(makeNimstrLit("len(val) == 3 "));
 }
 
-s_66243.gl.uniform3fv(un_66259.location, new Float32Array(val_66248));
+s_66216.gl.uniform3fv(un_66232.location, new Float32Array(val_66221));
 
 break;
-case 4: if (!(((val_66248 != null ? val_66248.length : 0) == 4))) {
+case 4: if (!(((val_66221 != null ? val_66221.length : 0) == 4))) {
 raiseAssert_21816(makeNimstrLit("len(val) == 4 "));
 }
 
-s_66243.gl.uniform4fv(un_66259.location, new Float32Array(val_66248));
+s_66216.gl.uniform4fv(un_66232.location, new Float32Array(val_66221));
 
 break;
-case 44: if (!(((val_66248 != null ? val_66248.length : 0) == 4))) {
+case 44: if (!(((val_66221 != null ? val_66221.length : 0) == 4))) {
 raiseAssert_21816(makeNimstrLit("len(val) == 4 "));
 }
 
@@ -2209,10 +2201,10 @@ if (false) {
 raiseAssert_21816(makeNimstrLit("true "));
 }
 
-s_66243.gl.uniformMatrix2fv(un_66259.location, false, new Float32Array(val_66248));
+s_66216.gl.uniformMatrix2fv(un_66232.location, false, new Float32Array(val_66221));
 
 break;
-case 9: if (!(((val_66248 != null ? val_66248.length : 0) == 9))) {
+case 9: if (!(((val_66221 != null ? val_66221.length : 0) == 9))) {
 raiseAssert_21816(makeNimstrLit("len(val) == 9 "));
 }
 
@@ -2220,18 +2212,18 @@ if (false) {
 raiseAssert_21816(makeNimstrLit("true "));
 }
 
-s_66243.gl.uniformMatrix3fv(un_66259.location, false, new Float32Array(val_66248));
+s_66216.gl.uniformMatrix3fv(un_66232.location, false, new Float32Array(val_66221));
 
 break;
-case 16: if (!(((val_66248 != null ? val_66248.length : 0) == 16))) {
-raiseAssert_21816((makeNimstrLit("len(val) == 16 got: ").slice(0,-1)).concat(cstrToNimstr(((val_66248 != null ? val_66248.length : 0))+"")));
+case 16: if (!(((val_66221 != null ? val_66221.length : 0) == 16))) {
+raiseAssert_21816((makeNimstrLit("len(val) == 16 got: ").slice(0,-1)).concat(cstrToNimstr(((val_66221 != null ? val_66221.length : 0))+"")));
 }
 
 if (false) {
 raiseAssert_21816(makeNimstrLit("true "));
 }
 
-s_66243.gl.uniformMatrix4fv(un_66259.location, false, new Float32Array(val_66248));
+s_66216.gl.uniformMatrix4fv(un_66232.location, false, new Float32Array(val_66221));
 
 break;
 default: 
@@ -2240,7 +2232,7 @@ F.line = 2614;
 var e_67072 = null;
 e_67072 = {m_type: NTI3456, parent: null, name: null, message: null, trace: null};
 F.line = 2616;
-e_67072.message = nimCopy(null, (makeNimstrLit("Uniform ").slice(0,-1)).concat(name_66245.slice(0,-1),makeNimstrLit(":").slice(0,-1),dollar__67038(val_66248).slice(0,-1),makeNimstrLit(" doesn\'t match any data layout")), NTI138);
+e_67072.message = nimCopy(null, (makeNimstrLit("Uniform ").slice(0,-1)).concat(name_66218.slice(0,-1),makeNimstrLit(":").slice(0,-1),dollar__67038(val_66221).slice(0,-1),makeNimstrLit(" doesn\'t match any data layout")), NTI138);
 F.line = 2617;
 e_67072.parent = null;
 raiseException(e_67072, "FieldError");
@@ -2248,118 +2240,55 @@ break;
 }
 framePtr = F.prev;
 }
-function X5BX5Deq__66026(s_66030, name_66032, val_66035) {
+function X5BX5Deq__66129(s_66133, name_66135, val_66138) {
 
 var F={procname:"[]=.[]=",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
 framePtr = F;
 F.line = 142;
-switch (X5BX5D__63255(s_66030.shader, name_66032)) {
-case 1: attribute_66038(s_66030, name_66032, val_66035);
+switch (X5BX5D__63255(s_66133.shader, name_66135)) {
+case 1: attribute_66141(s_66133, name_66135, val_66138);
 
 break;
-case 0: uniform_66239(s_66030, name_66032, val_66035);
+case 0: uniform_66212(s_66133, name_66135, val_66138);
 
 break;
 }
 framePtr = F.prev;
 }
-function projection3_61150(w_61152, h_61153) {
+function degToRad_61171(d_61175) {
 
-var result_61156 = new Float64Array(9);
-var F={procname:"utils.projection3",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\utils.nim",line:0};
+var result_61176 = 0.0;
+result_61176 = (d_61175 * 1.7453292519943295e-002);
+return result_61176;
+}
+function rotation4Y_61259(theta_61261) {
+
+var result_61264 = new Float64Array(16);
+var F={procname:"utils.rotation4Y",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\utils.nim",line:0};
 framePtr = F;
-F.line = 55;
-result_61156[0] = (2.0000000000000000e+000 / w_61152);
-F.line = 56;
-result_61156[4] = (2.0000000000000000e+000 / h_61153);
-F.line = 57;
-result_61156[6] = -1.0000000000000000e+000;
-F.line = 58;
-result_61156[7] = -1.0000000000000000e+000;
-F.line = 59;
-result_61156[8] = 1.0000000000000000e+000;
+F.line = 83;
+result_61264[0] = Math.cos(degToRad_61171(theta_61261));
+F.line = 84;
+result_61264[2] = -(Math.sin(degToRad_61171(theta_61261)));
+F.line = 85;
+result_61264[8] = Math.sin(degToRad_61171(theta_61261));
+F.line = 86;
+result_61264[10] = Math.cos(degToRad_61171(theta_61261));
+F.line = 87;
+result_61264[5] = 1.0000000000000000e+000;
+F.line = 88;
+result_61264[15] = 1.0000000000000000e+000;
 framePtr = F.prev;
-return result_61156;
+return result_61264;
 }
-X5BX5Deq__66026(sgl_66019[0], makeNimstrLit("projection"), projection3_61150(sgl_66019[0].gl.drawingBufferWidth, sgl_66019[0].gl.drawingBufferHeight));
-X5BX5Deq__66026(sgl_66019[0], makeNimstrLit("translation"), lasttranslation_66014[0]);
-X5BX5Deq__66026(sgl_66019[0], makeNimstrLit("rotation"), rotation3_61164(0.0));
-X5BX5Deq__66026(sgl_66019[0], makeNimstrLit("u_color"), [0.0, 0.0, 0.0, 1.0000000000000000e+000]);
-function upload_67152(b_67156, data_67159) {
-
-var F={procname:"upload.upload",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\buffer.nim",line:0};
-framePtr = F;
-b_67156.gl.bindBuffer(b_67156.kind, b_67156.glbuffer);
-b_67156.gl.bufferData(b_67156.kind, new Uint16Array(data_67159), b_67156.drawmode);
-framePtr = F.prev;
-}
-function upload_67130(s_67135, vertices_67138, indices_67141) {
-
-var F={procname:"upload.upload",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
-framePtr = F;
-upload_66202(s_67135.vb, vertices_67138);
-upload_67152(s_67135.ib, indices_67141);
-bindBuffers_64050([s_67135.vb, s_67135.ib]);
-F.line = 47;
-s_67135.il = chckRange((indices_67141 != null ? indices_67141.length : 0), 0, 2147483647);
-F.line = 48;
-s_67135.vl = chckRange((vertices_67138 != null ? vertices_67138.length : 0), 0, 2147483647);
-framePtr = F.prev;
-}
-upload_67130(sgl_66019[0], vertices_66008, indices_66018[0]);
-function point_63018(gl_63020, a_63021) {
-
-var F={procname:"shader.point",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\shader.nim",line:0};
-framePtr = F;
-gl_63020.vertexAttribPointer(a_63021.location, a_63021.size, a_63021.datatype, a_63021.normalize, 0, 0);
-gl_63020.enableVertexAttribArray(a_63021.location);
-framePtr = F.prev;
-}
-function point_65112(s_65114, name_65115) {
-
-var F={procname:"state.point",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\state.nim",line:0};
-framePtr = F;
-F.line = 68;
-var coord_65126 = X5BX5D__63420(s_65114.shader.attributes, name_65115);
-point_63018(s_65114.gl, coord_65126);
-framePtr = F.prev;
-}
-point_65112(sgl_66019[0], makeNimstrLit("coordinates"));
-var dx_67202 = /**/[0.0];
-var dy_67203 = /**/[0.0];
-var theta_67204 = /**/[0.0];
-var last_time_67206 = /**/[-1.0000000000000000e+000];
-var dt_67207 = /**/[0.0];
-function appendFpsCounter_67210(toID_67212) {
-
-var F={procname:"move_a_triangle.appendFpsCounter",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\utils.nim",line:0};
-framePtr = F;
-F.line = 138;
-var fel_67213 = document.createElement("P");
-F.line = 139;
-fel_67213.innerHTML = "FPS Counter";
-fel_67213.setAttribute("ID", "_fpsCounter_");
-fel_67213.setAttribute("STYLE", "position:relative;top:-2em;left:1em;border:0.1em solid black; max-width:5em;text-align:right;background-color:ghostwhite; z-index:10;");
-if (eqStrings(toID_67212, makeNimstrLit("body"))) {
-document.body.appendChild(fel_67213);
-}
-else {
-F.line = 146;
-var parent_67214 = document.getElementById(toJSStr(toID_67212));
-parent_67214.appendChild(fel_67213);
-}
-
-framePtr = F.prev;
-}
-var fps_time_67208 = /**/[0.0];
-var fps_frames_67209 = /**/[0];
-appendFpsCounter_67210(makeNimstrLit("output"));
-function minuseq__67466(x_67471, x_67471_Idx, y_67473) {
+X5BX5Deq__66129(sgl_66021[0], makeNimstrLit("rot"), rotation4Y_61259(0.0));
+var theta_67083 = /**/[0.0];
+function minuseq__67150(x_67155, x_67155_Idx, y_67157) {
 
 var F={procname:"-=.-=",prev:framePtr,filename:"lib\\system.nim",line:0};
 framePtr = F;
 F.line = 3461;
-x_67471[x_67471_Idx] = (x_67471[x_67471_Idx] - y_67473);
+x_67155[x_67155_Idx] = (x_67155[x_67155_Idx] - y_67157);
 framePtr = F.prev;
 }
 function pluseq__52495(x_52500, x_52500_Idx, y_52502) {
@@ -2370,119 +2299,27 @@ F.line = 3456;
 x_52500[x_52500_Idx] = (x_52500[x_52500_Idx] + y_52502);
 framePtr = F.prev;
 }
-function keyev_67461(e_67464) {
+function keyev_67145(e_67148) {
 
-var F={procname:"move_a_triangle.keyev",prev:framePtr,filename:"move_a_triangle.nim",line:0};
+var F={procname:"cube.keyev",prev:framePtr,filename:"cube.nim",line:0};
 framePtr = F;
-if ((chckRange(e_67464.keyCode, 0, 255) == 97)) {
-minuseq__67466(dx_67202, 0, 3.0000000000000000e+001);
+if ((chckRange(e_67148.keyCode, 0, 255) == 113)) {
+minuseq__67150(theta_67083, 0, 5.0000000000000000e+000);
 }
 else {
-if ((chckRange(e_67464.keyCode, 0, 255) == 100)) {
-pluseq__52495(dx_67202, 0, 3.0000000000000000e+001);
+if ((chckRange(e_67148.keyCode, 0, 255) == 101)) {
+pluseq__52495(theta_67083, 0, 5.0000000000000000e+000);
 }
-else {
-if ((chckRange(e_67464.keyCode, 0, 255) == 119)) {
-pluseq__52495(dy_67203, 0, 3.0000000000000000e+001);
 }
-else {
-if ((chckRange(e_67464.keyCode, 0, 255) == 115)) {
-minuseq__67466(dy_67203, 0, 3.0000000000000000e+001);
-}
-else {
-if ((chckRange(e_67464.keyCode, 0, 255) == 113)) {
-minuseq__67466(theta_67204, 0, 5.0000000000000000e+000);
-}
-else {
-if ((chckRange(e_67464.keyCode, 0, 255) == 101)) {
-pluseq__52495(theta_67204, 0, 5.0000000000000000e+000);
-}
-}}}}}
 framePtr = F.prev;
 }
-document.addEventListener("keypress", keyev_67461, true);
+document.addEventListener("keypress", keyev_67145, true);
 function requestAnimationFrame_29023(fn_29028) {
 
 var F={procname:"webgl.requestAnimationFrame",prev:framePtr,filename:"C:\\Users\\stisa\\.nimble\\pkgs\\webgl-#head\\webgl.nim",line:0};
 framePtr = F;
 F.line = 443;
 window.requestAnimationFrame(fn_29028);framePtr = F.prev;
-}
-function slash__21007(x_21009, y_21010) {
-
-var result_21011 = 0.0;
-var F={procname:"system./",prev:framePtr,filename:"lib\\system.nim",line:0};
-framePtr = F;
-F.line = 3306;
-result_21011 = (x_21009 / y_21010);
-framePtr = F.prev;
-return result_21011;
-}
-function round_52457(x_52461, places_52463) {
-
-var result_52464 = 0.0;
-if ((places_52463 == 0)) {
-result_52464 = Math.round(x_52461);
-}
-else {
-var mult_52465 = Math.pow(1.0000000000000000e+001, places_52463);
-result_52464 = (Math.round((x_52461 * mult_52465)) / mult_52465);
-}
-
-return result_52464;
-}
-function updateFpsCounter_67215(dt_67217) {
-
-var F={procname:"move_a_triangle.updateFpsCounter",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\utils.nim",line:0};
-framePtr = F;
-F.line = 152;
-var dom_counter_67218 = document.getElementById("_fpsCounter_");
-pluseq__52495(fps_time_67208, 0, dt_67217);
-fps_frames_67209[0] = addInt(fps_frames_67209[0], 1);
-if ((1.0000000000000000e+003 < fps_time_67208[0])) {
-F.line = 157;
-var fps_67243 = ((1.0000000000000000e+003 * fps_frames_67209[0]) / fps_time_67208[0]);
-F.line = 158;
-dom_counter_67218.innerHTML = toJSStr((cstrToNimstr((round_52457(fps_67243, 0))+"").slice(0,-1)).concat(makeNimstrLit(" FPS")));
-F.line = 159;
-fps_time_67208[0] = 0.0;
-F.line = 160;
-fps_frames_67209[0] = 0;
-}
-
-framePtr = F.prev;
-}
-function eqeq__67258(x_67264, y_67267) {
-
-var result_67268 = false;
-var F={procname:"==.==",prev:framePtr,filename:"lib\\system.nim",line:0};
-framePtr = F;
-BeforeRet: do {
-L1: do {
-F.line = 2188;
-var f_67414 = 0;
-F.line = 1942;
-var res_67418 = 0;
-L2: do {
-F.line = 1943;
-L3: while (true) {
-if (!(res_67418 <= 8)) break L3;
-F.line = 1944;
-f_67414 = chckRange(res_67418, 0, 8);
-if (!((x_67264[chckIndx(f_67414, 0, x_67264.length)-0] == y_67267[chckIndx(f_67414, 0, y_67267.length)-0]))) {
-F.line = 2190;
-break BeforeRet;
-}
-
-res_67418 = addInt(res_67418, 1);
-}
-} while(false);
-} while(false);
-F.line = 2191;
-result_67268 = true;
-} while (false); 
-framePtr = F.prev;
-return result_67268;
 }
 function drawElementsAs_65163(s_65165, pm_65166) {
 
@@ -2491,39 +2328,24 @@ framePtr = F;
 s_65165.gl.drawElements(pm_65166, s_65165.il, s_65165.ib.datatype, 0);
 framePtr = F.prev;
 }
-function draw_67255() {
+function draw_67084() {
 
-var F={procname:"move_a_triangle.draw",prev:framePtr,filename:"move_a_triangle.nim",line:0};
+var F={procname:"cube.draw",prev:framePtr,filename:"cube.nim",line:0};
 framePtr = F;
-if (!(eqeq__67258(translation3_61299(dx_67202[0], dy_67203[0]), lasttranslation_66014[0]))) {
-X5BX5Deq__66026(sgl_66019[0], makeNimstrLit("translation"), translation3_61299(dx_67202[0], dy_67203[0]));
-F.line = 57;
-nimCopy(lasttranslation_66014[0], translation3_61299(dx_67202[0], dy_67203[0]), NTI61304);
-}
-
-if (!(eqeq__67258(rotation3_61164(theta_67204[0]), lastrotation_66015[0]))) {
-X5BX5Deq__66026(sgl_66019[0], makeNimstrLit("rotation"), rotation3_61164(theta_67204[0]));
-F.line = 60;
-nimCopy(lastrotation_66015[0], rotation3_61164(theta_67204[0]), NTI61168);
-}
-
-drawElementsAs_65163(sgl_66019[0], 4);
+X5BX5Deq__66129(sgl_66021[0], makeNimstrLit("color"), [1.0000000000000000e+000, 0.0, 0.0, 1.0000000000000000e+000]);
+drawElementsAs_65163(sgl_66021[0], 4);
+X5BX5Deq__66129(sgl_66021[0], makeNimstrLit("color"), [0.0, 0.0, 0.0, 1.0000000000000000e+000]);
+drawElementsAs_65163(sgl_66021[0], 2);
 framePtr = F.prev;
 }
-function update_67456(then_67458) {
+function update_67120(then_67122) {
 
-var F={procname:"move_a_triangle.update",prev:framePtr,filename:"move_a_triangle.nim",line:0};
+var F={procname:"cube.update",prev:framePtr,filename:"cube.nim",line:0};
 framePtr = F;
-requestAnimationFrame_29023(update_67456);
-F.line = 68;
-dt_67207[0] = (then_67458 - last_time_67206[0]);
-if ((slash__21007(1000, 30) < dt_67207[0])) {
-updateFpsCounter_67215(dt_67207[0]);
-draw_67255();
-F.line = 75;
-last_time_67206[0] = then_67458;
-}
-
+requestAnimationFrame_29023(update_67120);
+X5BX5Deq__66129(sgl_66021[0], makeNimstrLit("rot"), rotation4Y_61259(theta_67083[0]));
+pluseq__52495(theta_67083, 0, 5.0000000000000000e-001);
+draw_67084();
 framePtr = F.prev;
 }
-update_67456(0.0);
+update_67120(0.0);
