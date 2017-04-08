@@ -1292,8 +1292,8 @@ void main() {
 <li>
   <a class="reference reference-toplevel" href="#17" id="67">Templates</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#setupFpsCounter.t,string"
-    title="setupFpsCounter(onID: string = &quot;body&quot;)"><wbr />setup<wbr />Fps<wbr />Counter<span class="attachedType" style="visibility:hidden"></span></a></li>
+      <li><a class="reference" href="#newFpsCounter.t,string"
+    title="newFpsCounter(onID: string = &quot;body&quot;)"><wbr />new<wbr />Fps<wbr />Counter<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1530,9 +1530,9 @@ class="link-seesrc" target="_blank">Source</a>
 <div class="section" id="17">
 <h1><a class="toc-backref" href="#17">Templates</a></h1>
 <dl class="item">
-<dt id="setupFpsCounter"><a name="setupFpsCounter.t,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">setupFpsCounter</span><span class="Other">(</span><span class="Identifier">onID</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;body&quot;</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">dirty</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="newFpsCounter"><a name="newFpsCounter.t,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">newFpsCounter</span><span class="Other">(</span><span class="Identifier">onID</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;body&quot;</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">dirty</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
-Setup an fps counter as a child of element &quot;onID&quot; You the need to pass the delta time to updateFpsCounter to update. Exports a proc <cite>updateFpsCounter(dt:float)</cite>, that you need to call in your loop, passing it the time between frames.
+Setup an fps counter as a child of element &quot;onID&quot; You then need to call <span id="updatefpscounter_1">updateFpsCounter</span> to update.
 &nbsp;&nbsp;<a
 href="/tree/master/sgl/utils.nim#L124"
 class="link-seesrc" target="_blank">Source</a>
@@ -1549,7 +1549,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-04-07 22:50:00 UTC</small>
+        <small>Made with Nim. Generated: 2017-04-08 16:59:45 UTC</small>
       </div>
     </div>
   </div>

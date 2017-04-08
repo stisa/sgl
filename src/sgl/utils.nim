@@ -121,18 +121,16 @@ proc toJSA*(v:openarray[int32]) :Int32Array {.importcpp: "new Uint16Array(#)".} 
 proc toJSA*(v:openarray[int]) :Int32Array {.importcpp: "new Int32Array(#)".} # might be a lie
 
 
-template setupFpsCounter*(onID:string = "body"){.dirty}=
+template newFpsCounter*(onID:string = "body"){.dirty}=
   ## Setup an fps counter as a child of element "onID"
-  ## You the need to pass the delta time to updateFpsCounter
+  ## You then need to call `updateFpsCounter`:idx:
   ## to update.
-  ## Exports a proc `updateFpsCounter(dt:float)`, that you need to
-  ## call in your loop, passing it the time between frames.
   # FIXME: not sure about reported fps.
   import dom
-  from math import round
+  from times import epochtime
 
-  var fps_time = 0.0
-  var fps_frames = 0
+  var fpsPrevTime = 0.0
+  var fpsFrames = 0
  
   proc appendFpsCounter*(toID:string="body") =
     var fel = document.createElement("P")
@@ -143,18 +141,18 @@ template setupFpsCounter*(onID:string = "body"){.dirty}=
     if toID=="body":
       document.body.appendChild(fel)
     else:
-      let parent = document.getElementById(toID)
-      #echo "appending to ",toid
+      var parent = document.getElementById(toID)
+      if parent.isnil: parent = document.getElementById("body")
       parent.appendChild(fel)
+  fpsPrevTime = epochtime()
   appendFpsCounter(onID)
 
-  proc updateFpsCounter*(dt : float) =
-    var dom_counter = dom.document.getElementById("_fpsCounter_")
-    fps_time+= dt
-    inc fps_frames
-
-    if(fps_time>1000):
-      var fps=1000 * fps_frames.float/fps_time
-      dom_counter.innerHTML = $round(fps) & " FPS"
-      fps_time = 0.0
+  proc updateFpsCounter*() =
+    var fpsCounter = dom.document.getElementById("_fpsCounter_")
+    inc fpsFrames
+    let time = times.epochTime()
+    if time > fpsPrevTime+1:
+      let fps= int(fps_frames.float / (time - fpsPrevTime))
+      fpsCounter.innerHTML = $fps & " FPS"
+      fpsprevtime = time
       fps_frames = 0

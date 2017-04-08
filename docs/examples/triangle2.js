@@ -1307,8 +1307,8 @@ var Tmp2;
 var result_55056 = {name: null, location: 0, kind: 0, size: 0, datatype: 0, normalize: false};
 var F={procname:"shader.attribute",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\shader.nim",line:0};
 framePtr = F;
-F.line = 66;
-F.line = 66;
+F.line = 67;
+F.line = 67;
 switch (toJSStr(kind_55055)) {
 case "float": Tmp1 = 1;
 
@@ -1336,16 +1336,16 @@ Tmp1 = 0;
 break;
 }
 var k_55114 = Tmp1;
-F.line = 75;
+F.line = 76;
 var colontmp__59016 = {Field0: 0, Field1: 0, Field2: false};
-F.line = 75;
+F.line = 76;
 var sz_55130 = 0;
-F.line = 75;
+F.line = 76;
 var dt_55131 = 0;
-F.line = 75;
+F.line = 76;
 var nrm_55132 = false;
-F.line = 75;
-F.line = 75;
+F.line = 76;
+F.line = 76;
 switch (k_55114) {
 case 1: Tmp2 = {Field0: 1, Field1: 5126, Field2: false};
 
@@ -1373,13 +1373,13 @@ Tmp2 = {Field0: 0, Field1: 5122, Field2: false};
 break;
 }
 nimCopy(colontmp__59016, Tmp2, NTI55116);
-F.line = 75;
+F.line = 76;
 sz_55130 = colontmp__59016["Field0"];
-F.line = 75;
+F.line = 76;
 dt_55131 = colontmp__59016["Field1"];
-F.line = 75;
+F.line = 76;
 nrm_55132 = colontmp__59016["Field2"];
-F.line = 84;
+F.line = 85;
 nimCopy(result_55056, {name: name_55054, kind: k_55114, datatype: dt_55131, size: sz_55130, normalize: nrm_55132, location: 0}, NTI55025);
 framePtr = F.prev;
 return result_55056;
@@ -1489,8 +1489,8 @@ var Tmp2;
 var result_55138 = {location: null, name: null, size: 0, datatype: 0, normalize: false, kind: 0, mat2: new Float64Array(4), mat3: new Float64Array(9), mat4: new Float64Array(16)};
 var F={procname:"shader.uniform",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\shader.nim",line:0};
 framePtr = F;
-F.line = 87;
-F.line = 87;
+F.line = 88;
+F.line = 88;
 switch (toJSStr(kind_55137)) {
 case "float": Tmp1 = 1;
 
@@ -1518,16 +1518,16 @@ Tmp1 = 0;
 break;
 }
 var k_55196 = Tmp1;
-F.line = 96;
+F.line = 97;
 var colontmp__59017 = {Field0: 0, Field1: 0, Field2: false};
-F.line = 96;
+F.line = 97;
 var sz_55212 = 0;
-F.line = 96;
+F.line = 97;
 var dt_55213 = 0;
-F.line = 96;
+F.line = 97;
 var nrm_55214 = false;
-F.line = 96;
-F.line = 96;
+F.line = 97;
+F.line = 97;
 switch (k_55196) {
 case 1: Tmp2 = {Field0: 1, Field1: 5126, Field2: false};
 
@@ -1555,13 +1555,13 @@ Tmp2 = {Field0: 0, Field1: 5122, Field2: false};
 break;
 }
 nimCopy(colontmp__59017, Tmp2, NTI55198);
-F.line = 96;
+F.line = 97;
 sz_55212 = colontmp__59017["Field0"];
-F.line = 96;
+F.line = 97;
 dt_55213 = colontmp__59017["Field1"];
-F.line = 96;
+F.line = 97;
 nrm_55214 = colontmp__59017["Field2"];
-F.line = 106;
+F.line = 107;
 nimCopy(result_55138, {name: name_55136, kind: k_55196, datatype: dt_55213, size: sz_55212, normalize: nrm_55214, location: null, mat2: new Float64Array(4), mat3: new Float64Array(9), mat4: new Float64Array(16)}, NTI55033);
 framePtr = F.prev;
 return result_55138;
@@ -1571,10 +1571,10 @@ function extractAttrsAndUnifs_55216(vs_55218, fs_55219) {
 var result_55269 = {Field0: {data: null, counter: 0}, Field1: {data: null, counter: 0}};
 var F={procname:"shader.extractAttrsAndUnifs",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\shader.nim",line:0};
 framePtr = F;
-F.line = 157;
+F.line = 158;
 nimCopy(result_55269, {Field0: initTable_55272(16), Field1: initTable_55413(16)}, NTI55220);
 L1: do {
-F.line = 160;
+F.line = 161;
 var line_55612 = null;
 F.line = 749;
 var first_56008 = 0;
@@ -1593,10 +1593,10 @@ last_56010 = addInt(last_56010, 1);
 } while(false);
 F.line = 753;
 line_55612 = (vs_55218.slice(first_56008, (subInt(last_56010, 1))+1).concat(0));
-F.line = 161;
+F.line = 162;
 var splitted_55625 = nsuSplitWhitespace(nsuStrip(line_55612, true, true, SetConstr([9, 13], 32, [58, 59])));
 if (((splitted_55625 != null ? splitted_55625.length : 0) == 3)) {
-F.line = 163;
+F.line = 164;
 switch (toJSStr(nsuStrip(splitted_55625[0], true, true, SetConstr(32, 9, 11, 13, 10, 12)))) {
 case "attribute": add_55634(result_55269.Field1, splitted_55625[2], attribute_55052(splitted_55625[2], splitted_55625[1]));
 
@@ -1633,7 +1633,7 @@ first_56008 = last_56010;
 } while(false);
 } while(false);
 L6: do {
-F.line = 172;
+F.line = 173;
 var line_55955 = null;
 F.line = 749;
 var first_56015 = 0;
@@ -1652,10 +1652,10 @@ last_56017 = addInt(last_56017, 1);
 } while(false);
 F.line = 753;
 line_55955 = (fs_55219.slice(first_56015, (subInt(last_56017, 1))+1).concat(0));
-F.line = 173;
+F.line = 174;
 var splitted_55968 = nsuSplitWhitespace(nsuStrip(line_55955, true, true, SetConstr([9, 13], 32, [58, 59])));
 if (((splitted_55968 != null ? splitted_55968.length : 0) == 3)) {
-F.line = 176;
+F.line = 177;
 switch (toJSStr(nsuStrip(splitted_55968[0], true, true, SetConstr(32, 9, 11, 13, 10, 12)))) {
 case "attribute": add_55634(result_55269.Field1, splitted_55968[2], attribute_55052(splitted_55968[2], splitted_55968[1]));
 
@@ -1699,7 +1699,7 @@ function shader_56051(gl_56053, vssrc_56054, fssrc_56055, usethis_56056) {
 var result_56057 = {glprogram: null, uniforms: {data: null, counter: 0}, attributes: {data: null, counter: 0}};
 var F={procname:"shader.shader",prev:framePtr,filename:"C:\\Users\\stisa\\OneDrive\\Progetti\\sgl\\src\\sgl\\shader.nim",line:0};
 framePtr = F;
-F.line = 198;
+F.line = 199;
 var vs_56066 = gl_56053.createShader(35633);
 gl_56053.shaderSource(vs_56066, toJSStr(vssrc_56054));
 gl_56053.compileShader(vs_56066);
@@ -1707,7 +1707,7 @@ if (!(getStatus_29029(gl_56053, vs_56066))) {
 rawEcho(makeNimstrLit("error vertex shader"));
 }
 
-F.line = 203;
+F.line = 204;
 var fs_56078 = gl_56053.createShader(35632);
 gl_56053.shaderSource(fs_56078, toJSStr(fssrc_56055));
 gl_56053.compileShader(fs_56078);
@@ -1715,7 +1715,7 @@ if (!(getStatus_29029(gl_56053, fs_56078))) {
 rawEcho(makeNimstrLit("error fragment shader"));
 }
 
-F.line = 208;
+F.line = 209;
 var prog_56082 = gl_56053.createProgram();
 gl_56053.attachShader(prog_56082, vs_56066);
 gl_56053.attachShader(prog_56082, fs_56078);
@@ -1724,18 +1724,18 @@ if (!(getStatus_29034(gl_56053, prog_56082))) {
 rawEcho(makeNimstrLit("error linking program"));
 }
 
-F.line = 214;
-var ua_56086 = extractAttrsAndUnifs_55216(vssrc_56054, fssrc_56055);
 F.line = 215;
-nimCopy(result_56057.uniforms, ua_56086.Field0, NTI55226);
+var ua_56086 = extractAttrsAndUnifs_55216(vssrc_56054, fssrc_56055);
 F.line = 216;
-nimCopy(result_56057.attributes, ua_56086.Field1, NTI55250);
+nimCopy(result_56057.uniforms, ua_56086.Field0, NTI55226);
 F.line = 217;
+nimCopy(result_56057.attributes, ua_56086.Field1, NTI55250);
+F.line = 218;
 result_56057.glprogram = prog_56082;
 gl_56053.deleteShader(vs_56066);
 gl_56053.deleteShader(fs_56078);
 L1: do {
-F.line = 223;
+F.line = 224;
 var a_56117 = null;
 L2: do {
 F.line = 265;
@@ -1755,7 +1755,7 @@ h_56237 = res_56241;
 if (isFilled_50464(result_56057.attributes.data[chckIndx(h_56237, 0, result_56057.attributes.data.length)-0].Field0)) {
 F.line = 266;
 a_56117 = result_56057.attributes.data[chckIndx(h_56237, 0, result_56057.attributes.data.length)-0].Field2;
-F.line = 224;
+F.line = 225;
 a_56117.location = gl_56053.getAttribLocation(result_56057.glprogram, toJSStr(a_56117.name));
 if (!(!(((a_56117.location|0) == -1)))) {
 failedAssertImpl_21839((makeNimstrLit("\x0D\x0A  not (int(a.location) == -1) Problems with attribute: ").slice(0,-1)).concat(a_56117.name.slice(0,-1),makeNimstrLit(", misspelled?")));
@@ -1769,7 +1769,7 @@ res_56241 = addInt(res_56241, 1);
 } while(false);
 } while(false);
 L5: do {
-F.line = 226;
+F.line = 227;
 var u_56231 = null;
 L6: do {
 F.line = 265;
@@ -1789,7 +1789,7 @@ h_56248 = res_56252;
 if (isFilled_50464(result_56057.uniforms.data[chckIndx(h_56248, 0, result_56057.uniforms.data.length)-0].Field0)) {
 F.line = 266;
 u_56231 = result_56057.uniforms.data[chckIndx(h_56248, 0, result_56057.uniforms.data.length)-0].Field2;
-F.line = 227;
+F.line = 228;
 u_56231.location = gl_56053.getUniformLocation(result_56057.glprogram, toJSStr(u_56231.name));
 }
 

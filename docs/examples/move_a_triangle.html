@@ -92,7 +92,7 @@ var
   last_time = -1.0
   dt = 0.0
 
-setupFPSCounter("output")
+newFPSCounter("output")
 
 proc draw() =
   # Update translation uniforms
@@ -114,7 +114,7 @@ proc update(then:float) =
   # Limit to 30fps
   if dt>1000/30:  
     # FPS counter
-    updateFpsCounter(dt)
+    updateFpsCounter()
     draw()
     last_time = then
 

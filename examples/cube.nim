@@ -46,6 +46,9 @@ sgl["rot"] = rotation4Y(0)
 
 var theta = 0.0
 
+newFpsCounter("output")
+
+
 proc draw() =
   # Update translation uniforms
   sgl["color"] = [1.0,0,0,1] # red
@@ -54,11 +57,14 @@ proc draw() =
   sgl.drawElementsAs(pmLineLoop) # draw the outline
 
 proc update(then:float) =
-  # Main Loop
-  requestAnimationFrame(update)
   sgl["rot"] = rotation4Y(theta)
   theta += 0.5
   draw()
+  
+  # Main Loop
+  updateFpsCounter()
+  requestAnimationFrame(update)
+  
 
 # Example binding keyboard input
 proc keyev(e:dom.Event) =

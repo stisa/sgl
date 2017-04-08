@@ -63,6 +63,7 @@ type Uniform* = object
   ( 4, dtSHORT, true )
 ]#
 proc attribute*(name:string,kind:string):Attribute = # don't export this
+  # this is wrong, need to consider integers FIXME:
   let k = case kind:
     of $DataKind.Vec1: DataKind.Vec1
     of $DataKind.Vec2: DataKind.Vec2
